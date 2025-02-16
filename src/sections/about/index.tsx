@@ -8,7 +8,7 @@ export default function About() {
                 <h2 className={classes.heading}>About me</h2>
                 <div className={classes.about__content}>
                     <figure className={classes.profile}>
-                        <img src="/images/Krissh.jpg" alt="Krissh" style={{ width: '100%', height: 'auto' }} />
+                        <img src="/images/Krissh.png" alt="Krissh" style={{ width: '100%', height: 'auto' }} />
                     </figure>
 
                     <div className={classes.about__text}>
