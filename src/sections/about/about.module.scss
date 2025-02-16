@@ -1,0 +1,41 @@
+@use '../../styles/mixins';
+@use '../../styles/variables';
+
+.about {
+    position: relative;
+
+    &__content {
+        display: grid;
+        grid-template-columns: minmax(30%, 1fr) minmax(min-content, 65%);
+        grid-template-rows: min-content;
+        grid-gap: 2rem;
+        margin-bottom: 6rem;
+        justify-content: space-between;
+
+        @include mixins.respond(phone) {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content 100%;
+        }
+
+        .description:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+
+        .profile {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+            @include mixins.respond(phone) {
+                max-height: 30rem;
+            }
+        }
+    }
+
+    .socialLinks {
+        @include mixins.respond(phone) {
+            text-align: center;
+        }
+    }
+}

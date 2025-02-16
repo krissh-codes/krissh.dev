@@ -1,0 +1,29 @@
+import { HyperLink } from '@components';
+import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit, TbBrandTwitter } from 'react-icons/tb';
+import classes from './social-links.module.scss';
+
+export default function SocialLinks() {
+    return (
+        <div className={classes.socials}>
+            <HyperLink to="https://bsky.app/profile/krissh.dev" noUnderLine lone style={{ margin: 0 }}>
+                <TbBrandBluesky />
+            </HyperLink>
+
+            <HyperLink to="https://x.com/krissh_the_dev" noUnderLine lone style={{ margin: 0 }}>
+                <TbBrandTwitter />
+            </HyperLink>
+
+            <HyperLink to="https://www.linkedin.com/in/krissh-the-dev/" noUnderLine lone style={{ margin: 0 }}>
+                <TbBrandLinkedin />
+            </HyperLink>
+
+            <HyperLink to="https://www.reddit.com/user/krissh_the_dev/" noUnderLine lone style={{ margin: 0 }}>
+                <TbBrandReddit />
+            </HyperLink>
+
+            <HyperLink to="https://www.instagram.com/krissh_the_dev/" noUnderLine lone style={{ margin: 0 }}>
+                <TbBrandInstagram />
+            </HyperLink>
+        </div>
+    );
+}

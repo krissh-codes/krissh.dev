@@ -1,0 +1,16 @@
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    font-size: 2.4rem;
+
+    a {
+        &:hover {
+            color: var(--primary-light);
+
+            -webkit-filter: var(--glow);
+            filter: var(--glow);
+        }
+    }
+}

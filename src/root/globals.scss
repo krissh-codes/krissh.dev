@@ -1,0 +1,104 @@
+@use '../styles/typography';
+@use '../styles/mixins';
+@use '../styles/variables';
+@use '../styles/fonts';
+
+:root {
+    --bg-1: #{variables.$light-2};
+    --bg-2: #{variables.$light-3};
+    --fg-1: #{variables.$dark-1};
+    --fg-2: #{variables.$dark-2};
+    --fg-3: #{variables.$dark-3};
+    --primary-light: #{variables.$primary-light};
+    --primary-dark: #{variables.$primary-dark};
+
+    --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
+    --red: #{variables.$red};
+    --green: #{variables.$green};
+
+    --font-headings: 'Metropolis';
+    --font-body: 'DM Sans';
+    --font-mono: 'Fira Code';
+}
+
+@include mixins.theme(dark) {
+    :root {
+        --bg-1: #{variables.$dark-1};
+        --bg-2: #{variables.$dark-3};
+        --fg-1: #{variables.$light-1};
+        --fg-2: #{variables.$light-2};
+        --fg-3: #{variables.$light-3};
+    }
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--fg-3);
+    background: var(--bg-1);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(var(--primary-dark), 0.05);
+}
+
+section {
+    padding: 12rem 0;
+
+    &:nth-child(even) {
+        background: var(--bg-2);
+
+        > * {
+            width: 110rem;
+            margin: 0 auto;
+
+            @include mixins.respond(tab-lan) {
+                max-width: 90%;
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        max-width: 120rem;
+        margin: 0 auto;
+
+        @include mixins.respond(desktop) {
+            width: 90%;
+        }
+
+        @include mixins.respond(xdr) {
+            max-width: 140rem;
+        }
+
+        @include mixins.respond(tab-lan) {
+            max-width: 90%;
+        }
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@include mixins.theme(dark) {
+    html {
+        color-scheme: dark;
+    }
+}

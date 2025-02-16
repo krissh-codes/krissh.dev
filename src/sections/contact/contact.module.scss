@@ -1,0 +1,22 @@
+.contact {
+    max-width: 60rem !important;
+    margin: 0 auto !important;
+    text-align: center;
+
+    h6 {
+    }
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    button {
+        align-self: center;
+    }
+}

@@ -1,0 +1,76 @@
+@use '../../styles/mixins';
+
+.experience {
+    @include mixins.respond(tab-port) {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    &__container {
+        display: flex;
+        gap: 4rem;
+
+        @include mixins.respond(tab-port) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 3rem;
+    }
+
+    &__left {
+        &__details {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            color: var(--fg-3);
+
+            &:not(:last-child) {
+                margin-bottom: 0.4rem;
+            }
+
+            time {
+            }
+
+            &_icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        @include mixins.respond(tab-port) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+    }
+
+    &__description {
+        @include mixins.respond(tab-port) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__company {
+    }
+
+    &__points {
+        margin-top: 2rem;
+        text-align: justify;
+    }
+
+    &__point {
+        &_bullet {
+            transform: scale(1.2) translateY(2px);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use '../../styles/mixins' as *;
+
+.link {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    color: var(--primary-dark);
+    transition: 0.2s all;
+    position: relative;
+
+    @include theme(dark) {
+        color: var(--primary-light);
+    }
+
+    &:not([data-style-modifier='noUnderLine'])::after {
+        content: '';
+        display: block;
+        bottom: -0.5rem;
+        height: 1px;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: var(--primary-dark);
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        @include theme(dark) {
+            background-color: var(--primary-light);
+        }
+    }
+
+    &:hover {
+        color: var(--primary-dark) !important;
+
+        @include theme(dark) {
+            color: var(--primary-light) !important;
+        }
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 3rem;
+    }
+}

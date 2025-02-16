@@ -1,0 +1,48 @@
+@use '../../styles/mixins';
+
+.skills_container {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: space-between;
+
+    aside {
+        min-width: max-content;
+    }
+
+    @include mixins.respond(tab-port) {
+        flex-direction: column;
+    }
+}
+
+.skills_desc {
+    text-align: justify;
+
+    &__item {
+        &__title {
+            font-size: inherit;
+            color: inherit;
+            font-family: var(--font-headings);
+            display: inline;
+            margin-right: 1ex;
+            text-transform: capitalize;
+
+            &__bullet {
+                transform: scale(1.2) translateY(2px);
+            }
+        }
+
+        &__text {
+            display: inline;
+        }
+    }
+}
+
+.tech_icons {
+    font-size: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.8em;
+}
