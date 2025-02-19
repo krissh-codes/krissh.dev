@@ -22,11 +22,16 @@ export default function Contact() {
 
         try {
             setMailerStatus('in-progress');
-            // await sendEmail({ fromEmail: fromEmail as string, fromName: fromName as string, message: message as string });
+            await fetch('/api/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ from: { email: fromEmail, name: fromName }, message }),
+            });
             setMailerStatus('success');
         } catch (error) {
             setMailerStatus('failure');
-
             setTimeout(() => setMailerStatus(null), 3000);
             console.error(error);
         }
@@ -42,7 +47,7 @@ export default function Contact() {
                 <TextArea name="message" id="message" label="Message" />
 
                 {/*Spam prevention*/}
-                <input name="1201307" type="text" style={{ display: 'none' }} />
+                <input name="1201307" type="text" className={classes.contact__bt1201307} />
 
                 <ClickableButton disabled={isSending} label={isSending ? 'Sending...' : 'Send ->'} type="submit" />
             </form>
