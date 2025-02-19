@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ClickableButton } from '@components/Button';
-import { TextArea, TextInput } from '@components/Inputs';
+import { ClickableButton, TextArea, TextInput } from '@components';
 import classes from './contact.module.scss';
 
 export default function Contact() {
@@ -25,9 +24,9 @@ export default function Contact() {
             await fetch('/api/message', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ from: { email: fromEmail, name: fromName }, message }),
+                body: JSON.stringify({ from: { email: fromEmail, name: fromName }, message })
             });
             setMailerStatus('success');
         } catch (error) {
