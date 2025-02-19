@@ -1,4 +1,5 @@
 'use client';
+
 import classes from './time-since.module.scss';
 
 interface TimeSinceProps {

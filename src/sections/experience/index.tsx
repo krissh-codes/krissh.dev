@@ -1,8 +1,8 @@
-import CompanyLogo from './CompanyLogo';
 import type { ReactNode } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { TbCalendarSmile } from 'react-icons/tb';
+import CompanyLogo from './CompanyLogo';
 import classes from './experience.module.scss';
 
 function ExperiencePoint({ children }: { children: ReactNode }) {

@@ -1,8 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { ClickableButton } from '@components/Button';
 import { TextArea, TextInput } from '@components/Inputs';
-import { useState } from 'react';
 import classes from './contact.module.scss';
 
 export default function Contact() {

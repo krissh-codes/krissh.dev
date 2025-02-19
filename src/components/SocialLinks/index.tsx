@@ -1,5 +1,5 @@
-import { HyperLink } from '@components';
 import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit, TbBrandTwitter } from 'react-icons/tb';
+import { HyperLink } from '@components';
 import classes from './social-links.module.scss';
 
 export default function SocialLinks() {
