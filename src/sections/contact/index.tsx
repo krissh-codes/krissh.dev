@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { SlideUp } from '@animations';
 import { ClickableButton, TextArea, TextInput } from '@components';
 import classes from './contact.module.scss';
 
@@ -41,14 +42,16 @@ export default function Contact() {
             <h5>Contact me</h5>
             <h2>Get in Touch</h2>
             <form className={classes.contact__form} action={submitContactForm}>
-                <TextInput name="name" id="name" label="Name" />
-                <TextInput name="email" id="email" type="email" label="Email" />
-                <TextArea name="message" id="message" label="Message" />
+                <SlideUp>
+                    <TextInput name="name" id="name" label="Name" />
+                    <TextInput name="email" id="email" type="email" label="Email" />
+                    <TextArea name="message" id="message" label="Message" />
 
-                {/*Spam prevention*/}
-                <input name="1201307" type="text" className={classes.contact__bt1201307} />
+                    {/*Spam prevention*/}
+                    <input id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
-                <ClickableButton disabled={isSending} label={isSending ? 'Sending...' : 'Send ->'} type="submit" />
+                    <ClickableButton disabled={isSending} label={isSending ? 'Sending...' : 'Send ->'} type="submit" />
+                </SlideUp>
             </form>
         </section>
     );

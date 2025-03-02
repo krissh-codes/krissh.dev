@@ -14,13 +14,13 @@
         display: flex;
         flex-direction: column;
         gap: 4rem;
-    }
-
-    button {
-        align-self: center;
-    }
-
-    &__bt1201307 {
-        display: none;
+        
+        div:nth-last-of-type(2){
+            display: none;
+        }
+        
+        div:nth-last-of-type(1) {
+            align-self: center;
+        }
     }
 }

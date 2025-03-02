@@ -7,6 +7,7 @@ export default defineConfig({
         alias: {
             '@': '/src',
             '@assets': '/src/assets',
+            '@animations': '/src/animations',
             '@components': '/src/components',
             '@sections': '/src/sections',
             '@utils': '/src/utils'
