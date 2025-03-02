@@ -18,9 +18,9 @@ export default function HeroSection() {
                     A passionate{' '}
                     <HyperLink to="#experience" style={{ fontWeight: 600 }} lone noUnderLine>
                         Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional
-                        experience{' '}
+                        experience
                     </HyperLink>
-                    building performant and scalable enterprise web applications.
+                    {' '}building performant and scalable enterprise web applications.
                 </div>
             </div>
 
