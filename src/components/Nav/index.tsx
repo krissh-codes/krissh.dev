@@ -3,10 +3,14 @@ import classes from './navbar.module.scss';
 import { Fade } from 'react-awesome-reveal';
 import { ClickableButton } from '@components/Button';
 
+declare global {
+    interface Window { oldScroll: number; }
+}
+
 export default function NavBar() {
     const [navStyle, setNavStyle] = useState({});
 
-    window.onscroll = function () {
+    window.onscroll = () => {
         if (window.scrollY <= 5) {
             // top of the page
             setNavStyle({ boxShadow: 'none', background: 'none' });
@@ -17,13 +21,12 @@ export default function NavBar() {
             // scrolled down
             setNavStyle({ boxShadow: 'none', transform: 'translateY(-100%)' });
         }
-        this.oldScroll = window.scrollY;
+        window.oldScroll = window.scrollY;
     };
 
     useEffect(() => setNavStyle({ boxShadow: 'none', background: 'none' }), []);
 
     const check = useRef<HTMLInputElement>(null);
-
     const handleHamClose = () => {
         check.current!.checked = false;
     };
