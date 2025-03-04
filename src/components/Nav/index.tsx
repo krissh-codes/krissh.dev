@@ -13,10 +13,10 @@ export default function NavBar() {
     window.onscroll = () => {
         if (window.scrollY <= 5) {
             // top of the page
-            setNavStyle({ boxShadow: 'none', background: 'none' });
+            setNavStyle({ boxShadow: 'none', background: 'transparent', backdropFilter: 'none' });
         } else if (window.oldScroll > window.scrollY) {
             // scrolled up
-            setNavStyle({ transform: 'translateY(0)' });
+            setNavStyle({ transform: 'translateY(0)', background: '#0000010', backdropFilter: 'blur(10px' });
         } else {
             // scrolled down
             setNavStyle({ boxShadow: 'none', transform: 'translateY(-100%)' });
@@ -24,7 +24,7 @@ export default function NavBar() {
         window.oldScroll = window.scrollY;
     };
 
-    useEffect(() => setNavStyle({ boxShadow: 'none', background: 'none' }), []);
+    useEffect(() => setNavStyle({ boxShadow: 'none', background: 'transparent' }), []);
 
     const check = useRef<HTMLInputElement>(null);
     const handleHamClose = () => {
