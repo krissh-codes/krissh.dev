@@ -1,3 +1,4 @@
+import Footer from '@components/Footer';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { About, Contact, Experience, Hero, TechnicalExpertise } from '@sections';
@@ -13,6 +14,7 @@ function bootstrap() {
             <TechnicalExpertise />
             <Experience />
             <Contact />
+            <Footer />
         </StrictMode>
     );
 }
