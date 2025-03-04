@@ -88,9 +88,9 @@
     }
 
     .quickContact {
-        position: absolute;
+        position: relative;
         left: 0;
-        bottom: 5%;
+        top: 50%;
         font-family: var(--font-mono), monospace;
         font-size: 1.4rem;
 

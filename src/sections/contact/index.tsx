@@ -38,7 +38,7 @@ export default function Contact() {
     };
 
     return (
-        <section className={classes.contact}>
+        <section id="contact" className={classes.contact}>
             <h5>Contact me</h5>
             <h2>Get in Touch</h2>
             <form className={classes.contact__form} action={submitContactForm}>

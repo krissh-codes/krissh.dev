@@ -1,14 +1,13 @@
-import { HyperLink, TimeSince } from '@components';
+import { Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
 
 export default function HeroSection() {
     return (
         <section className={classes.hero}>
+            <NavBar />
             <div className={classes.container}>
                 <p className={classes.intro}>
-                    <span role="img" aria-label="wave emoji">
-                        👋 &nbsp;
-                    </span>
+                    <Emoji character="👋" label="wave emoji" />
                     Hi, my name is
                 </p>
                 <h1 className={classes.hero__name}>
@@ -17,10 +16,9 @@ export default function HeroSection() {
                 <div className={classes.info}>
                     A passionate{' '}
                     <HyperLink to="#experience" style={{ fontWeight: 600 }} lone noUnderLine>
-                        Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional
-                        experience
-                    </HyperLink>
-                    {' '}building performant and scalable enterprise web applications.
+                        Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional experience
+                    </HyperLink>{' '}
+                    building performant and scalable enterprise web applications.
                 </div>
             </div>
 

@@ -4,3 +4,4 @@ export { default as TimeSince } from './TimeSince';
 export { default as SocialLinks } from './SocialLinks';
 export * from './Inputs';
 export * from './Button';
+export { default as NavBar } from './Nav';
