@@ -9,15 +9,29 @@
     &__social {
         display: flex;
         justify-content: center;
+        margin: 1rem 0 2rem 0;
     }
 
-    & > div {
-        margin: 1rem 0;
+    &__line1 {
+        display: inline-flex;
+        align-items: baseline;
+
+        svg {
+            position: relative;
+            top: .3rem;
+            margin: 0 .4rem;
+            font-size: 1.8rem;
+            color: var(--primary-light);
+        }
     }
 
     .colorize {
         font-family: var(--font-mono);
         font-size: 1.6rem;
         color: var(--primary-light);
+    }
+
+    strong {
+        font-family: var(--font-headings);
     }
 }
