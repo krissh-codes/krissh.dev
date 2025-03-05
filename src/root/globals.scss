@@ -9,8 +9,8 @@
     --fg-1: #{variables.$dark-1};
     --fg-2: #{variables.$dark-2};
     --fg-3: #{variables.$dark-3};
-    --primary-light: #{variables.$primary-light};
-    --primary-dark: #{variables.$primary-dark};
+    --primary-light: #{variables.$primary-dark};
+    --primary-dark: #{variables.$primary-light};
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
@@ -35,6 +35,8 @@
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
         --fg-3: #{variables.$light-3};
+        --primary-light: #{variables.$primary-light};
+        --primary-dark: #{variables.$primary-dark};
     }
 
     @supports (--natsumi-glass-background: transparent) {
