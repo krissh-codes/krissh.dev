@@ -22,12 +22,12 @@
         margin: 0 auto;
         padding: 2rem 0;
         display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: flex-end;
     }
 
     &__brand {
-        max-height: 3rem;
+        max-height: 4rem;
         margin-right: auto;
         display: inline-block;
         text-decoration: none;
@@ -57,7 +57,7 @@
     }
 
     &__logo {
-        height: 3rem;
+        height: 3.5rem;
         object-fit: contain;
         object-position: center;
     }

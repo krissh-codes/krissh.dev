@@ -41,12 +41,11 @@ export default function NavBar() {
 
                     {/* eslint-disable-next-line */}
                     <a href="#" className={classes.nav__brand}>
-                        {/* <img
+                        <img
                             className={classes.nav__logo}
-                            src={LogoSmall}
-                            srcSet={`${LogoSmall} 300w, ${LogoLarge} 600w`}
+                            src={`/images/logos/krissh/logo-thumb.png`}
                             alt="Krish"
-                        /> */}
+                        />
                     </a>
 
                     <div className={classes.nav__list_container}>
