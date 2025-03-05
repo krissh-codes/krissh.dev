@@ -30,8 +30,11 @@
     &:hover,
     &:active {
         background-position: 100%;
-        color: var(--bg-1);
         box-shadow: 0 0 1rem var(--primary-dark);
+
+        @include mixins.isTransparentTheme {
+            color: var(--fg-1);
+        }
     }
 
     @include mixins.theme(dark) {

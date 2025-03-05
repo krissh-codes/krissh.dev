@@ -21,7 +21,6 @@
  * CHOICES:
  * phone, tab-port, tab-lan, xdr
  */
-
 @mixin respond($breakpoint) {
     @if ($breakpoint==phone) {
         @media only screen and (max-width: 37.5em) {
@@ -76,5 +75,11 @@
             // 1600px - 1800px
             @content;
         }
+    }
+}
+
+@mixin isTransparentTheme() {
+    @supports (--natsumi-glass-background: transparent) {
+        @content;
     }
 }

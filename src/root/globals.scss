@@ -21,7 +21,7 @@
     --font-mono: 'Fira Code';
 }
 
-@supports (--natsumi-glass-background: transparent) {
+@include mixins.isTransparentTheme {
     :root {
         --bg-1: transparent;
         --bg-2: #00000015;
@@ -39,7 +39,7 @@
         --primary-dark: #{variables.$primary-dark};
     }
 
-    @supports (--natsumi-glass-background: transparent) {
+    @include mixins.isTransparentTheme {
         :root {
             --bg-1: transparent;
             --bg-2: #00000040;
