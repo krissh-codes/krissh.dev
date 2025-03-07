@@ -1,22 +1,28 @@
-import { useEffect, useRef, useState } from 'react';
-import classes from './navbar.module.scss';
+import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { ClickableButton } from '@components/Button';
+import classes from './navbar.module.scss';
 
 declare global {
-    interface Window { oldScroll: number; }
+    interface Window {
+        oldScroll: number;
+    }
 }
 
 export default function NavBar() {
-    const [navStyle, setNavStyle] = useState({});
+    const [navStyle, setNavStyle] = useState<CSSProperties>({
+        boxShadow: 'none',
+        background: 'transparent',
+        backdropFilter: 'none'
+    });
 
     window.onscroll = () => {
         if (window.scrollY <= 5) {
             // top of the page
-            setNavStyle({ boxShadow: 'none', background: 'transparent', backdropFilter: 'none' });
+            setNavStyle({ boxShadow: 'none', background: 'none', backdropFilter: 'none' });
         } else if (window.oldScroll > window.scrollY) {
             // scrolled up
-            setNavStyle({ transform: 'translateY(0)', background: '#0000010', backdropFilter: 'blur(10px' });
+            setNavStyle({ transform: 'translateY(0)', background: '#0000010', backdropFilter: 'blur(10px)' });
         } else {
             // scrolled down
             setNavStyle({ boxShadow: 'none', transform: 'translateY(-100%)' });
@@ -41,11 +47,7 @@ export default function NavBar() {
 
                     {/* eslint-disable-next-line */}
                     <a href="#" className={classes.nav__brand}>
-                        <img
-                            className={classes.nav__logo}
-                            src={`/images/logos/krissh/logo-thumb.png`}
-                            alt="Krish"
-                        />
+                        <img className={classes.nav__logo} src={`/images/logos/krissh/logo-thumb.png`} alt="Krish" />
                     </a>
 
                     <div className={classes.nav__list_container}>
@@ -83,7 +85,7 @@ export default function NavBar() {
                         </ul>
                     </div>
 
-                    <ClickableButton label='Résumé'></ClickableButton>
+                    <ClickableButton label="Résumé"></ClickableButton>
                 </div>
             </Fade>
         </nav>
