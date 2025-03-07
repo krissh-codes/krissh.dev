@@ -16,7 +16,12 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true
+        "noUncheckedSideEffectImports": true,
+
+        "paths": {
+            "@common-types/*": ["./types/*"],
+            "@common-types": ["./types/index"]
+        }
     },
     "include": ["api"]
 }

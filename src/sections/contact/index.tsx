@@ -1,40 +1,24 @@
-'use client';
-
-import { useState } from 'react';
 import { SlideUp } from '@animations';
 import { ClickableButton, TextArea, TextInput } from '@components';
+import { MailerStates, useMailer } from '@hooks';
 import classes from './contact.module.scss';
 
 export default function Contact() {
-    const [mailerStatus, setMailerStatus] = useState<'in-progress' | 'success' | 'failure' | null>(null);
+    const [mailerStatus, sendMail] = useMailer();
 
     // no need for useMemo
-    const isSending = mailerStatus === 'in-progress';
+    const isSending = mailerStatus === MailerStates.IN_PROGRESS;
 
     const submitContactForm = async (formData: FormData) => {
-        const fromEmail = formData.get('email');
-        const fromName = formData.get('name');
-        const message = formData.get('message');
+        const fromEmail = formData.get('email')!.toString();
+        const fromName = formData.get('name')!.toString();
+        const message = formData.get('message')!.toString();
 
         if (!fromEmail || !fromName || !message) return;
 
         if (formData.get('1201307') !== '') return;
 
-        try {
-            setMailerStatus('in-progress');
-            await fetch('/api/message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ from: { email: fromEmail, name: fromName }, message })
-            });
-            setMailerStatus('success');
-        } catch (error) {
-            setMailerStatus('failure');
-            setTimeout(() => setMailerStatus(null), 3000);
-            console.error(error);
-        }
+        sendMail({ from: { email: fromEmail, name: fromName }, message });
     };
 
     return (
@@ -47,7 +31,7 @@ export default function Contact() {
                     <TextInput name="email" id="email" type="email" label="Email" />
                     <TextArea name="message" id="message" label="Message" />
 
-                    {/*Spam prevention*/}
+                    {/* Spam prevention */}
                     <input id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
                     <ClickableButton disabled={isSending} label={isSending ? 'Sending...' : 'Send ->'} type="submit" />

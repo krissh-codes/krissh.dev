@@ -8,7 +8,9 @@
         "skipLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@*": ["./src/*"]
+            "@*": ["./src/*"],
+            "@common-types/*": ["./types/*"],
+            "@common-types": ["./types/index"]
         },
 
         "moduleResolution": "bundler",

@@ -1,10 +1,17 @@
-export default async (req: Request) => {
+import type { MessagePayload } from '@common-types';
+
+function constructResponse(statusCode: number, responseMessage: string, details?: unknown) {
+    return new Response(
+        JSON.stringify({ status: statusCode >= 400 ? 'error' : 'success', message: responseMessage, details }),
+        { status: statusCode }
+    );
+}
+
+export default async function MessageController(req: Request) {
     if (req.method !== 'POST') {
-        return new Response(JSON.stringify({ status: 'error', message: 'method not allowed' }), { status: 405 });
+        return constructResponse(405, 'method not allowed');
     }
 
-    const body = await req.json();
-    return new Response(JSON.stringify({ status: 'success', message: 'message sent successfully', details: body }), {
-        status: 200
-    });
-};
+    const body = (await req.json()) as MessagePayload;
+    return constructResponse(200, 'message sent successfully', body);
+}
