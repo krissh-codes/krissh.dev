@@ -41,7 +41,7 @@
         color: inherit;
         background-color: transparent;
         border: 2px solid var(--primary-dark);
-        border-radius: 0.5rem;
+        border-radius: var(--radius-sm);
         transition: all 0.2s;
 
         &::placeholder {

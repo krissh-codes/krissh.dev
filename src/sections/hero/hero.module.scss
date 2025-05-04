@@ -39,7 +39,7 @@
                 left: 0;
                 width: 98%;
                 height: 0.5rem;
-                border-radius: 1rem;
+                border-radius: var(--radius-md);
                 background-image: linear-gradient(to right, var(--primary-light), var(--primary-dark));
                 box-shadow: 0 0 1rem var(--primary-dark);
 

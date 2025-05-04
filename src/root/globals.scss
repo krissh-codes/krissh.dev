@@ -19,6 +19,28 @@
     --font-headings: 'Metropolis';
     --font-body: 'DM Sans';
     --font-mono: 'Fira Code';
+
+    --radius-xs: 0.2rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 3rem;
+    --radius-xl: 5rem;
+
+    --gap-xs: 0.5rem;
+    --gap-sm: 1rem;
+    --gap-md: 2rem;
+    --gap-lg: 4rem;
+    --gap-xl: 8rem;
+    --gap-xxl: 12rem;
+}
+
+@include mixins.respond(phone) {
+    :root {
+        --radius-lg: 2rem;
+        --radius-xl: 3.6rem;
+        --gap-xl: 5rem;
+        --gap-xxl: 6rem;
+    }
 }
 
 @include mixins.isTransparentTheme {
@@ -75,13 +97,13 @@ body {
 }
 
 section {
-    padding: 12rem 0;
+    padding: var(--gap-xxl) 0;
 
     &:nth-child(even) {
         background: var(--bg-2);
         width: 95%;
         margin: 0 auto;
-        border-radius: 5rem;
+        border-radius: var(--radius-xl);
 
         > * {
             width: 110rem;

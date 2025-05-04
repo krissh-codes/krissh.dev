@@ -5,7 +5,7 @@
 }
 
 @mixin addPadding {
-    padding: 10rem 0;
+    padding: var(--gap-xl) 0;
 }
 
 /*
