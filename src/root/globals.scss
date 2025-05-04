@@ -79,6 +79,9 @@ section {
 
     &:nth-child(even) {
         background: var(--bg-2);
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 5rem;
 
         > * {
             width: 110rem;
