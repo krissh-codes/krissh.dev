@@ -29,12 +29,12 @@
 
             img {
                 border-radius: var(--radius-lg);
-                background-color: rgba(0, 0, 0, 0.4);
+                background-color: var(--translucent-dark);
                 transition: all 0.2s;
             }
 
             &:hover img {
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: var(--translucent-darker);
                 border-radius: var(--radius-md);
             }
         }

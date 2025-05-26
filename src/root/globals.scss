@@ -6,11 +6,15 @@
 :root {
     --bg-1: #{variables.$light-2};
     --bg-2: #{variables.$light-3};
+    --contrast-bg: #{variables.$light-1};
     --fg-1: #{variables.$dark-1};
     --fg-2: #{variables.$dark-2};
     --fg-3: #{variables.$dark-3};
     --primary-light: #{variables.$primary-dark};
     --primary-dark: #{variables.$primary-light};
+
+    --translucent-dark: rgba(0, 0, 0, 0.4);
+    --translucent-darker: rgba(0, 0, 0, 0.8);
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
@@ -54,6 +58,7 @@
     :root {
         --bg-1: #{variables.$dark-1};
         --bg-2: #{variables.$dark-3};
+        --contrast-bg: #{variables.$dark-2};
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
         --fg-3: #{variables.$light-3};
