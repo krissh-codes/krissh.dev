@@ -80,6 +80,10 @@
 
 @mixin isTransparentTheme() {
     @supports (--natsumi-glass-background: transparent) {
-        @content;
+        @supports not (prefers-reduced-transparency: reduce) {
+            @media only screen {
+                @content;
+            }
+        }
     }
 }
