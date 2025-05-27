@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { JSX, type ReactNode } from 'react';
 import { DiRedis } from 'react-icons/di';
 import { FiChevronRight } from 'react-icons/fi';
 import { LiaReact } from 'react-icons/lia';
