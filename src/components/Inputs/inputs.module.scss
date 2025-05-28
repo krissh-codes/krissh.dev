@@ -41,8 +41,8 @@
         color: inherit;
         background-color: transparent;
         border: 2px solid var(--primary-dark);
-        transition: all 0.2s;
         border-radius: var(--radius-md);
+        transition: all var(--animation-duration-default);
 
         &::placeholder {
             color: transparent;

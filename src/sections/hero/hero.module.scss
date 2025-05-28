@@ -63,7 +63,7 @@
         animation-name: fadeAppear;
         animation-duration: 1.8s;
         //animation-delay: 3.8s;
-        animation-delay: 0.3s;
+        animation-delay: var(--animation-duration-default);
 
         @include mixins.respond(phone) {
             font-size: 2rem;

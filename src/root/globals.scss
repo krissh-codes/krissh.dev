@@ -36,6 +36,8 @@
     --gap-lg: 4rem;
     --gap-xl: 8rem;
     --gap-xxl: 12rem;
+
+    --animation-duration-default: 0.3s;
 }
 
 @include mixins.respond(phone) {
