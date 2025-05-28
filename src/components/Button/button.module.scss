@@ -31,6 +31,7 @@
     &:active {
         background-position: 100%;
         box-shadow: 0 0 1rem var(--primary-dark);
+        border-radius: var(--radius-sm);
 
         @include mixins.isTransparentTheme {
             color: var(--fg-1);
