@@ -15,6 +15,7 @@ export default function HyperLink({ to, lone, noUnderLine, style, children, ...r
         <a
             href={to}
             rel="noopener noreferrer"
+            target="_blank"
             data-style-modifier={noUnderLine && 'noUnderLine'}
             style={lone ? { color: 'inherit', ...style } : (style ?? {})}
             {...rest}

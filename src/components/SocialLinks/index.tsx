@@ -13,15 +13,15 @@ export default function SocialLinks() {
                 <TbBrandTwitter />
             </HyperLink>
 
-            <HyperLink to="https://www.linkedin.com/in/krissh-connects" noUnderLine lone style={{ margin: 0 }}>
+            <HyperLink to="https://linkedin.com/in/krissh-connects" noUnderLine lone style={{ margin: 0 }}>
                 <TbBrandLinkedin />
             </HyperLink>
 
-            <HyperLink to="https://www.reddit.com/user/krissh_speaks" noUnderLine lone style={{ margin: 0 }}>
+            <HyperLink to="https://reddit.com/user/krissh_speaks" noUnderLine lone style={{ margin: 0 }}>
                 <TbBrandReddit />
             </HyperLink>
 
-            <HyperLink to="https://www.instagram.com/krissh_posts" noUnderLine lone style={{ margin: 0 }}>
+            <HyperLink to="https://instagram.com/krissh_posts" noUnderLine lone style={{ margin: 0 }}>
                 <TbBrandInstagram />
             </HyperLink>
         </div>
