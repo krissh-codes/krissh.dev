@@ -8,7 +8,7 @@ export default function HeroSection() {
             <div className={classes.container}>
                 <p className={classes.intro}>
                     <Emoji character="👋" label="wave emoji" />
-                    Hi, my name is
+                    Hi, this is
                 </p>
                 <h1 className={classes.hero__name}>
                     <span className={classes.emphasize}>Krishna</span> Moorthy
