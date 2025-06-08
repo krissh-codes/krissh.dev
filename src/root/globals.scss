@@ -112,6 +112,11 @@ section {
         margin: 0 auto;
         border-radius: var(--radius-xl);
 
+        @include mixins.respond(phone-large) {
+            width: 100%;
+            border-radius: 0;
+        }
+
         > * {
             width: 110rem;
             margin: 0 auto;

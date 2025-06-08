@@ -2,7 +2,7 @@
 
 .experience {
     @include mixins.respond(tab-port) {
-        h2 {
+        h2, h5 {
             text-align: center;
         }
     }
@@ -50,17 +50,18 @@
         }
     }
 
-    &__description {
+    &__title {
+        margin-bottom: 0;
+
         @include mixins.respond(tab-port) {
             text-align: center;
         }
     }
 
-    &__title {
-        margin-bottom: 0;
-    }
-
     &__company {
+        @include mixins.respond(tab-port) {
+            text-align: center;
+        }
     }
 
     &__points {

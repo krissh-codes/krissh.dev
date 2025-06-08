@@ -9,6 +9,29 @@ declare global {
     }
 }
 
+const navItems = [
+    {
+        label: 'About',
+        href: '#about',
+    },
+    {
+        label: 'Experience',
+        href: '#experience',
+    },
+    {
+        label: 'Projects',
+        href: '#projects',
+    },
+    {
+        label: 'Statistics',
+        href: '#statistics',
+    },
+    {
+        label: 'Contact',
+        href: '#contact',
+    }
+];
+
 export default function NavBar() {
     const [navStyle, setNavStyle] = useState<CSSProperties>({
         boxShadow: 'none',
@@ -57,26 +80,15 @@ export default function NavBar() {
                         </label>
 
                         <ul className={classes.nav__list}>
-                            <li className={classes.nav__item}>
-                                <a className={classes.nav__link} onClick={handleHamClose} href="#about">
-                                    About
-                                </a>
-                            </li>
-                            <li className={classes.nav__item}>
-                                <a className={classes.nav__link} onClick={handleHamClose} href="#projects">
-                                    Projects
-                                </a>
-                            </li>
-                            <li className={classes.nav__item}>
-                                <a className={classes.nav__link} onClick={handleHamClose} href="#statistics">
-                                    Statistics
-                                </a>
-                            </li>
-                            <li className={classes.nav__item}>
-                                <a className={classes.nav__link} onClick={handleHamClose} href="#contact">
-                                    Contact
-                                </a>
-                            </li>
+                            {
+                                navItems.map(item => {
+                                    return <li className={classes.nav__item}>
+                                        <a className={classes.nav__link} onClick={handleHamClose} href={item.href}>
+                                            { item.label }
+                                        </a>
+                                    </li>
+                                })
+                            }
 
                             <li className={classes.hamCloseBtn} onClick={handleHamClose}>
                                 <span className="icon icon-arrow-thin-right"></span>

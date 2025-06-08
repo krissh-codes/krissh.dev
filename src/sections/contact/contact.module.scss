@@ -1,9 +1,12 @@
+@use '../../styles/mixins';
+
 .contact {
     max-width: 60rem !important;
     margin: 0 auto !important;
     text-align: center;
 
-    h6 {
+    @include mixins.respond(phone-large) {
+        max-width: 90% !important;
     }
 
     h2 {
