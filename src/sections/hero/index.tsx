@@ -30,8 +30,8 @@ export default function HeroSection() {
                 <HyperLink to="mailto: me@krissh.dev" lone>
                     me@krissh.dev
                 </HyperLink>
-                <HyperLink to="https://x.com/krissh_the_dev" lone>
-                    x/@krissh_the_dev
+                <HyperLink to="https://x.com/krissh_tweets" lone>
+                    x/@krissh_tweets
                 </HyperLink>
             </div>
         </section>
