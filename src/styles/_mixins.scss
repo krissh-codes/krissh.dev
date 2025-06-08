@@ -77,13 +77,3 @@
         }
     }
 }
-
-@mixin isTransparentTheme() {
-    @supports (--natsumi-glass-background: transparent) {
-        @supports not (prefers-reduced-transparency: reduce) {
-            @media only screen {
-                @content;
-            }
-        }
-    }
-}

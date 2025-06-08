@@ -28,14 +28,14 @@
             text-align: center;
 
             img {
-                border-radius: var(--radius-lg);
+                border-radius: var(--radius-xl);
                 background-color: var(--translucent-dark);
                 transition: all 0.2s;
             }
 
             &:hover img {
                 background-color: var(--translucent-darker);
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-lg);
             }
         }
     }

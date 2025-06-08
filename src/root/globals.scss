@@ -4,8 +4,8 @@
 @use '../styles/fonts';
 
 :root {
-    --bg-1: #{variables.$light-2};
-    --bg-2: #{variables.$light-3};
+    --bg-1: transparent;
+    --bg-2: #00000015;
     --contrast-bg: #{variables.$light-1};
     --fg-1: #{variables.$dark-1};
     --fg-2: #{variables.$dark-2};
@@ -26,9 +26,10 @@
 
     --radius-xs: 0.2rem;
     --radius-sm: 0.5rem;
-    --radius-md: 1rem;
-    --radius-lg: 3rem;
-    --radius-xl: 5rem;
+    --radius-md: .8rem;
+    --radius-lg: 2rem;
+    --radius-xl: 3rem;
+    --radius-xxl: 5rem;
 
     --gap-xs: 0.5rem;
     --gap-sm: 1rem;
@@ -42,37 +43,24 @@
 
 @include mixins.respond(phone) {
     :root {
-        --radius-lg: 2rem;
-        --radius-xl: 3.6rem;
+        --radius-lg: 1.4rem;
+        --radius-xl: 2rem;
+        --radius-xxl: 3.6rem;
         --gap-xl: 5rem;
         --gap-xxl: 6rem;
     }
 }
 
-@include mixins.isTransparentTheme {
-    :root {
-        --bg-1: transparent;
-        --bg-2: #00000015;
-    }
-}
-
 @include mixins.theme(dark) {
     :root {
-        --bg-1: #{variables.$dark-1};
-        --bg-2: #{variables.$dark-3};
+        --bg-1: transparent;
+        --bg-2: #00000040;
         --contrast-bg: #{variables.$dark-2};
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
         --fg-3: #{variables.$light-3};
         --primary-light: #{variables.$primary-light};
         --primary-dark: #{variables.$primary-dark};
-    }
-
-    @include mixins.isTransparentTheme {
-        :root {
-            --bg-1: transparent;
-            --bg-2: #00000040;
-        }
     }
 }
 
@@ -110,7 +98,7 @@ section {
         background: var(--bg-2);
         width: 95%;
         margin: 0 auto;
-        border-radius: var(--radius-xl);
+        border-radius: var(--radius-xxl);
 
         @include mixins.respond(phone-large) {
             width: 100%;
