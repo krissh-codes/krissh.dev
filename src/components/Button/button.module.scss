@@ -29,13 +29,10 @@
 
     &:hover,
     &:active {
-        background-position: 100%;
+        background-position: 99%;
         box-shadow: 0 0 1rem var(--primary-dark);
         border-radius: var(--radius-sm);
-
-        @include mixins.isTransparentTheme {
-            color: var(--fg-1);
-        }
+        color: var(--contrast-bg);
     }
 
     @include mixins.theme(dark) {
