@@ -68,7 +68,6 @@ export default function NavBar() {
                         Skip to main content
                     </a>
 
-                    {/* eslint-disable-next-line */}
                     <a href="#" className={classes.nav__brand}>
                         <img className={classes.nav__logo} src={`/images/logos/krissh/logo-thumb.png`} alt="Krish" />
                     </a>

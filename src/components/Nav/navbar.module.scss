@@ -12,7 +12,6 @@
     transition: all var(--animation-duration-default);
 
     .container {
-        /* @include mixins.marginate; */
         max-width: 140rem;
         width: 90%;
         margin: 0 auto;
@@ -40,20 +39,19 @@
         position: absolute;
         text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: 0.4ex;
         font-weight: bold;
         padding: 1.2rem 2rem;
         background-color: var(--primary-dark);
-        color: var(--fg-2);
-        border-radius: var(--radius-xs);
-        left: 0;
-        top: 0;
+        color: var(--contrast-bg);
+        border-radius: var(--radius-md);
+        left: 1rem;
+        top: 1rem;
         transform: translateY(-200%);
         transition: all 0.4s;
 
         &:focus {
             outline: none;
-            transform: translateY(50%);
+            transform: translateY(0);
             box-shadow: 0 0 0.5rem rgba(var(--primary-dark), 0.5);
         }
     }
@@ -200,11 +198,15 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            border: 2px solid var(--primary-light);
-            border-radius: var(--radius-xs);
+            border: 2px solid var(--primary-dark);
+            border-radius: var(--radius-md);
             transform: translate(-50%, -50%) scale(0);
             z-index: -10;
             transition: all var(--animation-duration-default);
+
+            @include mixins.theme(dark) {
+                border: 2px solid var(--primary-light);
+            }
         }
 
         &:hover {
