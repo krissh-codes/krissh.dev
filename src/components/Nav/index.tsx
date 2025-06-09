@@ -96,7 +96,7 @@ export default function NavBar() {
                         </ul>
                     </div>
 
-                    <ClickableButton label="Résumé"></ClickableButton>
+                    <ClickableButton label="Résumé" link="https://1drv.ms/b/c/bdfd7be85b755174/EXRRdVvoe_0ggL3DCAAAAAABgp5y7wgUU4wn0ixgCIeeHw?e=P1Ra5l"></ClickableButton>
                 </div>
             </Fade>
         </nav>
