@@ -1,4 +1,4 @@
-import { type MouseEventHandler } from 'react';
+import { type MouseEventHandler, type ReactNode } from 'react';
 import classes from './button.module.scss';
 
 export function ClickableButton(props: ButtonProps) {
@@ -8,7 +8,7 @@ export function ClickableButton(props: ButtonProps) {
             type={props.type}
             onClick={props.link ? () => window.open(props.link) : props.onClick}
             disabled={props.disabled}>
-            {props.label}
+            {props.children}
         </button>
     );
 }
@@ -16,7 +16,7 @@ export function ClickableButton(props: ButtonProps) {
 interface ButtonProps {
     type?: 'submit' | 'reset';
     link?: string;
-    label: string;
+    children: ReactNode;
     disabled?: boolean;
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
