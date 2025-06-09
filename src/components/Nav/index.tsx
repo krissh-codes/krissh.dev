@@ -81,7 +81,7 @@ export default function NavBar() {
                         <ul className={classes.nav__list}>
                             {
                                 navItems.map(item => {
-                                    return <li className={classes.nav__item}>
+                                    return <li key={item.label} className={classes.nav__item}>
                                         <a className={classes.nav__link} onClick={handleHamClose} href={item.href}>
                                             { item.label }
                                         </a>
