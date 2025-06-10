@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Footer from '@components/Footer';
 import { About, Contact, Experience, Hero, TechnicalExpertise } from '@sections';
+import { Footer } from '@components';
 import './globals.scss';
 
 function bootstrap() {
