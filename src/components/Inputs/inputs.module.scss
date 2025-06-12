@@ -63,11 +63,7 @@
             outline: none;
             box-shadow: 0 0 0.6rem var(--primary-dark);
             border-radius: var(--radius-sm);
-            background-color: var(--bg-2);
-
-            @include mixins.theme(dark) {
-                background-color: var(--bg-1);
-            }
+            background-color: var(--primary-translucent);
         }
 
         @include mixins.theme(dark) {
