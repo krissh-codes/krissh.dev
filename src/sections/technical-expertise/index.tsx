@@ -1,4 +1,6 @@
+import { SlideUp } from '@animations';
 import { JSX, type ReactNode } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { DiRedis } from 'react-icons/di';
 import { FiChevronRight } from 'react-icons/fi';
 import { LiaReact } from 'react-icons/lia';
@@ -32,6 +34,7 @@ export default function TechnicalExpertise() {
             <h2>Technical Expertise</h2>
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
+                    <SlideUp damping={.1} delay={0} cascade={true}>
                     <SkillDescription title="Full-Stack Development">
                         Capable of handling both server-side and client-side development, integrating backend services
                         with modern front-end frameworks.
@@ -66,9 +69,11 @@ export default function TechnicalExpertise() {
                         Proficient in using Git for version control, adept at managing branches, resolving conflicts,
                         and maintaining a structured workflow.
                     </SkillDescription>
+                    </SlideUp>
                 </ul>
                 <aside>
                     <h4>Languages</h4>
+                    <Fade cascade={true} damping={.2} delay={.5}>
                     <div className={classes.tech_icons}>
                         <RiJavaLine />
                         <RiJavascriptLine size="4.4rem" />
@@ -94,6 +99,7 @@ export default function TechnicalExpertise() {
                         <TbBrandGit />
                         <TbBrandFigma />
                     </div>
+                    </Fade>
                 </aside>
             </div>
         </section>
