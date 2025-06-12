@@ -12,6 +12,7 @@
     --fg-3: #{variables.$dark-3};
     --primary-light: #{variables.$primary-dark};
     --primary-dark: #{variables.$primary-light};
+    --primary-translucent: #{variables.$primary-translucent};
 
     --translucent-dark: rgba(0, 0, 0, 0.4);
     --translucent-darker: rgba(0, 0, 0, 0.8);
@@ -142,4 +143,8 @@ a {
     html {
         color-scheme: dark;
     }
+}
+
+.recharts-surface {
+    overflow:visible;
 }
