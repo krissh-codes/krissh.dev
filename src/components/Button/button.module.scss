@@ -6,11 +6,13 @@
     display: flex;
     max-width: max-content;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-family: var(--font-mono);
     font-size: 1.4rem;
 
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 1.4rem;
+    min-width: 12rem;
     background-clip: padding-box;
     border-radius: var(--radius-md);
     box-shadow: 0 0 0.3rem var(--primary-dark);
@@ -22,6 +24,10 @@
     cursor: pointer;
 
     transition: all var(--animation-duration-default) ease-in-out;
+
+    * {
+        font: inherit;
+    }
 
     & > span {
         margin-right: 1rem;
