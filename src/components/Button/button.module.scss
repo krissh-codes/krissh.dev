@@ -72,7 +72,7 @@
     );
 
     animation-name: load;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration-long);
     animation-iteration-count: infinite;
 
     @include mixins.theme(dark) {

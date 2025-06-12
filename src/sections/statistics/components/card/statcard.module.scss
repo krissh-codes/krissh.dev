@@ -10,10 +10,10 @@
     border-radius: var(--radius-lg);
     box-shadow: 0 0 .3rem rgba(0, 0, 0, .05);
     cursor: default;
-    transition: border-radius 0.4s, background-color 1s, color 1s;
+    transition: border-radius 0.4s, background-color var(--animation-duration-long), color var(--animation-duration-long);
 
     & > * {
-        transition: color .3s;
+        transition: color var(--animation-duration-default);
     }
 
     &:hover {
