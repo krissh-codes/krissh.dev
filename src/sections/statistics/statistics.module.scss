@@ -1,0 +1,46 @@
+@use '../../styles/animations';
+@use '../../styles/mixins';
+
+.statistics {
+    &__container {
+        display: grid;
+        grid-gap: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    .data {
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        grid-gap: 2rem;
+
+        @include mixins.respond(tab-port) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .contributions {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        display: grid;
+        grid-gap: 2rem;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+    }
+
+    .cta {
+        text-align: center;
+
+        svg { display: inline-flex; }
+
+        &__button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}

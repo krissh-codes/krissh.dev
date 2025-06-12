@@ -33,12 +33,12 @@ export class ContributionsAdapter {
             let key;
 
             if (groupBy === 'month') {
-                key = `${ d.getFullYear() }-${ d.getMonth() + 1 }`;
+                key = `${d.getFullYear()}-${d.getMonth() + 1}`;
             } else if (groupBy === 'week') {
                 const year = d.getFullYear();
                 const start = new Date(year, 0, 1);
                 const week = Math.ceil(((+d - +start) / 86400000 + 1) / 7);
-                key = `${ year }-W${ week }`;
+                key = `${year}-W${week}`;
             } else {
                 key = date;
             }

@@ -1,7 +1,8 @@
+import Projects from '@sections/projects';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { About, Contact, Experience, Hero, TechnicalExpertise } from '@sections';
 import { Footer } from '@components';
+import { About, Contact, Experience, Hero, Statistics, TechnicalExpertise } from '@sections';
 import './globals.scss';
 
 function bootstrap() {
@@ -13,6 +14,8 @@ function bootstrap() {
             <About />
             <TechnicalExpertise />
             <Experience />
+            <Statistics />
+            <Projects />
             <Contact />
             <Footer />
         </StrictMode>
