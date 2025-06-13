@@ -1,4 +1,3 @@
-import { SlideUp } from '@animations';
 import { JSX, type ReactNode } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { DiRedis } from 'react-icons/di';
@@ -15,6 +14,7 @@ import {
     TbBrandSass,
     TbBrandTypescript
 } from 'react-icons/tb';
+import { SlideUp } from '@animations';
 import classes from './skills.module.scss';
 
 function SkillDescription({ title, children }: { title: string; children: ReactNode }): JSX.Element {
@@ -34,71 +34,71 @@ export default function TechnicalExpertise() {
             <h2>Technical Expertise</h2>
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
-                    <SlideUp damping={.1} delay={0} cascade={true}>
-                    <SkillDescription title="Full-Stack Development">
-                        Capable of handling both server-side and client-side development, integrating backend services
-                        with modern front-end frameworks.
-                    </SkillDescription>
+                    <SlideUp damping={0.1} delay={0} cascade={true}>
+                        <SkillDescription title="Full-Stack Development">
+                            Capable of handling both server-side and client-side development, integrating backend
+                            services with modern front-end frameworks.
+                        </SkillDescription>
 
-                    <SkillDescription title="API Design & Development">
-                        Skilled in designing, developing, and maintaining RESTful APIs, ensuring scalability and high
-                        performance.
-                    </SkillDescription>
+                        <SkillDescription title="API Design & Development">
+                            Skilled in designing, developing, and maintaining RESTful APIs, ensuring scalability and
+                            high performance.
+                        </SkillDescription>
 
-                    <SkillDescription title="Database Management">
-                        Experienced in crafting and optimizing database schemas, ensuring well-structured, normalized,
-                        and efficient data storage.
-                    </SkillDescription>
+                        <SkillDescription title="Database Management">
+                            Experienced in crafting and optimizing database schemas, ensuring well-structured,
+                            normalized, and efficient data storage.
+                        </SkillDescription>
 
-                    <SkillDescription title="System Architecture">
-                        Proficient in creating detailed architecture, flow, and class diagrams, facilitating streamlined
-                        development and clear communication.
-                    </SkillDescription>
+                        <SkillDescription title="System Architecture">
+                            Proficient in creating detailed architecture, flow, and class diagrams, facilitating
+                            streamlined development and clear communication.
+                        </SkillDescription>
 
-                    <SkillDescription title="Code Quality & Best Practices">
-                        Strong focus on writing clean, maintainable code, adhering to SOLID principles, software design
-                        patterns, and industry best practices.
-                    </SkillDescription>
+                        <SkillDescription title="Code Quality & Best Practices">
+                            Strong focus on writing clean, maintainable code, adhering to SOLID principles, software
+                            design patterns, and industry best practices.
+                        </SkillDescription>
 
-                    <SkillDescription title="Performance Optimization">
-                        Experienced in conducting in-depth performance analysis and implementing optimizations to
-                        enhance system efficiency.
-                    </SkillDescription>
+                        <SkillDescription title="Performance Optimization">
+                            Experienced in conducting in-depth performance analysis and implementing optimizations to
+                            enhance system efficiency.
+                        </SkillDescription>
 
-                    <SkillDescription title="Version Control & Collaboration">
-                        Proficient in using Git for version control, adept at managing branches, resolving conflicts,
-                        and maintaining a structured workflow.
-                    </SkillDescription>
+                        <SkillDescription title="Version Control & Collaboration">
+                            Proficient in using Git for version control, adept at managing branches, resolving
+                            conflicts, and maintaining a structured workflow.
+                        </SkillDescription>
                     </SlideUp>
                 </ul>
                 <aside>
                     <h4>Languages</h4>
-                    <Fade cascade={true} damping={.2} delay={.5}>
-                    <div className={classes.tech_icons}>
-                        <RiJavaLine />
-                        <RiJavascriptLine size="4.4rem" />
-                        <TbBrandTypescript />
-                        <TbBrandHtml5 />
-                        <SiCsswizardry style={{ transform: 'scale(.75)' }} />
-                        <TbBrandSass />
-                    </div>
-                    <h4>Frameworks & Libraries</h4>
-                    <div className={classes.tech_icons}>
-                        <LiaReact />
-                        <TbBrandNextjs />
-                        <SiSpringboot style={{ transform: 'scale(.9)' }} />
-                        <SiNestjs style={{ transform: 'scale(.85)' }} />
-                        <SiExpress />
-                    </div>
+                    <Fade cascade={true} damping={0.2} delay={0.5}>
+                        <div className={classes.tech_icons}>
+                            <RiJavaLine />
+                            <RiJavascriptLine size="4.4rem" />
+                            <TbBrandTypescript />
+                            <TbBrandHtml5 />
+                            <SiCsswizardry style={{ transform: 'scale(.75)' }} />
+                            <TbBrandSass />
+                        </div>
+                        <h4>Frameworks & Libraries</h4>
+                        <div className={classes.tech_icons}>
+                            <LiaReact />
+                            <TbBrandNextjs />
+                            <SiSpringboot style={{ transform: 'scale(.9)' }} />
+                            <SiNestjs style={{ transform: 'scale(.85)' }} />
+                            <SiExpress />
+                        </div>
 
-                    <h4>Databases & Tools</h4>
-                    <div className={classes.tech_icons}>
-                        <SiPostgresql />
-                        <TbBrandMongodb />
-                        <DiRedis style={{ transform: 'scale(1.3)' }} />
-                        <TbBrandGit />
-                        <TbBrandFigma />
-                    </div>
+                        <h4>Databases & Tools</h4>
+                        <div className={classes.tech_icons}>
+                            <SiPostgresql />
+                            <TbBrandMongodb />
+                            <DiRedis style={{ transform: 'scale(1.3)' }} />
+                            <TbBrandGit />
+                            <TbBrandFigma />
+                        </div>
                     </Fade>
                 </aside>
             </div>

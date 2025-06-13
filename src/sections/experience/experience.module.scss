@@ -66,6 +66,10 @@
 
     &__points {
         margin-top: 2rem;
+
+        & > div:not(:last-child) {
+            margin-bottom: .8rem;
+        }
     }
 
     &__point {
