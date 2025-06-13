@@ -8,7 +8,7 @@
     background-color: var(--primary-translucent);
     padding: 1.8rem 1.2rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 0 .3rem rgba(0, 0, 0, .05);
+    box-shadow: 0 0 2rem var(--primary-translucent);
     cursor: default;
     transition: border-radius 0.4s, background-color var(--animation-duration-long), color var(--animation-duration-long);
 
