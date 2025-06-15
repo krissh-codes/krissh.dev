@@ -64,6 +64,10 @@
         --fg-3: #{variables.$light-3};
         --primary-light: #{variables.$primary-light};
         --primary-dark: #{variables.$primary-dark};
+
+
+        --translucent-dark: rgba(255, 255, 255, 0.1);
+        --translucent-darker: rgba(255, 255, 255, 0.2);
     }
 }
 
