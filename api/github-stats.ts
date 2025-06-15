@@ -60,6 +60,10 @@ export default async function GithubStatsController(req: Request) {
         return ResponseBuilder.constructResponse(405, 'method not allowed');
     }
 
+    if (process.env.NODE_ENV !== 'production') {
+        return ResponseBuilder.constructResponse(200, 'stats fetched successfully', (await import('./github-stats/cached-api-response')).response);
+    }
+
     const body = await getAllStats();
     return ResponseBuilder.constructResponse(200, 'stats fetched successfully', body);
 }
