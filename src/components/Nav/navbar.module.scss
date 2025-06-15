@@ -3,13 +3,37 @@
 @use '../../styles/variables';
 
 .nav {
-    box-shadow: 0 1rem 1rem rgba(var(--primary-dark), 0.08);
+    background-color: var(--primary-translucent);
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
+    left: 50%;
+    backdrop-filter: none;
     z-index: 1000;
+    width: 100%;
     transition: all var(--animation-duration-default);
+
+    &[nav-style="top"] {
+        transform: translate(-50%, 15%);
+        box-shadow: none;
+        background: none;
+    }
+
+    &[nav-style="hidden"] {
+        box-shadow: none;
+        transform: translate(-50%, -100%);
+    }
+
+    &[nav-style="visible"] {
+        width: 120rem;
+        transform: translate(-50%, 25%);
+        box-shadow: 0 0 2rem var(--primary-translucent);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-lg);
+
+        @include mixins.respond(tab-lan) {
+            width: 90%;
+        }
+    }
 
     .container {
         max-width: 140rem;
