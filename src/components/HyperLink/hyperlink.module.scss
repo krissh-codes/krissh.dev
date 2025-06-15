@@ -5,13 +5,10 @@
     font-family: inherit;
     font-size: inherit;
     text-decoration: none;
-    color: var(--primary-dark);
+    color: var(--primary-light);
     transition: 0.2s all;
     position: relative;
 
-    @include theme(dark) {
-        color: var(--primary-light);
-    }
 
     &:not([data-style-modifier='noUnderLine'])::after {
         content: '';
@@ -30,11 +27,7 @@
     }
 
     &:hover {
-        color: var(--primary-dark) !important;
-
-        @include theme(dark) {
-            color: var(--primary-light) !important;
-        }
+        color: var(--primary-light) !important;
 
         &::after {
             transform: scaleX(1);
