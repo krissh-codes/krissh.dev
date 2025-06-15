@@ -4,8 +4,15 @@ export interface IGitHubStats {
 
     contributions: {
         repositories: number;
-        past_year: { total: number; monthly: number[], weekly: number[]; };
-        past_month: { total: number; weekly: number[], daily: number[] };
-        past_week: { total: number; daily: number[] };
+        past_year: IGitHubContributionCount;
+        past_month: IGitHubContributionCount;
+        past_week: IGitHubContributionCount;
     };
 }
+
+export default interface IGitHubContributionCount {
+    total: number;
+    monthly?: number[];
+    weekly?: number[];
+    daily?: number[];
+};
