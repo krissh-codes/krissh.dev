@@ -7,10 +7,10 @@
     flex: 1;
 
     &__item {
-        border: 1px solid var(--bg-2);
+        border: 1px solid var(--translucent-dark);
         min-width: 9rem;
-        padding: 1rem;
-        background-color: var(--bg-2);
+        padding: 1.1rem 1rem 1rem 1rem;
+        background-color: var(--translucent-dark);
         font-family: var(--font-mono);
         text-transform: uppercase;
         border-radius: var(--radius-xs);
