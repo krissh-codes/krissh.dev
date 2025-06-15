@@ -13,7 +13,7 @@ export default function Graph({ data }: { data: { contributions: number }[] }) {
                     </linearGradient>
                 </defs>
                 <XAxis dataKey="name" hide={true} />
-                <Tooltip contentStyle={{ borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--primary-translucent)', backdropFilter: 'blur(20px)', borderColor: 'var(--primary-light)' }} itemStyle={{ color: 'inherit' }} />
+                <Tooltip contentStyle={{ borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--translucent-dark)', backdropFilter: 'blur(20px)', borderColor: 'var(--translucent-darker)' }} itemStyle={{ color: 'inherit' }} />
                 <Area
                     type="monotone"
                     dataKey="contributions"
