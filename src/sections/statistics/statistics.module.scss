@@ -45,4 +45,17 @@
             gap: 1rem;
         }
     }
+
+    .head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 3em;
+
+        h2 {
+            margin-bottom: 0;
+            line-height: 1ex;
+            margin-top: .8ex;
+        }
+    }
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { SlideUp } from '@animations';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
-import { ClickableButton } from '@components';
+import { ButtonGroup, type ButtonItem, ClickableButton } from '@components';
 import { Graph, StatsCard } from './components';
 import classes from './statistics.module.scss';
 
@@ -11,6 +11,38 @@ async function fetchGitHubStats() {
     const json = await response.json();
     return json.details;
 }
+
+const StatsCalendar = ['past_year', 'past_month', 'past_week'] as const;
+
+type TStatsCalendar = (typeof StatsCalendar)[number];
+
+const buttonItems: ButtonItem[] = [
+    { id: 'past_year', label: 'Year' },
+    { id: 'past_month', label: 'Month' },
+    { id: 'past_week', label: 'Week' },
+];
+
+const getDescriptor = (statsCal: TStatsCalendar) => {
+    switch (statsCal) {
+        case 'past_year':
+            return 'Week';
+        case 'past_month':
+            return 'Day';
+        case 'past_week':
+            return 'Day';
+    }
+};
+
+const getStatsCalendarCountKey = (statsCal: TStatsCalendar) => {
+    switch (statsCal) {
+        case 'past_year':
+            return 'weekly';
+        case 'past_month':
+            return 'daily';
+        case 'past_week':
+            return 'daily';
+    }
+};
 
 export default function Statistics() {
     const [stats, setStats] = useState<IGitHubStats>({
@@ -29,21 +61,43 @@ export default function Statistics() {
         }
     });
 
+    const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
+
+    const statsMapper = (value: number, idx: number, cal: TStatsCalendar) => ({
+        contributions: value,
+        name: `${getDescriptor(cal)} ${idx + 1}`
+    });
+
     useEffect(() => {
         fetchGitHubStats().then(setStats);
     }, []);
 
+    const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
+        setSelectedStatsCalendar(selectedButtonItem.id as TStatsCalendar);
+    }
+
     return (
-        <SlideUp fraction={.5} cascade={true} damping={.3}>
+        <SlideUp fraction={0.5} cascade={true} damping={0.3}>
             <section id="statistics" className={classes.statistics}>
                 <div className={classes.container}>
-                    <h5>My GitHub profile</h5>
-                    <h2 className={classes.heading}>Statistics</h2>
+                    <header className={classes.head}>
+                        <div className={classes.head__left}>
+                            <h5>My GitHub profile</h5>
+                            <h2 className={classes.heading}>Statistics</h2>
+                        </div>
+                        <div className={classes.stats_control}>
+                            <ButtonGroup buttonItems={buttonItems} onSelectedOptionChanged={changeSelectedStatsCalendar} />
+                        </div>
+                    </header>
+
                     <div className={classes.statistics__container}>
                         <div className={classes.visualization}>
                             <Graph
-                                data={stats.contributions.past_year.monthly.map((value, idx) => ({ contributions: value, name: `Month ${idx+1}` }))}
-                            />
+                                data={
+                                    stats
+                                        .contributions[selectedStatsCalendar][getStatsCalendarCountKey(selectedStatsCalendar)]!
+                                        .map((value, idx) => statsMapper(value, idx, selectedStatsCalendar))
+                                } />
                         </div>
                         <div className={classes.data}>
                             <div className={classes.contributions}>
