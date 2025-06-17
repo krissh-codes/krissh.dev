@@ -62,11 +62,7 @@ h4 {
 h5,
 h6 {
     font-family: var(--font-mono);
-    color: var(--primary-dark);
-
-    @include mixins.theme(dark) {
-        color: var(--primary-light);
-    }
+    color: var(--primary-light);
 }
 
 h5 {
