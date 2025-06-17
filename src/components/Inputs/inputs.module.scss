@@ -61,7 +61,7 @@
         &:active,
         &:focus {
             outline: none;
-            box-shadow: 0 0 0.6rem var(--primary-dark);
+            box-shadow: 0 0 0.6rem var(--primary-translucent-dark);
             border-radius: var(--radius-sm);
             background-color: var(--primary-translucent);
         }
