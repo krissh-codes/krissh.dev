@@ -1,6 +1,6 @@
 import type { GitHubGraphQLResponse } from './types';
 
-const token = process.env.REACT_APP_TOKEN;
+const token = process.env.GITHUB_TOKEN;
 
 const graphQuery = `query {
   user(login: "krissh-codes") {
