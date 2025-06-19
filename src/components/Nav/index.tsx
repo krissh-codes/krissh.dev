@@ -63,7 +63,7 @@ export default function NavBar() {
                     </a>
 
                     <a href="#" className={classes.nav__brand}>
-                        <img className={classes.nav__logo} src={`/images/logos/krissh/logo-thumb.png`} alt="Krish" />
+                        <img className={classes.nav__logo} src={`/images/logos/krissh/logo-thumb.png`} alt="Krissh" />
                     </a>
 
                     <div className={classes.nav__list_container}>
