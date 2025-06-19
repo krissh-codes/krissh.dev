@@ -1,6 +1,5 @@
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 
-
 export default function Graph({ data }: { data: { contributions: number }[] }) {
     return (
         <ResponsiveContainer width="100%" height={250}>

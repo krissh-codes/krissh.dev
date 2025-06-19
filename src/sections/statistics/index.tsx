@@ -44,22 +44,25 @@ const getStatsCalendarCountKey = (statsCal: TStatsCalendar) => {
     }
 };
 
-export default function Statistics() {
-    const [stats, setStats] = useState<IGitHubStats>({
-        followers: { count: 0 },
-        following: { count: 0 },
+const EMPTY_STATS: IGitHubStats = {
+    followers: { count: 0 },
+    following: { count: 0 },
 
-        contributions: {
-            repositories: 0,
-            past_year: {
-                total: 0,
-                monthly: new Array(12).fill(0),
-                weekly: new Array(53).fill(0)
-            },
-            past_month: { total: 0, weekly: new Array(4).fill(0), daily: new Array(31).fill(0) },
-            past_week: { total: 0, daily: new Array(7).fill(0) }
-        }
-    });
+    contributions: {
+        repositories: 0,
+        past_year: {
+            total: 0,
+            monthly: new Array(12).fill(0),
+            weekly: new Array(53).fill(0)
+        },
+        past_month: { total: 0, weekly: new Array(4).fill(0), daily: new Array(31).fill(0) },
+        past_week: { total: 0, daily: new Array(7).fill(0) }
+    }
+};
+
+export default function Statistics() {
+    const [fetchedStats, setFetchedStats] = useState<IGitHubStats>(EMPTY_STATS);
+    const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
 
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
 
@@ -69,7 +72,7 @@ export default function Statistics() {
     });
 
     useEffect(() => {
-        fetchGitHubStats().then(setStats);
+        fetchGitHubStats().then(setFetchedStats);
     }, []);
 
     const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
@@ -77,7 +80,7 @@ export default function Statistics() {
     }
 
     return (
-        <SlideUp fraction={0.5} cascade={true} damping={0.3}>
+        <SlideUp fraction={0.5} cascade={true} damping={0.3} onVisibilityChange={(isVisible: boolean) => { setStats(isVisible ? fetchedStats! : EMPTY_STATS); }}>
             <section id="statistics" className={classes.statistics}>
                 <div className={classes.container}>
                     <header className={classes.head}>
