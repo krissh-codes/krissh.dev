@@ -34,7 +34,7 @@ export default function TechnicalExpertise() {
             <h2>Technical Expertise</h2>
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
-                    <SlideUp damping={0.1} delay={0} cascade={true}>
+                    <SlideUp damping={0.1} delay={0} cascade={true} triggerOnce={true}>
                         <SkillDescription title="Full-Stack Development">
                             Capable of handling both server-side and client-side development, integrating backend
                             services with modern front-end frameworks.
@@ -73,7 +73,7 @@ export default function TechnicalExpertise() {
                 </ul>
                 <aside>
                     <h4>Languages</h4>
-                    <Fade cascade={true} damping={0.2} delay={0.5}>
+                    <Fade cascade={true} damping={0.1} delay={0.5} triggerOnce={true}>
                         <div className={classes.tech_icons}>
                             <RiJavaLine />
                             <RiJavascriptLine size="4.4rem" />
