@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import type { MessagePayload } from '@common-types';
-import { Mailer } from './mailer/Mailer';
+import { Mailer } from './message/Mailer';
 import ResponseBuilder from './utils/ResponseBuilder';
 
 export default async function MessageController(req: Request) {
