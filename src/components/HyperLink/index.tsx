@@ -7,10 +7,11 @@ type LinkProps = {
     noUnderLine?: boolean;
     style?: CSSProperties;
     children: ReactNode;
+    label?: string;
     className?: string;
 };
 
-export default function HyperLink({ to, lone, noUnderLine, style, children, ...rest }: LinkProps) {
+export default function HyperLink({ to, lone, noUnderLine, style, children, label, ...rest }: LinkProps) {
     return (
         <a
             href={to}
@@ -18,6 +19,7 @@ export default function HyperLink({ to, lone, noUnderLine, style, children, ...r
             target="_blank"
             data-style-modifier={noUnderLine && 'noUnderLine'}
             style={lone ? { color: 'inherit', ...style } : (style ?? {})}
+            aria-label={label}
             {...rest}
             className={rest.className ? rest.className : classes.link}
         >
