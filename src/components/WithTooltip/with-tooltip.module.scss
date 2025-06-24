@@ -1,0 +1,22 @@
+.withTooltip {
+    position: relative;
+
+    .tooltip {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        font: 1.2rem var(--font-mono);
+        border-radius: var(--radius-sm);
+        background-color: var(--fg-1);
+        color: var(--contrast-bg);
+        padding: .3rem .6rem;
+        opacity: 0;
+        transform: scale(0) translate(-50%, 0%);
+        transition: all 150ms ease-in-out;
+    }
+
+    &:hover .tooltip {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -100%);
+    }
+}

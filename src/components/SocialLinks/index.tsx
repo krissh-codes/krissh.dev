@@ -1,5 +1,5 @@
 import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit, TbBrandTwitter } from 'react-icons/tb';
-import { HyperLink } from '@components';
+import { HyperLink, WithTooltip } from '@components';
 import classes from './social-links.module.scss';
 
 const SOCIAL_LINKS = [
@@ -35,7 +35,7 @@ export default function SocialLinks() {
         <div className={classes.socials}>
             {SOCIAL_LINKS.map(link => (
                 <HyperLink key={link.label} to={link.url} noUnderLine lone style={{ margin: 0 }} label={link.label}>
-                    {link.icon}
+                    <WithTooltip tooltipText={link.label}>{link.icon}</WithTooltip>
                 </HyperLink>
             ))}
         </div>

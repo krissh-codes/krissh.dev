@@ -7,3 +7,4 @@ export * from './Inputs';
 export { default as NavBar } from './Nav';
 export { default as SocialLinks } from './SocialLinks';
 export { default as TimeSince } from './TimeSince';
+export * from './WithTooltip';
