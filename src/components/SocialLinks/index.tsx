@@ -2,28 +2,42 @@ import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit, TbBra
 import { HyperLink } from '@components';
 import classes from './social-links.module.scss';
 
+const SOCIAL_LINKS = [
+    {
+        label: 'Bluesky',
+        url: '/bluesky',
+        icon: <TbBrandBluesky />
+    },
+    {
+        label: 'Twitter',
+        url: '/x',
+        icon: <TbBrandTwitter />
+    },
+    {
+        label: 'LinkedIn',
+        url: '/linkedin',
+        icon: <TbBrandLinkedin />
+    },
+    {
+        label: 'Reddit',
+        url: '/reddit',
+        icon: <TbBrandReddit />
+    },
+    {
+        label: 'Instagram',
+        url: '/instagram',
+        icon: <TbBrandInstagram />
+    }
+];
+
 export default function SocialLinks() {
     return (
         <div className={classes.socials}>
-            <HyperLink to="/bluesky" noUnderLine lone style={{ margin: 0 }} label="Bluesky">
-                <TbBrandBluesky />
-            </HyperLink>
-
-            <HyperLink to="/x" noUnderLine lone style={{ margin: 0 }} label="Twitter">
-                <TbBrandTwitter />
-            </HyperLink>
-
-            <HyperLink to="/linkedin" noUnderLine lone style={{ margin: 0 }} label="LinkedIn">
-                <TbBrandLinkedin />
-            </HyperLink>
-
-            <HyperLink to="/reddit" noUnderLine lone style={{ margin: 0 }} label="Reddit">
-                <TbBrandReddit />
-            </HyperLink>
-
-            <HyperLink to="/instagram" noUnderLine lone style={{ margin: 0 }} label="Instagram">
-                <TbBrandInstagram />
-            </HyperLink>
+            {SOCIAL_LINKS.map(link => (
+                <HyperLink key={link.label} to={link.url} noUnderLine lone style={{ margin: 0 }} label={link.label}>
+                    {link.icon}
+                </HyperLink>
+            ))}
         </div>
     );
 }
