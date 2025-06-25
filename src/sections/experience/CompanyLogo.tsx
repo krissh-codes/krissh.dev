@@ -7,14 +7,5 @@ export default function CompanyLogo({ companyName, customSize = 150 }: { company
     const [themeMode, setThemeMode] = useState(BrowserThemeSettings.getCurrentThemeMode());
     BrowserThemeSettings.onThemeChange(setThemeMode);
 
-    return (
-        <img
-            src={`/images/logos/${companyName}/${themeMode}.svg`}
-            alt={`${companyName}`}
-            width={customSize}
-            height={customSize}
-            loading="lazy"
-            style={{ height: 'auto' }}
-        />
-    );
+    return <img src={`/images/logos/${companyName}/${themeMode}.svg`} alt={`${companyName}`} width={customSize} height={customSize} loading="lazy" style={{ height: 'auto' }} />;
 }

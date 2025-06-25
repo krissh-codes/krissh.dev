@@ -34,7 +34,9 @@ export default function Contact() {
                     {/* Spam prevention */}
                     <input id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
-                    <ClickableButton disabled={isSending} type="submit">{isSending ? 'Sending...' : 'Send ->'}</ClickableButton>
+                    <ClickableButton disabled={isSending} type="submit">
+                        {isSending ? 'Sending...' : 'Send ->'}
+                    </ClickableButton>
                 </SlideUp>
             </form>
         </section>

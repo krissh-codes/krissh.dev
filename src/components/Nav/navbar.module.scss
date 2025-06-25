@@ -12,18 +12,18 @@
     width: 100%;
     transition: all var(--animation-duration-default);
 
-    &[nav-style="top"] {
+    &[nav-style='top'] {
         transform: translate(-50%, 15%);
         box-shadow: none;
         background: none;
     }
 
-    &[nav-style="hidden"] {
+    &[nav-style='hidden'] {
         box-shadow: none;
         transform: translate(-50%, -100%);
     }
 
-    &[nav-style="visible"] {
+    &[nav-style='visible'] {
         width: 120rem;
         transform: translate(-50%, 25%);
         box-shadow: 0 0 2rem var(--primary-translucent);

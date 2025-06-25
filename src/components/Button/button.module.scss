@@ -24,7 +24,8 @@
 
     transition: all var(--animation-duration-default) ease-in-out;
 
-    &, * {
+    &,
+    * {
         cursor: pointer;
     }
 
@@ -70,25 +71,13 @@
 
     color: inherit;
 
-    background-image: linear-gradient(
-        120deg,
-        transparent 33%,
-        var(--primary-dark) 33%,
-        var(--primary-dark) 66%,
-        transparent 66%
-    );
+    background-image: linear-gradient(120deg, transparent 33%, var(--primary-dark) 33%, var(--primary-dark) 66%, transparent 66%);
 
     animation-name: load;
     animation-duration: var(--animation-duration-long);
     animation-iteration-count: infinite;
 
     @include mixins.theme(dark) {
-        background-image: linear-gradient(
-            120deg,
-            transparent 33%,
-            var(--primary-light) 33%,
-            var(--primary-light) 66%,
-            transparent 66%
-        );
+        background-image: linear-gradient(120deg, transparent 33%, var(--primary-light) 33%, var(--primary-light) 66%, transparent 66%);
     }
 }

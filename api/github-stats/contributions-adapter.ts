@@ -22,10 +22,7 @@ export class ContributionsAdapter {
         return this.contributionCalendar.filter(({ date }) => new Date(date) >= since);
     }
 
-    public static getGroupedContributions(
-        contributions: ContributionCalendar,
-        groupBy: 'month' | 'week' | 'day'
-    ): number[] {
+    public static getGroupedContributions(contributions: ContributionCalendar, groupBy: 'month' | 'week' | 'day'): number[] {
         const map = new Map<string, number>();
 
         contributions.forEach(({ date, count }) => {

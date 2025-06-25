@@ -9,7 +9,6 @@
     transition: 0.2s all;
     position: relative;
 
-
     &:not([data-style-modifier='noUnderLine'])::after {
         content: '';
         display: block;

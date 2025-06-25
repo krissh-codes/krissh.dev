@@ -37,7 +37,9 @@
         display: flex;
         justify-content: center;
 
-        svg { display: inline-flex; }
+        svg {
+            display: inline-flex;
+        }
 
         &__button {
             display: flex;
@@ -61,7 +63,7 @@
         h2 {
             margin-bottom: 0;
             line-height: 1ex;
-            margin-top: .8ex;
+            margin-top: 0.8ex;
         }
     }
 }

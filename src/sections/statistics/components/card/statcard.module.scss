@@ -10,7 +10,10 @@
     border-radius: var(--radius-lg);
     box-shadow: 0 0 2rem var(--primary-translucent);
     cursor: default;
-    transition: border-radius 0.4s, background-color var(--animation-duration-long), color var(--animation-duration-long);
+    transition:
+        border-radius 0.4s,
+        background-color var(--animation-duration-long),
+        color var(--animation-duration-long);
 
     & > * {
         transition: color var(--animation-duration-default);
@@ -27,7 +30,6 @@
             color: var(--contrast-bg);
         }
     }
-
 
     &__data {
         font-size: 4.8rem;

@@ -6,7 +6,7 @@
   "jsxSingleQuote": false,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "printWidth": 120,
+  "printWidth": 180,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": ["^~/(.*)$", "@netlify/(.*)", "@[^ ]+", "^[./]"],
   "importOrderSeparation": false,

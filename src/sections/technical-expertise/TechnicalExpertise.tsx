@@ -5,15 +5,7 @@ import { FiChevronRight } from 'react-icons/fi';
 import { LiaReact } from 'react-icons/lia';
 import { RiJavaLine, RiJavascriptLine } from 'react-icons/ri';
 import { SiCsswizardry, SiExpress, SiNestjs, SiPostgresql, SiSpringboot } from 'react-icons/si';
-import {
-    TbBrandFigma,
-    TbBrandGit,
-    TbBrandHtml5,
-    TbBrandMongodb,
-    TbBrandNextjs,
-    TbBrandSass,
-    TbBrandTypescript
-} from 'react-icons/tb';
+import { TbBrandFigma, TbBrandGit, TbBrandHtml5, TbBrandMongodb, TbBrandNextjs, TbBrandSass, TbBrandTypescript } from 'react-icons/tb';
 import { SlideUp } from '@animations';
 import classes from './skills.module.scss';
 
@@ -28,47 +20,49 @@ function SkillDescription({ title, children }: { title: string; children: ReactN
     );
 }
 
-export default function TechnicalExpertise() {
+const SKILL_POINTS = [
+    {
+        title: 'Full-Stack Development',
+        description: 'Capable of handling both server-side and client-side development, integrating backend services with modern front-end frameworks.'
+    },
+    {
+        title: 'API Design & Development',
+        description: 'Skilled in designing, developing, and maintaining RESTful APIs, ensuring scalability and high performance.'
+    },
+    {
+        title: 'Database Management',
+        description: 'Experienced in crafting and optimizing database schemas, ensuring well-structured, normalized, and efficient data storage.'
+    },
+    {
+        title: 'System Architecture',
+        description: 'Proficient in creating detailed architecture, flow, and class diagrams, facilitating streamlined development and clear communication.'
+    },
+    {
+        title: 'Code Quality & Best Practices',
+        description: 'Strong focus on writing clean, maintainable code, adhering to SOLID principles, software design patterns, and industry best practices.'
+    },
+    {
+        title: 'Performance Optimization',
+        description: 'Experienced in conducting in-depth performance analysis and implementing optimizations to enhance system efficiency.'
+    },
+    {
+        title: 'Version Control & Collaboration',
+        description: 'Proficient in using Git for version control, adept at managing branches, resolving conflicts, and maintaining a structured workflow.'
+    }
+];
+
+export function TechnicalExpertise() {
     return (
         <section id="technical-expertise">
             <h2>Technical Expertise</h2>
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
                     <SlideUp damping={0.1} delay={0} cascade={true} triggerOnce={true}>
-                        <SkillDescription title="Full-Stack Development">
-                            Capable of handling both server-side and client-side development, integrating backend
-                            services with modern front-end frameworks.
-                        </SkillDescription>
-
-                        <SkillDescription title="API Design & Development">
-                            Skilled in designing, developing, and maintaining RESTful APIs, ensuring scalability and
-                            high performance.
-                        </SkillDescription>
-
-                        <SkillDescription title="Database Management">
-                            Experienced in crafting and optimizing database schemas, ensuring well-structured,
-                            normalized, and efficient data storage.
-                        </SkillDescription>
-
-                        <SkillDescription title="System Architecture">
-                            Proficient in creating detailed architecture, flow, and class diagrams, facilitating
-                            streamlined development and clear communication.
-                        </SkillDescription>
-
-                        <SkillDescription title="Code Quality & Best Practices">
-                            Strong focus on writing clean, maintainable code, adhering to SOLID principles, software
-                            design patterns, and industry best practices.
-                        </SkillDescription>
-
-                        <SkillDescription title="Performance Optimization">
-                            Experienced in conducting in-depth performance analysis and implementing optimizations to
-                            enhance system efficiency.
-                        </SkillDescription>
-
-                        <SkillDescription title="Version Control & Collaboration">
-                            Proficient in using Git for version control, adept at managing branches, resolving
-                            conflicts, and maintaining a structured workflow.
-                        </SkillDescription>
+                        {SKILL_POINTS.map((item, i) => (
+                            <SkillDescription key={i} title={item.title}>
+                                {item.description}
+                            </SkillDescription>
+                        ))}
                     </SlideUp>
                 </ul>
                 <aside>

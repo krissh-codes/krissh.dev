@@ -15,4 +15,4 @@ export default interface IGitHubContributionCount {
     monthly?: number[];
     weekly?: number[];
     daily?: number[];
-};
+}

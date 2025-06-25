@@ -19,7 +19,7 @@ type TStatsCalendar = (typeof StatsCalendar)[number];
 const buttonItems: ButtonItem[] = [
     { id: 'past_year', label: 'Year' },
     { id: 'past_month', label: 'Month' },
-    { id: 'past_week', label: 'Week' },
+    { id: 'past_week', label: 'Week' }
 ];
 
 const getDescriptor = (statsCal: TStatsCalendar) => {
@@ -77,10 +77,17 @@ export default function Statistics() {
 
     const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
         setSelectedStatsCalendar(selectedButtonItem.id as TStatsCalendar);
-    }
+    };
 
     return (
-        <SlideUp fraction={0.5} cascade={true} damping={0.3} onVisibilityChange={(isVisible: boolean) => { setStats(isVisible ? fetchedStats! : EMPTY_STATS); }}>
+        <SlideUp
+            fraction={0.5}
+            cascade={true}
+            damping={0.3}
+            onVisibilityChange={(isVisible: boolean) => {
+                setStats(isVisible ? fetchedStats! : EMPTY_STATS);
+            }}
+        >
             <section id="statistics" className={classes.statistics}>
                 <div className={classes.container}>
                     <header className={classes.head}>
@@ -96,28 +103,18 @@ export default function Statistics() {
                     <div className={classes.statistics__container}>
                         <div className={classes.visualization}>
                             <Graph
-                                data={
-                                    stats
-                                        .contributions[selectedStatsCalendar][getStatsCalendarCountKey(selectedStatsCalendar)]!
-                                        .map((value, idx) => statsMapper(value, idx, selectedStatsCalendar))
-                                } />
+                                data={stats.contributions[selectedStatsCalendar][getStatsCalendarCountKey(selectedStatsCalendar)]!.map((value, idx) =>
+                                    statsMapper(value, idx, selectedStatsCalendar)
+                                )}
+                            />
                         </div>
                         <div className={classes.data}>
                             <div className={classes.contributions}>
-                                <StatsCard
-                                    data={stats.contributions.past_year.total}
-                                    caption={'contributions this year'}
-                                />
-                                <StatsCard
-                                    data={stats.contributions.past_week.total}
-                                    caption={'contributions this week'}
-                                />
+                                <StatsCard data={stats.contributions.past_year.total} caption={'contributions this year'} />
+                                <StatsCard data={stats.contributions.past_week.total} caption={'contributions this week'} />
                             </div>
                             <div className={classes.stats}>
-                                <StatsCard
-                                    data={stats.contributions.repositories}
-                                    caption={'contributed repositories'}
-                                />
+                                <StatsCard data={stats.contributions.repositories} caption={'contributed repositories'} />
                                 <StatsCard data={stats.followers.count} caption={'followers'} />
                                 <StatsCard data={stats.following.count} caption={'following'} />
                             </div>

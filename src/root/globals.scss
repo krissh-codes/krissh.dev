@@ -28,7 +28,7 @@
 
     --radius-xs: 0.2rem;
     --radius-sm: 0.5rem;
-    --radius-md: .8rem;
+    --radius-md: 0.8rem;
     --radius-lg: 1.6rem;
     --radius-xl: 3rem;
     --radius-xxl: 5rem;
@@ -64,7 +64,6 @@
         --fg-3: #{variables.$light-3};
         --primary-light: #{variables.$primary-light};
         --primary-dark: #{variables.$primary-dark};
-
 
         --translucent-dark: rgba(255, 255, 255, 0.1);
         --translucent-darker: rgba(255, 255, 255, 0.2);
@@ -152,5 +151,5 @@ a {
 }
 
 .recharts-surface {
-    overflow:visible;
+    overflow: visible;
 }

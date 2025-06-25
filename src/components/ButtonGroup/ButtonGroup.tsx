@@ -15,12 +15,7 @@ export function ButtonGroup(props: ButtonGroupProps) {
     return (
         <div className={classes.button_group}>
             {props.buttonItems.map(buttonItem => (
-                <button
-                    key={buttonItem.id}
-                    id={buttonItem.id}
-                    className={classes.button_group__item}
-                    onClick={onButtonClick}
-                    aria-selected={selectedItem?.id === buttonItem.id}>
+                <button key={buttonItem.id} id={buttonItem.id} className={classes.button_group__item} onClick={onButtonClick} aria-selected={selectedItem?.id === buttonItem.id}>
                     {buttonItem.icon}
                     {buttonItem.label}
                 </button>

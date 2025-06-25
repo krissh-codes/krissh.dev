@@ -18,9 +18,7 @@ export default class BrowserThemeSettings {
 
     public static onThemeChange(callback: (themeMode: ThemeMode) => void) {
         if (BrowserThemeSettings.isClient()) {
-            window
-                ?.matchMedia?.(BrowserThemeSettings.PREFERS_DARK)
-                .addEventListener('change', () => callback(BrowserThemeSettings.getCurrentThemeMode()));
+            window?.matchMedia?.(BrowserThemeSettings.PREFERS_DARK).addEventListener('change', () => callback(BrowserThemeSettings.getCurrentThemeMode()));
         }
     }
 

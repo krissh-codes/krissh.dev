@@ -32,7 +32,7 @@
             color: var(--contrast-bg) !important;
         }
 
-        &[aria-selected="true"] {
+        &[aria-selected='true'] {
             border-radius: var(--radius-lg);
             border-color: var(--primary-light);
             background-color: var(--primary-translucent);

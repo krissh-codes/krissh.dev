@@ -1,8 +1,7 @@
-import Projects from '@sections/projects';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Footer } from '@components';
-import { About, Contact, Experience, Hero, Statistics, TechnicalExpertise } from '@sections';
+import { About, Contact, Experience, Hero, Projects, Statistics, TechnicalExpertise } from '@sections';
 import './globals.scss';
 
 function bootstrap() {
