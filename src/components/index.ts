@@ -1,5 +1,4 @@
 export * from './Button';
-export * from './ButtonGroup';
 export { default as Emoji } from './Emoji';
 export { default as Footer } from './Footer';
 export { default as HyperLink } from './HyperLink';

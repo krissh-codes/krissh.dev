@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { ClickableButton } from '@components/Button';
+import { Button } from '@components/Button';
 import classes from './navbar.module.scss';
 
 declare global {
@@ -90,7 +90,7 @@ export default function NavBar() {
                         </ul>
                     </div>
 
-                    <ClickableButton link="https://1drv.ms/b/c/bdfd7be85b755174/EXRRdVvoe_0ggL3DCAAAAAABgp5y7wgUU4wn0ixgCIeeHw?e=P1Ra5l">Résumé</ClickableButton>
+                    <Button link="https://1drv.ms/b/c/bdfd7be85b755174/EXRRdVvoe_0ggL3DCAAAAAABgp5y7wgUU4wn0ixgCIeeHw?e=P1Ra5l">Résumé</Button>
                 </div>
             </Fade>
         </nav>

@@ -1,5 +1,5 @@
 import { SlideUp } from '@animations';
-import { ClickableButton, TextArea, TextInput } from '@components';
+import { Button, TextArea, TextInput } from '@components';
 import { MailerStates, useMailer } from '@hooks';
 import classes from './contact.module.scss';
 
@@ -34,9 +34,9 @@ export default function Contact() {
                     {/* Spam prevention */}
                     <input id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
-                    <ClickableButton disabled={isSending} type="submit">
+                    <Button disabled={isSending} type="submit">
                         {isSending ? 'Sending...' : 'Send ->'}
-                    </ClickableButton>
+                    </Button>
                 </SlideUp>
             </form>
         </section>

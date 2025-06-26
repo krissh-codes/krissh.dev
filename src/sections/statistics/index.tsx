@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { SlideUp } from '@animations';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
-import { ButtonGroup, type ButtonItem, ClickableButton } from '@components';
+import { ButtonGroup, type ButtonItem, Button } from '@components';
 import { Graph, StatsCard } from './components';
 import classes from './statistics.module.scss';
 
@@ -122,12 +122,12 @@ export default function Statistics() {
                     </div>
 
                     <div className={classes.cta}>
-                        <ClickableButton link="https://github.com/krissh-codes">
+                        <Button link="https://github.com/krissh-codes">
                             <div className={classes.cta__button}>
                                 <FiGithub />
                                 <label>@krissh-codes</label>
                             </div>
-                        </ClickableButton>
+                        </Button>
                     </div>
                 </div>
             </section>
