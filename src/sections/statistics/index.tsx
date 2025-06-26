@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { SlideUp } from '@animations';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
-import { ButtonGroup, type ButtonItem, Button } from '@components';
+import { Button, ButtonGroup, type ButtonItem } from '@components';
+import { useVisibilityObserver } from '@hooks';
 import { Graph, StatsCard } from './components';
 import classes from './statistics.module.scss';
 
@@ -63,6 +64,7 @@ const EMPTY_STATS: IGitHubStats = {
 export default function Statistics() {
     const [fetchedStats, setFetchedStats] = useState<IGitHubStats>(EMPTY_STATS);
     const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
+    const [ref, isVisible] = useVisibilityObserver();
 
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
 
@@ -75,20 +77,17 @@ export default function Statistics() {
         fetchGitHubStats().then(setFetchedStats);
     }, []);
 
+    useEffect(() => {
+        setStats(isVisible ? fetchedStats : EMPTY_STATS);
+    }, [isVisible, fetchedStats]);
+
     const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
         setSelectedStatsCalendar(selectedButtonItem.id as TStatsCalendar);
     };
 
     return (
-        <SlideUp
-            fraction={0.5}
-            cascade={true}
-            damping={0.3}
-            onVisibilityChange={(isVisible: boolean) => {
-                setStats(isVisible ? fetchedStats! : EMPTY_STATS);
-            }}
-        >
-            <section id="statistics" className={classes.statistics}>
+        <SlideUp fraction={0.5} cascade={true} damping={0.3}>
+            <section id="statistics" className={classes.statistics} ref={ref}>
                 <div className={classes.container}>
                     <header className={classes.head}>
                         <div className={classes.head__left}>
