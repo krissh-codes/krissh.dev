@@ -4,6 +4,7 @@ import { SlideUp } from '@animations';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
 import { Button, ButtonGroup, type ButtonItem } from '@components';
 import { useVisibilityObserver } from '@hooks';
+import { getDescriptor, getStatsCalendarCountKey, StatsCalendar, type TStatsCalendar } from './utils';
 import { Graph, StatsCard } from './components';
 import classes from './statistics.module.scss';
 
@@ -13,37 +14,11 @@ async function fetchGitHubStats() {
     return json.details;
 }
 
-const StatsCalendar = ['past_year', 'past_month', 'past_week'] as const;
-
-type TStatsCalendar = (typeof StatsCalendar)[number];
-
 const buttonItems: ButtonItem[] = [
     { id: 'past_year', label: 'Year' },
     { id: 'past_month', label: 'Month' },
     { id: 'past_week', label: 'Week' }
 ];
-
-const getDescriptor = (statsCal: TStatsCalendar) => {
-    switch (statsCal) {
-        case 'past_year':
-            return 'Week';
-        case 'past_month':
-            return 'Day';
-        case 'past_week':
-            return 'Day';
-    }
-};
-
-const getStatsCalendarCountKey = (statsCal: TStatsCalendar) => {
-    switch (statsCal) {
-        case 'past_year':
-            return 'weekly';
-        case 'past_month':
-            return 'daily';
-        case 'past_week':
-            return 'daily';
-    }
-};
 
 const EMPTY_STATS: IGitHubStats = {
     followers: { count: 0 },
@@ -61,12 +36,11 @@ const EMPTY_STATS: IGitHubStats = {
     }
 };
 
-export default function Statistics() {
+export function Statistics() {
     const [fetchedStats, setFetchedStats] = useState<IGitHubStats>(EMPTY_STATS);
     const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
-    const [ref, isVisible] = useVisibilityObserver();
-
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
+    const [ref, isVisible] = useVisibilityObserver();
 
     const statsMapper = (value: number, idx: number, cal: TStatsCalendar) => ({
         contributions: value,
