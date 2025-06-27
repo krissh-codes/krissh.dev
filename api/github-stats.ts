@@ -1,8 +1,8 @@
-import 'dotenv/config';
+import type { Context } from '@netlify/functions';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
 import { ContributionsAdapter } from './github-stats/contributions-adapter';
 import { fetchGitHubStats } from './github-stats/query-maker';
-import ResponseBuilder from './utils/ResponseBuilder';
+import { Constants, ResponseBuilder } from './utils';
 
 async function getAllStats(): Promise<IGitHubStats> {
     const {
@@ -55,12 +55,12 @@ async function getAllStats(): Promise<IGitHubStats> {
     };
 }
 
-export default async function GithubStatsController(req: Request) {
+export default async function GithubStatsController(req: Request, ctx: Context) {
     if (req.method !== 'GET') {
-        return ResponseBuilder.constructResponse(405, 'method not allowed');
+        return ResponseBuilder.constructResponse(405, Constants.RESPONSE_CONSTANTS.METHOD_NOT_ALLOWED);
     }
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (!Constants.PRODUCTION_CONTEXTS.includes(ctx.deploy.context)) {
         return ResponseBuilder.constructResponse(200, 'stats fetched successfully', (await import('./github-stats/cached-api-response')).response);
     }
 

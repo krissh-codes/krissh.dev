@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import nodemailer from 'nodemailer';
 import type { MessagePayload } from '@common-types';
 
@@ -8,8 +7,7 @@ export class Mailer {
     constructor() {
         this.transport = nodemailer.createTransport({
             host: process.env.MAILER_HOST,
-            port: process.env.MAILER_PORT as number | undefined,
-            secure: true,
+            port: +process.env.MAILER_PORT!,
             auth: {
                 user: process.env.SENDER_ADDRESS,
                 pass: process.env.SENDER_PASS
