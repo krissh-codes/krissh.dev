@@ -1,11 +1,11 @@
 # example netlify.toml
 [build]
     command = "npm run build"
-    functions = "api"
+    functions = "api/controllers"
     publish = "dist"
 
 [functions]
-    directory = "api"
+    directory = "api/controllers"
 
 [[redirects]]
     from = "/api/*"
