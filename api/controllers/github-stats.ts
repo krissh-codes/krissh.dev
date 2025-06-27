@@ -60,13 +60,10 @@ export default async function GithubStatsController(req: Request, ctx: Context) 
         return ResponseBuilder.constructResponse(405, Constants.RESPONSE_CONSTANTS.METHOD_NOT_ALLOWED);
     }
 
-    console.log({context: ctx.deploy.context});
     if (!Constants.PRODUCTION_CONTEXTS.includes(ctx.deploy.context)) {
-        console.log('serving cached stats for dev environment')
         return ResponseBuilder.constructResponse(200, 'stats fetched successfully', (await import('../github-stats/cached-api-response')).response);
     }
 
-    console.log('fetching stats from github api');
     const body = await getAllStats();
     return ResponseBuilder.constructResponse(200, 'stats fetched successfully', body);
 }

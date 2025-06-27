@@ -26,10 +26,6 @@ const graphQuery = `query {
 }`;
 
 export async function fetchGitHubStats(): Promise<GitHubGraphQLResponse> {
-    if (process.env.NODE_ENV !== 'production') {
-        return (await import('./sample-github-stats')).cachedSampleResponse;
-    }
-
     const response = await fetch('https://api.github.com/graphql', {
         method: 'POST',
         body: JSON.stringify({ query: graphQuery }),
