@@ -66,8 +66,8 @@ export function TechnicalExpertise() {
                     </SlideUp>
                 </ul>
                 <aside>
-                    <h4>Languages</h4>
                     <Fade cascade={true} damping={0.1} delay={0.5} triggerOnce={true}>
+                        <h4>Languages</h4>
                         <div className={classes.tech_icons}>
                             <RiJavaLine />
                             <RiJavascriptLine size="4.4rem" />
