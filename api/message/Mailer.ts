@@ -15,14 +15,32 @@ export class Mailer {
         });
     }
 
+    getHtmlMessage(payload: MessagePayload) {
+        return `
+            <p>From: ${payload.from.name}</p>
+            <p>Email: ${payload.from.email}</p>
+            <p>Message:</p>
+            <p>${payload.message}</p>
+        `;
+    }
+
+    getPlainMessage(payload: MessagePayload) {
+        return `
+            From: ${payload.from.name}
+            Email: ${payload.from.email}
+            Message:
+            ${payload.message}
+        `;
+    }
+
     send(payload: MessagePayload) {
         return this.transport.sendMail({
             from: process.env.FROM_ADDRESS,
             to: process.env.MAILBOX_ADDRESS,
             replyTo: payload.from.email,
-            subject: `New message from ${payload.from.name} via portfolio`,
-            html: payload.message,
-            text: payload.message
+            subject: `${payload.from.name} via portfolio`,
+            html: this.getHtmlMessage(payload),
+            text: this.getPlainMessage(payload)
         });
     }
 }
