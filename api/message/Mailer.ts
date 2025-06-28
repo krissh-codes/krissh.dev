@@ -17,7 +17,7 @@ export class Mailer {
 
     send(payload: MessagePayload) {
         return this.transport.sendMail({
-            from: payload.from.email,
+            from: process.env.FROM_ADDRESS,
             to: process.env.MAILBOX_ADDRESS,
             replyTo: payload.from.email,
             subject: `New message from ${payload.from.name} via portfolio`,
