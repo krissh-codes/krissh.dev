@@ -1,4 +1,5 @@
-import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit, TbBrandTwitter } from 'react-icons/tb';
+import { RiTwitterXFill } from 'react-icons/ri';
+import { TbBrandBluesky, TbBrandInstagram, TbBrandLinkedin, TbBrandReddit } from 'react-icons/tb';
 import { HyperLink, WithTooltip } from '@components';
 import classes from './social-links.module.scss';
 
@@ -11,7 +12,7 @@ const SOCIAL_LINKS = [
     {
         label: 'Twitter',
         url: '/x',
-        icon: <TbBrandTwitter />
+        icon: <RiTwitterXFill />
     },
     {
         label: 'LinkedIn',
@@ -30,7 +31,7 @@ const SOCIAL_LINKS = [
     }
 ];
 
-export default function SocialLinks() {
+export function SocialLinks() {
     return (
         <div className={classes.socials}>
             {SOCIAL_LINKS.map(link => (
