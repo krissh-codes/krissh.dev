@@ -95,10 +95,10 @@ export function Statistics() {
                     </div>
 
                     <div className={classes.cta}>
-                        <Button link="https://github.com/krissh-codes">
+                        <Button link="/github">
                             <div className={classes.cta__button}>
                                 <FiGithub />
-                                <label>@krissh-codes</label>
+                                <label>GitHub Profile</label>
                             </div>
                         </Button>
                     </div>
