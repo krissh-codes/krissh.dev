@@ -29,7 +29,7 @@ export function TechnicalExpertise() {
                                 <h4>{item.title}</h4>
                                 <div className={classes.tech_icons}>
                                     {item.items.map(tech => (
-                                        <WithTooltip tooltipText={tech.title}>{tech.icon}</WithTooltip>
+                                        <WithTooltip key={tech.title} tooltipText={tech.title}>{tech.icon}</WithTooltip>
                                     ))}
                                 </div>
                             </div>
