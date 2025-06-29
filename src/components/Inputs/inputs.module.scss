@@ -16,8 +16,8 @@
     }
 
     &__textarea {
-        min-height: 6em;
-        max-height: 12em;
+        min-height: 8em;
+        max-height: 16em;
     }
 
     &__field:focus + &__label,
@@ -35,9 +35,8 @@
         width: 100%;
         max-width: 100%;
         height: 4.5rem;
-        font-size: var(--text-size-md);
         padding: 1rem;
-        font-family: var(--font-body);
+        font: var(--text-size-msm) var(--font-mono);
         color: inherit;
         background-color: transparent;
         border: 2px solid var(--primary-dark);
