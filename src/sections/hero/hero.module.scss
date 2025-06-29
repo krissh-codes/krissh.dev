@@ -10,10 +10,6 @@
     position: relative;
     overflow-x: hidden;
 
-    @include mixins.respond(phone) {
-        height: auto;
-    }
-
     .container {
         position: relative;
 
@@ -61,7 +57,7 @@
         font-size: var(--text-size-lg);
         line-height: 1.1em;
         margin-top: var(--gap-sm);
-        max-width: 60ch;
+        max-width: 54ch;
         color: var(--fg-3);
         //opacity: 0;
 
@@ -88,9 +84,9 @@
     }
 
     .quickContact {
-        position: relative;
+        position: absolute;
         left: 0;
-        top: 50%;
+        bottom: 4.8rem;
         font: var(--text-size-sm) var(--font-mono);
 
         animation-name: fadeAppear;

@@ -1,7 +1,7 @@
 import { Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
 
-export default function HeroSection() {
+export function Hero() {
     return (
         <section className={classes.hero}>
             <NavBar />
@@ -15,7 +15,7 @@ export default function HeroSection() {
                 </h1>
                 <div className={classes.info}>
                     A passionate{' '}
-                    <HyperLink to="#experience" style={{ fontWeight: 600 }} lone noUnderLine>
+                    <HyperLink to="#experience" style={{ fontWeight: 600, display: 'inline' }} lone noUnderLine>
                         Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional experience
                     </HyperLink>{' '}
                     building performant and scalable enterprise web applications.

@@ -1,4 +1,4 @@
-export { default as Hero } from './hero';
+export * from './hero';
 export { default as About } from './about';
 export * from './technical-expertise';
 export { default as Experience } from './experience';
