@@ -20,14 +20,14 @@
             position: relative;
             top: 0.3rem;
             margin: 0 0.4rem;
-            font-size: 1.8rem;
+            font-size: var(--text-size-md);
             color: var(--primary-light);
         }
     }
 
     .colorize {
         font-family: var(--font-mono);
-        font-size: 1.6rem;
+        font-size: var(--text-size-md);
         color: var(--primary-light);
     }
 

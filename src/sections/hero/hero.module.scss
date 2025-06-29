@@ -23,8 +23,7 @@
     }
 
     .intro {
-        font-family: var(--font-mono), monospace;
-        font-size: 1.4rem;
+        font: var(--text-size-msm) var(--font-mono);
         animation-name: fadeAppear;
         animation-duration: var(--animation-duration-long);
         //animation-delay: 3.8s;
@@ -59,9 +58,9 @@
     }
 
     .info {
-        font-size: 2.5rem;
+        font-size: var(--text-size-lg);
         line-height: 1.1em;
-        margin-top: 1rem;
+        margin-top: var(--gap-sm);
         max-width: 60ch;
         color: var(--fg-3);
         //opacity: 0;
@@ -70,22 +69,17 @@
         animation-duration: 1.8s;
         //animation-delay: 3.8s;
         animation-delay: var(--animation-duration-default);
-
-        @include mixins.respond(phone) {
-            font-size: 2rem;
-        }
     }
 
     .waterMark {
         position: absolute;
-        font-family: var(--font-mono), monospace;
+        font: 24.8rem var(--font-mono);
         opacity: 0.08;
         z-index: -10;
-        font-size: 25rem;
         display: inline-block;
 
         @include mixins.respond(tab-port) {
-            font-size: 15rem;
+            font-size: 16rem;
         }
 
         @include mixins.respond(phone) {
@@ -97,15 +91,13 @@
         position: relative;
         left: 0;
         top: 50%;
-        font-family: var(--font-mono), monospace;
-        font-size: 1.4rem;
+        font: var(--text-size-sm) var(--font-mono);
 
         animation-name: fadeAppear;
         animation-duration: 2s;
         animation-delay: 0.4s;
 
         @include mixins.respond(phone) {
-            font-size: 1.4rem;
             margin-top: 5rem;
 
             a {

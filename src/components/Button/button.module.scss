@@ -8,10 +8,9 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: 1.4rem;
+    font: var(--text-size-msm) var(--font-mono);
 
-    padding: 1.2rem 1.4rem;
+    padding: var(--text-size-sm) var(--text-size-md);
     min-width: 12rem;
     background-clip: padding-box;
     border-radius: var(--radius-md);
