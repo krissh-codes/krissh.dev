@@ -1,9 +1,10 @@
+import { LuSend } from 'react-icons/lu';
 import { SlideUp } from '@animations';
 import { Button, TextArea, TextInput } from '@components';
 import { MailerStates, useMailer } from '@hooks';
 import classes from './contact.module.scss';
 
-export default function Contact() {
+export function Contact() {
     const [mailerStatus, sendMail] = useMailer();
 
     // no need for useMemo
@@ -32,10 +33,16 @@ export default function Contact() {
                     <TextArea name="message" id="message" label="Message" />
 
                     {/* Spam prevention */}
-                    <input id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
+                    <input inert id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
                     <Button disabled={isSending} type="submit">
-                        {isSending ? 'Sending...' : 'Send ->'}
+                        {isSending ? (
+                            'Sending...'
+                        ) : (
+                            <>
+                                Send <LuSend style={{ marginLeft: '0.8rem' }} size={16} />
+                            </>
+                        )}
                     </Button>
                 </SlideUp>
             </form>
