@@ -32,7 +32,7 @@ const navItems = [
     }
 ];
 
-export default function NavBar() {
+export function NavBar() {
     const [customNavAttr, setCustomNavAttr] = useState('top');
 
     window.onscroll = () => {

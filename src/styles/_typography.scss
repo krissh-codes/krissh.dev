@@ -45,12 +45,8 @@ h4 {
 
 h5,
 h6 {
-    font: var(--text-size-msm) var(--font-mono);
+    font: normal var(--text-size-msm) var(--font-mono);
     color: var(--primary-light);
-}
-
-h5 {
-    font-weight: 400;
     text-transform: uppercase;
 }
 

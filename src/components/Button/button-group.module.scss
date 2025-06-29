@@ -12,7 +12,7 @@
         padding: 1.1rem 1rem 1rem 1rem;
         background-color: var(--translucent-dark);
         font-family: var(--font-mono);
-        text-transform: uppercase;
+        text-transform: lowercase;
         border-radius: var(--radius-xs);
 
         transition: all var(--animation-duration-default);
@@ -37,7 +37,7 @@
             border-color: var(--primary-light);
             background-color: var(--primary-translucent);
             color: var(--primary-light);
-            font-weight: bold;
+            text-transform: uppercase;
         }
     }
 }
