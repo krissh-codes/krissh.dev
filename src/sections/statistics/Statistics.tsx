@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+import { BiStats } from 'react-icons/bi';
 import { FiGithub } from 'react-icons/fi';
 import { SlideUp } from '@animations';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
 import { Button, ButtonGroup, type ButtonItem } from '@components';
 import { useVisibilityObserver } from '@hooks';
-import { getDescriptor, getStatsCalendarCountKey, StatsCalendar, type TStatsCalendar } from './utils';
 import { Graph, StatsCard } from './components';
 import classes from './statistics.module.scss';
+import { getDescriptor, getStatsCalendarCountKey, StatsCalendar, type TStatsCalendar } from './utils';
 
 async function fetchGitHubStats() {
     const response = await fetch('/api/github-stats');
@@ -65,7 +66,9 @@ export function Statistics() {
                 <div className={classes.container}>
                     <header className={classes.head}>
                         <div className={classes.head__left}>
-                            <h5>My GitHub profile</h5>
+                            <h5>
+                                <BiStats /> My GitHub profile
+                            </h5>
                             <h2 className={classes.heading}>Statistics</h2>
                         </div>
                         <div className={classes.stats_control}>

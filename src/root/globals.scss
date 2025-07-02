@@ -55,8 +55,8 @@
 
 @include mixins.respond(phone) {
     :root {
-        --text-size-lg: 2rem;
-        --text-size-xl: 3.2rem;
+        --text-size-lg: 2.4rem;
+        --text-size-xl: 2.8rem;
         --text-size-xxl: 4rem;
         --text-size-xxxl: 4.8rem;
 
@@ -149,6 +149,16 @@ section {
 
         @include mixins.respond(tab-lan) {
             max-width: 90%;
+        }
+    }
+
+    h5 {
+        display: inline-flex;
+        align-items: center;
+
+        svg {
+            font-size: 1.2em;
+            margin-right: 0.4em;
         }
     }
 }

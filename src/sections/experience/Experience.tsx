@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { MdWorkOutline } from 'react-icons/md';
 import { TbCalendarSmile } from 'react-icons/tb';
 import { SlideUp } from '@animations';
 import CompanyLogo from './CompanyLogo';
@@ -14,12 +15,15 @@ function ExperiencePoint({ children }: { children: ReactNode }) {
     );
 }
 
-export default function Experience() {
+export function Experience() {
     return (
         <section id="experience">
             <SlideUp cascade={true}>
                 <div className={classes.experience}>
-                    <h5>Where I&#39;ve worked</h5>
+                    <h5>
+                        <MdWorkOutline />
+                        The Stack Trace
+                    </h5>
                     <h2>Experience</h2>
 
                     <div className={classes.experience__container}>

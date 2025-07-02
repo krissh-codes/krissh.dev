@@ -1,8 +1,8 @@
 import type { Context } from '@netlify/functions';
-import { Constants, ResponseBuilder } from '../utils';
 import type { IGitHubStats } from '@common-types/IGitHubStats';
 import { ContributionsAdapter } from '../github-stats/contributions-adapter';
 import { fetchGitHubStats } from '../github-stats/query-maker';
+import { Constants, ResponseBuilder } from '../utils';
 
 async function getAllStats(): Promise<IGitHubStats> {
     const {

@@ -1,5 +1,6 @@
 import { Fade } from 'react-awesome-reveal';
 import { FiChevronRight } from 'react-icons/fi';
+import { LiaLaptopCodeSolid } from 'react-icons/lia';
 import { SlideUp } from '@animations';
 import { WithTooltip } from '@components';
 import { KNOWN_TECH, SKILL_POINTS } from '@sections/technical-expertise/data';
@@ -8,6 +9,9 @@ import classes from './skills.module.scss';
 export function TechnicalExpertise() {
     return (
         <section id="technical-expertise">
+            <h5>
+                <LiaLaptopCodeSolid /> Skills
+            </h5>
             <h2>Technical Expertise</h2>
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
@@ -29,7 +33,9 @@ export function TechnicalExpertise() {
                                 <h4>{item.title}</h4>
                                 <div className={classes.tech_icons}>
                                     {item.items.map(tech => (
-                                        <WithTooltip key={tech.title} tooltipText={tech.title}>{tech.icon}</WithTooltip>
+                                        <WithTooltip key={tech.title} tooltipText={tech.title}>
+                                            {tech.icon}
+                                        </WithTooltip>
                                     ))}
                                 </div>
                             </div>

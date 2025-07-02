@@ -1,12 +1,16 @@
+import { GrContactInfo } from 'react-icons/gr';
 import SlideUp from '@animations/SlideUp';
 import { Emoji, SocialLinks, TimeSince } from '@components';
 import classes from './about.module.scss';
 
-export default function About() {
+export function About() {
     return (
         <section className={classes.about} id="about">
             <SlideUp>
                 <div className={classes.container}>
+                    <h5>
+                        <GrContactInfo /> Get to know
+                    </h5>
                     <h2 className={classes.heading}>About me</h2>
                     <div className={classes.about__content}>
                         <figure className={classes.profile}>
