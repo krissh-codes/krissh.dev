@@ -1,6 +1,6 @@
-import { Constants, ResponseBuilder } from '../utils';
 import type { MessagePayload } from '@common-types';
 import { Mailer } from '../message/Mailer';
+import { Constants, ResponseBuilder } from '../utils';
 
 export default async function MessageController(req: Request) {
     if (req.method !== 'POST') {

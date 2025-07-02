@@ -1,4 +1,4 @@
-import { LuSend } from 'react-icons/lu';
+import { LuMail, LuSend } from 'react-icons/lu';
 import { SlideUp } from '@animations';
 import { Button, TextArea, TextInput } from '@components';
 import { MailerStates, useMailer } from '@hooks';
@@ -24,7 +24,9 @@ export function Contact() {
 
     return (
         <section id="contact" className={classes.contact}>
-            <h5>Contact me</h5>
+            <h5>
+                <LuMail /> Contact me
+            </h5>
             <h2>Get in Touch</h2>
             <form className={classes.contact__form} action={submitContactForm}>
                 <SlideUp>

@@ -4,4 +4,4 @@ export const RESPONSE_CONSTANTS = {
     SUCCESS: 'success',
     ERROR: 'error',
     METHOD_NOT_ALLOWED: 'method_not_allowed'
-}
+};
