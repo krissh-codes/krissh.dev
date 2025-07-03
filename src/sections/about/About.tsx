@@ -8,10 +8,13 @@ export function About() {
         <section className={classes.about} id="about">
             <SlideUp>
                 <div className={classes.container}>
-                    <h5>
-                        <GrContactInfo /> Get to know
-                    </h5>
-                    <h2 className={classes.heading}>About me</h2>
+                    <header>
+                        <h5>
+                            <GrContactInfo /> Get to know
+                        </h5>
+                        <h2 className={classes.heading}>About me</h2>
+                    </header>
+
                     <div className={classes.about__content}>
                         <figure className={classes.profile}>
                             <img src="/images/Krissh.png" alt="Krissh" style={{ width: '100%', height: 'auto' }} />

@@ -20,11 +20,13 @@ export function Experience() {
         <section id="experience">
             <SlideUp cascade={true}>
                 <div className={classes.experience}>
-                    <h5>
-                        <MdWorkOutline />
-                        The Stack Trace
-                    </h5>
-                    <h2>Experience</h2>
+                    <header>
+                        <h5>
+                            <MdWorkOutline />
+                            The Stack Trace
+                        </h5>
+                        <h2>Experience</h2>
+                    </header>
 
                     <div className={classes.experience__container}>
                         <div className={classes.experience__left}>
