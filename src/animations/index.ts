@@ -1,1 +1,1 @@
-export { default as SlideUp } from './SlideUp';
+export * from './SlideUp';

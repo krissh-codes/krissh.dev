@@ -1,5 +1,5 @@
 import { GrContactInfo } from 'react-icons/gr';
-import SlideUp from '@animations/SlideUp';
+import { SlideUp } from '@animations';
 import { Emoji, SocialLinks, TimeSince } from '@components';
 import classes from './about.module.scss';
 

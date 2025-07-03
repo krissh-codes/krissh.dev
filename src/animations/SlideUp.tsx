@@ -1,7 +1,7 @@
 import Reveal, { RevealProps } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
 
-export default function SlideUp({ distance, children, ...rest }: SlideUpProps) {
+export function SlideUp({ distance, children, ...rest }: SlideUpProps) {
     const customAnimation = keyframes`
     from {
       opacity: 0;
