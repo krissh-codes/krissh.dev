@@ -3,12 +3,12 @@ import { FiChevronRight } from 'react-icons/fi';
 import { LiaLaptopCodeSolid } from 'react-icons/lia';
 import { SlideUp } from '@animations';
 import { WithTooltip } from '@components';
-import { KNOWN_TECH, SKILL_POINTS } from '@sections/technical-expertise/data';
+import { KNOWN_TECH, SKILL_POINTS } from './data';
 import classes from './skills.module.scss';
 
 export function TechnicalExpertise() {
     return (
-        <section id="technical-expertise">
+        <section id="skills">
             <header>
                 <h5>
                     <LiaLaptopCodeSolid /> Skills
