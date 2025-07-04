@@ -1,18 +1,23 @@
-import { type MouseEventHandler, type ReactNode } from 'react';
+import { type ButtonHTMLAttributes, type DetailedHTMLProps, type MouseEventHandler } from 'react';
 import classes from './button.module.scss';
 
-export function Button(props: ButtonProps) {
+export function Button({ onClick, link, children, variant }: ButtonProps) {
+    const verticalPadding = `var(--text-size-${variant === 'sm' ? 'xs' : 'sm'})`;
+    const horizontalPadding = `var(--text-size-${variant === 'sm' ? 'sm' : 'md'})`;
+
     return (
-        <button className={classes.button} type={props.type} onClick={props.link ? () => window.open(props.link) : props.onClick} disabled={props.disabled}>
-            {props.children}
+        <button
+            className={classes.button}
+            style={{ padding: `${verticalPadding} ${horizontalPadding}`, fontSize: `var(--text-size-${variant === 'sm' ? 'sm' : 'msm'})` }}
+            onClick={link ? () => window.open(link) : onClick}
+        >
+            {children}
         </button>
     );
 }
 
-interface ButtonProps {
-    type?: 'submit' | 'reset';
+interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     link?: string;
-    children: ReactNode;
-    disabled?: boolean;
+    variant?: 'sm' | 'md';
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
