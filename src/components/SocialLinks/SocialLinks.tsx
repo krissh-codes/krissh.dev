@@ -35,7 +35,7 @@ export function SocialLinks() {
     return (
         <div className={classes.socials}>
             {SOCIAL_LINKS.map(link => (
-                <HyperLink key={link.label} to={link.url} noUnderLine lone style={{ margin: 0 }} label={link.label}>
+                <HyperLink key={link.label} to={link.url} noUnderLine lone style={{ margin: 0 }} label={link.label} target="_blank">
                     <WithTooltip tooltipText={link.label}>{link.icon}</WithTooltip>
                 </HyperLink>
             ))}

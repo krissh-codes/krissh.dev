@@ -27,10 +27,10 @@ export function Hero() {
             </div>
 
             <div className={classes.quickContact}>
-                <HyperLink to="mailto: me@krissh.dev" lone>
+                <HyperLink to="mailto: me@krissh.dev" lone target="_blank">
                     me@krissh.dev
                 </HyperLink>
-                <HyperLink to="/twitter" lone>
+                <HyperLink to="/twitter" lone target="_blank">
                     x/@krissh_tweets
                 </HyperLink>
             </div>
