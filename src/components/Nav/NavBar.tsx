@@ -1,6 +1,10 @@
 import { useRef, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { Button } from '@components/Button';
+import { BiStats } from 'react-icons/bi';
+import { GrContactInfo } from 'react-icons/gr';
+import { LuMail } from 'react-icons/lu';
+import { MdWorkOutline } from 'react-icons/md';
 import classes from './navbar.module.scss';
 
 declare global {
@@ -11,22 +15,22 @@ declare global {
 
 const navItems = [
     {
+        icon: <GrContactInfo />,
         label: 'About',
         href: '#about'
     },
     {
+        icon: <MdWorkOutline />,
         label: 'Experience',
         href: '#experience'
     },
     {
-        label: 'Projects',
-        href: '#projects'
-    },
-    {
+        icon: <BiStats />,
         label: 'Statistics',
         href: '#statistics'
     },
     {
+        icon: <LuMail />,
         label: 'Contact',
         href: '#contact'
     }
@@ -77,6 +81,7 @@ export function NavBar() {
                                 return (
                                     <li key={item.label} className={classes.nav__item}>
                                         <a className={classes.nav__link} onClick={handleHamClose} href={item.href}>
+                                            {item.icon}
                                             {item.label}
                                         </a>
                                     </li>
