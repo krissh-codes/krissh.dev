@@ -75,7 +75,7 @@ export function Experience() {
                                     </ExperiencePoint>
                                     <ExperiencePoint>
                                         <strong>Conducted in-depth performance analysis</strong> using tools like heap dumps and flame graphs to evaluate API efficiency, leading to
-                                        substantial performance optimizations.
+                                        significant performance optimizations.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
                                         <strong>Revamped UI components and built reusable modules</strong>, enhancing the functionality and scalability of client-facing
