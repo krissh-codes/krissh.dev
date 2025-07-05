@@ -53,7 +53,7 @@
     --animation-duration-long: 1s;
 }
 
-@include mixins.respond(phone) {
+@include mixins.respond(tab-port) {
     :root {
         --text-size-lg: 2.2rem;
         --text-size-xl: 2.8rem;
