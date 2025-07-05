@@ -154,7 +154,7 @@
 
     &__list {
         display: inline-flex;
-        gap: 3.5rem;
+        gap: var(--gap-lg);
         font: var(--text-size-msm) var(--font-mono);
         text-transform: lowercase;
         list-style: none;
@@ -164,6 +164,10 @@
             @include mixins.respond(phone-large) {
                 order: 1;
             }
+        }
+
+        @include mixins.respond(tab-lan) {
+            gap: var(--gap-md);
         }
 
         @include mixins.respond(phone-large) {
