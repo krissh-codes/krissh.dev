@@ -1,4 +1,5 @@
-import { Emoji, HyperLink, NavBar, TimeSince } from '@components';
+import { RxArrowTopRight } from 'react-icons/rx';
+import { Button, Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
 
 export function Hero() {
@@ -13,24 +14,36 @@ export function Hero() {
                 <h1 className={classes.hero__name}>
                     <span className={classes.emphasize}>Krishna</span> Moorthy
                 </h1>
-                <div className={classes.info}>
+                <div className={classes.hero__info}>
                     A passionate{' '}
                     <HyperLink to="#experience" style={{ fontWeight: 600, display: 'inline' }} lone noUnderLine>
                         Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional experience
                     </HyperLink>{' '}
                     building performant and scalable enterprise web applications.
                 </div>
+                <div className={classes.hero__cta}>
+                    <Button link="#contact" variant="sm">
+                        Get in touch
+                    </Button>
+
+                    <HyperLink to="#skills" lone>
+                        <span>
+                            Learn more
+                            <RxArrowTopRight />
+                        </span>
+                    </HyperLink>
+                </div>
             </div>
 
             <div role="img" className={classes.waterMark}>
-                KRISSH
+                Krissh
             </div>
 
             <div className={classes.quickContact}>
-                <HyperLink to="mailto: me@krissh.dev" lone>
+                <HyperLink to="mailto: me@krissh.dev" lone target="_blank">
                     me@krissh.dev
                 </HyperLink>
-                <HyperLink to="/twitter" lone>
+                <HyperLink to="/twitter" lone target="_blank">
                     x/@krissh_tweets
                 </HyperLink>
             </div>

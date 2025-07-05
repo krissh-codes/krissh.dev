@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { type AnchorHTMLAttributes, CSSProperties, type DetailedHTMLProps, ReactNode } from 'react';
 import classes from './hyperlink.module.scss';
 
 type LinkProps = {
@@ -9,14 +9,13 @@ type LinkProps = {
     children: ReactNode;
     label?: string;
     className?: string;
-};
+} & DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
 
-export default function HyperLink({ to, lone, noUnderLine, style, children, label, ...rest }: LinkProps) {
+export function HyperLink({ to, lone, noUnderLine, style, children, label, ...rest }: LinkProps) {
     return (
         <a
             href={to}
             rel="noopener noreferrer"
-            target="_blank"
             data-style-modifier={noUnderLine && 'noUnderLine'}
             style={lone ? { color: 'inherit', ...style } : (style ?? {})}
             aria-label={label}

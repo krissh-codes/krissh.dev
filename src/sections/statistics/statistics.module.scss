@@ -53,7 +53,6 @@
         align-items: flex-end;
         justify-content: space-between;
         gap: 2rem;
-        margin-bottom: 3em;
 
         @include mixins.respond(phone-large) {
             flex-direction: column;

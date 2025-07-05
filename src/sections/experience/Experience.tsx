@@ -20,11 +20,13 @@ export function Experience() {
         <section id="experience">
             <SlideUp cascade={true}>
                 <div className={classes.experience}>
-                    <h5>
-                        <MdWorkOutline />
-                        The Stack Trace
-                    </h5>
-                    <h2>Experience</h2>
+                    <header>
+                        <h5>
+                            <MdWorkOutline />
+                            The Stack Trace
+                        </h5>
+                        <h2>Experience</h2>
+                    </header>
 
                     <div className={classes.experience__container}>
                         <div className={classes.experience__left}>
@@ -73,7 +75,7 @@ export function Experience() {
                                     </ExperiencePoint>
                                     <ExperiencePoint>
                                         <strong>Conducted in-depth performance analysis</strong> using tools like heap dumps and flame graphs to evaluate API efficiency, leading to
-                                        substantial performance optimizations.
+                                        significant performance optimizations.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
                                         <strong>Revamped UI components and built reusable modules</strong>, enhancing the functionality and scalability of client-facing

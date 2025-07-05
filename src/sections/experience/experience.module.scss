@@ -2,8 +2,7 @@
 
 .experience {
     @include mixins.respond(tab-port) {
-        h2,
-        h5 {
+        header {
             text-align: center;
         }
     }
@@ -27,15 +26,11 @@
             display: flex;
             gap: 0.6rem;
             align-items: center;
-            font-family: var(--font-mono);
-            font-size: var(--text-size-sm);
+            font: var(--text-size-sm) var(--font-mono);
             color: var(--fg-3);
 
             &:not(:last-child) {
                 margin-bottom: 0.4rem;
-            }
-
-            time {
             }
 
             &_icon {
@@ -75,7 +70,7 @@
 
     &__point {
         &_bullet {
-            transform: scale(1.2) translateY(2px);
+            @include mixins.bullet_point;
         }
     }
 }

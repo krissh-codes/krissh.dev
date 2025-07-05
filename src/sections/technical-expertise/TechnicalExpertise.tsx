@@ -3,16 +3,19 @@ import { FiChevronRight } from 'react-icons/fi';
 import { LiaLaptopCodeSolid } from 'react-icons/lia';
 import { SlideUp } from '@animations';
 import { WithTooltip } from '@components';
-import { KNOWN_TECH, SKILL_POINTS } from '@sections/technical-expertise/data';
+import { KNOWN_TECH, SKILL_POINTS } from './data';
 import classes from './skills.module.scss';
 
 export function TechnicalExpertise() {
     return (
-        <section id="technical-expertise">
-            <h5>
-                <LiaLaptopCodeSolid /> Skills
-            </h5>
-            <h2>Technical Expertise</h2>
+        <section id="skills">
+            <header>
+                <h5>
+                    <LiaLaptopCodeSolid /> Skills
+                </h5>
+                <h2>Technical Expertise</h2>
+            </header>
+
             <div className={classes.skills_container}>
                 <ul className={classes.skills_desc}>
                     <SlideUp damping={0.1} delay={0} cascade={true} triggerOnce={true}>

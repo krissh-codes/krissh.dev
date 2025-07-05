@@ -8,13 +8,12 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    overflow-x: hidden;
 
     .container {
         position: relative;
 
         @include mixins.respond(phone) {
-            margin-top: 10rem;
+            margin-top: var(--gap-xl);
         }
     }
 
@@ -53,7 +52,7 @@
         }
     }
 
-    .info {
+    &__info {
         font-size: var(--text-size-lg);
         line-height: 1.1em;
         margin-top: var(--gap-sm);
@@ -67,12 +66,35 @@
         animation-delay: var(--animation-duration-default);
     }
 
+    &__cta {
+        margin-top: var(--gap-md);
+        font: var(--text-size-sm) var(--font-mono);
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        a {
+            span {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                min-width: max-content;
+            }
+
+            svg {
+                width: 1em;
+            }
+        }
+    }
+
     .waterMark {
         position: absolute;
         font: 24.8rem var(--font-mono);
+        text-transform: uppercase;
         opacity: 0.08;
         z-index: -10;
         display: inline-block;
+        word-wrap: anywhere;
 
         @include mixins.respond(tab-port) {
             font-size: 16rem;
@@ -94,7 +116,7 @@
         animation-delay: 0.4s;
 
         @include mixins.respond(phone) {
-            margin-top: 5rem;
+            bottom: 3rem;
 
             a {
                 padding: 1rem 0;

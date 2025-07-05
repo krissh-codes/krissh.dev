@@ -1,2 +1,1 @@
-export { default as BrowserThemeSettings } from './BrowserThemeSettings';
-export { ThemeMode } from './BrowserThemeSettings';
+export * from './BrowserThemeSettings';
