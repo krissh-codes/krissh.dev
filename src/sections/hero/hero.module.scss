@@ -13,7 +13,7 @@
         position: relative;
 
         @include mixins.respond(phone) {
-            margin-top: 10rem;
+            margin-top: var(--gap-xl);
         }
     }
 
@@ -116,7 +116,7 @@
         animation-delay: 0.4s;
 
         @include mixins.respond(phone) {
-            margin-top: 5rem;
+            bottom: 3rem;
 
             a {
                 padding: 1rem 0;
