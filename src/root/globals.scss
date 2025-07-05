@@ -152,13 +152,13 @@ section {
         }
     }
 
-    h5 {
+    header > h5 {
         display: inline-flex;
         align-items: center;
 
         svg {
             font-size: 1.2em;
-            margin-right: 0.4em;
+            margin-right: var(--gap-xs);
         }
     }
 

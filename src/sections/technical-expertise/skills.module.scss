@@ -22,15 +22,15 @@
 
     &__item {
         &__title {
-            font-size: inherit;
-            color: inherit;
-            font-family: var(--font-headings);
             display: inline;
-            margin-right: 1ex;
+            color: inherit;
+            font: inherit var(--font-headings);
+            font-weight: 800;
             text-transform: capitalize;
+            margin-right: var(--gap-xs);
 
             &__bullet {
-                transform: scale(1.2) translateY(2px);
+                @include mixins.bullet_point;
             }
         }
 

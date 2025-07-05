@@ -75,7 +75,7 @@
 
     &__point {
         &_bullet {
-            transform: scale(1.2) translateY(2px);
+            @include mixins.bullet_point;
         }
     }
 }

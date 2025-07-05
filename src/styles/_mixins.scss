@@ -8,6 +8,12 @@
     padding: var(--gap-xl) 0;
 }
 
+@mixin bullet_point {
+    font-size: 1.2em;
+    vertical-align: text-bottom;
+    translate: 0 -.5px;
+}
+
 /*
  * MEDIA QUERY MANAGER
  *
