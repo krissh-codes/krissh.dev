@@ -229,14 +229,14 @@
             vertical-align: middle;
             margin-right: var(--gap-xs);
             opacity: 0;
-            translate: .5ex 0;
+            translate: 0.5ex 0;
             transition: all var(--animation-duration-default);
         }
     }
 
     &__item:hover &__link {
         color: var(--primary-light);
-        translate: .5ex 0;
+        translate: 0.5ex 0;
 
         svg {
             opacity: 1;

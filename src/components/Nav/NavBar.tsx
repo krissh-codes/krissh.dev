@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { Button } from '@components/Button';
 import { BiStats } from 'react-icons/bi';
 import { GrContactInfo } from 'react-icons/gr';
 import { LuMail } from 'react-icons/lu';
 import { MdWorkOutline } from 'react-icons/md';
+import { Button } from '@components';
 import classes from './navbar.module.scss';
 
 declare global {
