@@ -17,11 +17,18 @@
         }
     }
 
-    &__logo {
-        margin-bottom: 3rem;
+    &__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap-md);
     }
 
-    &__left {
+    &__caption {
+        display: flex;
+        gap: var(--gap-xs);
+        flex-direction: column;
+
         &__details {
             display: flex;
             gap: 0.6rem;
@@ -29,20 +36,14 @@
             font: var(--text-size-sm) var(--font-mono);
             color: var(--fg-3);
 
-            &:not(:last-child) {
-                margin-bottom: 0.4rem;
-            }
-
             &_icon {
                 font-size: var(--text-size-md);
             }
         }
 
         @include mixins.respond(tab-port) {
-            display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            margin-top: 2rem;
         }
     }
 

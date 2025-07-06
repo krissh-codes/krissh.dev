@@ -29,20 +29,17 @@ export function Experience() {
                     </header>
 
                     <div className={classes.experience__container}>
-                        <div className={classes.experience__left}>
-                            <figure className={classes.experience__logo}>
-                                <CompanyLogo companyName="zoho" />
-                            </figure>
-                            <div className={classes.experience__left__details}>
-                                <TbCalendarSmile className={classes.experience__left__details_icon} />
-                                <time>2022</time>
-                                to <time>Present</time>
-                            </div>
-                            <div className={classes.experience__left__details}>
-                                <HiOutlineLocationMarker className={classes.experience__left__details_icon} />
-                                Chennai, India
-                            </div>
-                        </div>
+                        <figure className={classes.experience__left}>
+                            <CompanyLogo companyName="zoho" className={classes.experience__logo} />
+                            <figcaption className={classes.experience__caption}>
+                                <div className={classes.experience__caption__details}>
+                                    <TbCalendarSmile className={classes.experience__caption__details_icon} /> <time>2022</time> to <time>Present</time>
+                                </div>
+                                <div className={classes.experience__caption__details}>
+                                    <HiOutlineLocationMarker className={classes.experience__caption__details_icon} /> Chennai, India
+                                </div>
+                            </figcaption>
+                        </figure>
 
                         <div className={classes.experience__description}>
                             <h3 className={classes.experience__title}>Member Technical Staff (Software Engineer)</h3>
