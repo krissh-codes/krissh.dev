@@ -73,16 +73,20 @@
         align-items: center;
         gap: 1em;
 
-        a {
-            span {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.4rem;
-                min-width: max-content;
-            }
-
+        &__more {
             svg {
                 width: 1em;
+                opacity: 0;
+                scale: 0;
+                translate: -.5em .8em;
+                rotate: -45deg;
+                transition: all 0.2s ease-in-out;
+            }
+
+            &:hover svg {
+                opacity: 1;
+                scale: 1;
+                translate: .3em .1em;
             }
         }
     }

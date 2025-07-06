@@ -1,5 +1,3 @@
-'use client';
-
 import classes from './time-since.module.scss';
 
 interface TimeSinceProps {
@@ -7,7 +5,7 @@ interface TimeSinceProps {
     tooltip?: boolean;
 }
 
-export default function TimeSince({ date, tooltip }: TimeSinceProps) {
+export function TimeSince({ date, tooltip }: TimeSinceProps) {
     const currentDate = new Date();
     let years = currentDate.getFullYear() - date.getFullYear();
     let months = currentDate.getMonth() - date.getMonth();

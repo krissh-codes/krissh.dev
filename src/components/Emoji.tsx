@@ -1,4 +1,4 @@
-export default function Emoji({ character, label }: IEmojiDetails) {
+export function Emoji({ character, label }: IEmojiDetails) {
     return (
         <span role="img" aria-label={`${label} emoji`}>
             {character}{' '}

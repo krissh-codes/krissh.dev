@@ -1,4 +1,4 @@
-import { RxArrowTopRight } from 'react-icons/rx';
+import { FaArrowRight } from 'react-icons/fa6';
 import { Button, Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
 
@@ -26,10 +26,10 @@ export function Hero() {
                         Get in touch
                     </Button>
 
-                    <HyperLink to="#skills" lone>
-                        <span>
+                    <HyperLink to="#skills" lone noUnderLine>
+                        <span className={classes.hero__cta__more}>
                             Learn more
-                            <RxArrowTopRight />
+                            <FaArrowRight />
                         </span>
                     </HyperLink>
                 </div>

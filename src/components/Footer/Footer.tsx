@@ -5,7 +5,7 @@ import { TiHeartOutline } from 'react-icons/ti';
 import { SocialLinks } from '@components';
 import classes from './footer.module.scss';
 
-export default function Footer() {
+export function Footer() {
     return (
         <div className={classes.footer}>
             <div className={classes.footer__social}>
