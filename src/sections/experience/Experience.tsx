@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
+import { GoOrganization } from 'react-icons/go';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { MdWorkOutline } from 'react-icons/md';
 import { TbCalendarSmile } from 'react-icons/tb';
@@ -43,7 +44,9 @@ export function Experience() {
 
                         <div className={classes.experience__description}>
                             <h3 className={classes.experience__title}>Member Technical Staff (Software Engineer)</h3>
-                            <div className={classes.experience__company}>at Zoho Corporation, Private Limited.</div>
+                            <div className={classes.experience__company}>
+                                <GoOrganization /> Zoho Corporation, Private Limited.
+                            </div>
 
                             <ul className={classes.experience__points}>
                                 <SlideUp cascade={true} damping={0.1} delay={0}>
