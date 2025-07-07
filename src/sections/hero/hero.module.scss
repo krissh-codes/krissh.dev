@@ -80,7 +80,7 @@
                 scale: 0;
                 translate: -.5em .8em;
                 rotate: -45deg;
-                transition: all 0.2s ease-in-out;
+                transition: all var(--animation-duration-default);
             }
 
             &:hover svg {

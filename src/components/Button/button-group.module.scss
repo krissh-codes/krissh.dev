@@ -13,6 +13,7 @@
         background-color: var(--translucent-dark);
         font-family: var(--font-mono);
         text-transform: lowercase;
+        cursor: pointer;
         border-radius: var(--radius-xs);
 
         transition: all var(--animation-duration-default);
