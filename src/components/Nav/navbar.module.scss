@@ -27,7 +27,7 @@
         width: 120rem;
         transform: translate(-50%, 25%);
         box-shadow: 0 0 2rem var(--primary-translucent);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(20px);
         border-radius: var(--radius-lg);
 
         @include mixins.respond(tab-lan) {
