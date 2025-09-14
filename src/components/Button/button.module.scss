@@ -53,6 +53,34 @@
         border-color: var(--primary-light);
         background-image: linear-gradient(120deg, transparent 0%, transparent 50%, var(--primary-light) 50%);
     }
+
+    &[disabled] {
+        pointer-events: none;
+        background-position: 100%;
+        box-shadow: 0 0 0 var(--primary-dark);
+
+        color: inherit;
+
+        background-image: linear-gradient(120deg, transparent 33%, var(--primary-dark) 33%, var(--primary-dark) 66%, transparent 66%);
+
+        animation-name: load;
+        animation-duration: var(--animation-duration-long);
+        animation-iteration-count: infinite;
+
+        @include mixins.theme(dark) {
+            background-image: linear-gradient(120deg, transparent 33%, var(--primary-light) 33%, var(--primary-light) 66%, transparent 66%);
+        }
+    }
+
+    &__small {
+        padding: var(--text-size-xs) var(--text-size-sm);
+        font-size: var(--text-size-sm);
+    }
+
+    &__medium {
+        padding: var(--text-size-sm) var(--text-size-md);
+        font-size: var(--text-size-msm);
+    }
 }
 
 @keyframes load {
@@ -61,23 +89,5 @@
     }
     100% {
         background-position: -50%;
-    }
-}
-
-.button[disabled] {
-    pointer-events: none;
-    background-position: 100%;
-    box-shadow: 0 0 0 var(--primary-dark);
-
-    color: inherit;
-
-    background-image: linear-gradient(120deg, transparent 33%, var(--primary-dark) 33%, var(--primary-dark) 66%, transparent 66%);
-
-    animation-name: load;
-    animation-duration: var(--animation-duration-long);
-    animation-iteration-count: infinite;
-
-    @include mixins.theme(dark) {
-        background-image: linear-gradient(120deg, transparent 33%, var(--primary-light) 33%, var(--primary-light) 66%, transparent 66%);
     }
 }

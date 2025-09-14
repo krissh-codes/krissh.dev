@@ -2,13 +2,9 @@ import { type ButtonHTMLAttributes, type DetailedHTMLProps, type MouseEventHandl
 import classes from './button.module.scss';
 
 export function Button({ onClick, link, children, variant }: ButtonProps) {
-    const verticalPadding = `var(--text-size-${variant === 'sm' ? 'xs' : 'sm'})`;
-    const horizontalPadding = `var(--text-size-${variant === 'sm' ? 'sm' : 'md'})`;
-
     return (
         <button
-            className={classes.button}
-            style={{ padding: `${verticalPadding} ${horizontalPadding}`, fontSize: `var(--text-size-${variant === 'sm' ? 'sm' : 'msm'})` }}
+            className={`${classes.button} ${variant === 'sm' ? classes.button__small : classes.button__medium}`}
             onClick={link ? () => window.open(link) : onClick}
         >
             {children}
