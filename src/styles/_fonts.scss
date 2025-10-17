@@ -1,14 +1,16 @@
 @font-face {
-    font-family: 'Metropolis';
-    src: url('../assets/fonts/Metropolis-Bold.otf');
-}
-
-@font-face {
     font-family: 'Menlo';
     src: url('../assets/fonts/Menlo-Regular.ttf');
 }
 
 @font-face {
-    font-family: 'DM Sans';
-    src: url('../assets/fonts/DMSans-VF.ttf');
+    font-family: 'Rookery';
+    src: url('../assets/fonts/Rookery-Regular.woff');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Rookery';
+    src: url('../assets/fonts/Rookery-Bold.woff');
+    font-weight: bold;
 }
