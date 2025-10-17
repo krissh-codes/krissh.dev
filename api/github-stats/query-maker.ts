@@ -31,5 +31,5 @@ export async function fetchGitHubStats(): Promise<GitHubGraphQLResponse> {
         body: JSON.stringify({ query: graphQuery }),
         headers: { Authorization: `bearer ${token}` }
     });
-    return await response.json();
+    return response.json() as Promise<GitHubGraphQLResponse>;
 }
