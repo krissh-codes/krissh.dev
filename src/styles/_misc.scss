@@ -1,0 +1,24 @@
+::selection {
+    background-color: var(--primary-translucent-dark);
+    color: var(--color-white);
+}
+
+::-moz-selection {
+    background-color: var(--primary-translucent-dark);
+    color: var(--color-white);
+}
+
+::-o-selection {
+    background-color: var(--primary-translucent-dark);
+    color: var(--color-white);
+}
+
+::-ms-selection {
+    background-color: var(--primary-translucent-dark);
+    color: var(--color-white);
+}
+
+::-webkit-selection {
+    background-color: var(--primary-translucent-dark);
+    color: var(--color-white);
+}
