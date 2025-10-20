@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "netlify dev",
         "vite": "vite",
+        "prebuild": "node tools/build/pre-build.ts",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "format": "prettier --write \"**/*.{js,ts,tsx,html,scss,json}\"",

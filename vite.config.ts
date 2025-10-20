@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { redirectsPlugin } from './tools/plugins';
 
-// https://vitejs.dev/config/
 export default defineConfig({
     resolve: {
         alias: {
@@ -15,5 +15,5 @@ export default defineConfig({
             '@common-types': '/types'
         }
     },
-    plugins: [react()]
+    plugins: [react(), redirectsPlugin()]
 });

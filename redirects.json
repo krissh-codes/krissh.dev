@@ -1,0 +1,26 @@
+{
+    "instagram": {
+        "aliases": ["insta", "ig"],
+        "url": "https://www.instagram.com/krissh_posts"
+    },
+    "linkedin": {
+        "aliases": ["in", "li"],
+        "url": "https://linkedin.com/in/krissh-connects"
+    },
+    "twitter": {
+        "aliases": ["x"],
+        "url": "https://x.com/krissh_tweets"
+    },
+    "reddit": {
+        "aliases": ["r"],
+        "url": "https://reddit.com/user/krissh_speaks"
+    },
+    "bluesky": {
+        "aliases": ["bsky"],
+        "url": "https://bsky.app/profile/krissh.dev"
+    },
+    "github": {
+        "aliases": ["gh"],
+        "url": "https://github.com/krissh-codes"
+    }
+}
