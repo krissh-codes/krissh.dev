@@ -95,7 +95,7 @@ export function NavBar() {
                         </ul>
                     </div>
 
-                    <Button link="https://1drv.ms/b/c/bdfd7be85b755174/EXRRdVvoe_0ggL3DCAAAAAABgp5y7wgUU4wn0ixgCIeeHw?e=P1Ra5l">Résumé</Button>
+                    <Button link="/resume">Résumé</Button>
                 </div>
             </Fade>
         </nav>

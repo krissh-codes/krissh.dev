@@ -22,5 +22,9 @@
     "github": {
         "aliases": ["gh"],
         "url": "https://github.com/krissh-codes"
+    },
+    "resume": {
+        "aliases": ["rsm", "cv"],
+        "url": "https://1drv.ms/b/c/bdfd7be85b755174/EXRRdVvoe_0ggL3DCAAAAAABgp5y7wgUU4wn0ixgCIeeHw"
     }
 }
