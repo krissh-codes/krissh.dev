@@ -4,7 +4,7 @@ import classes from './hero.module.scss';
 
 export function Hero() {
     return (
-        <section className={classes.hero}>
+        <section className={`section__plain ${classes.hero}`}>
             <NavBar />
             <div className={classes.container}>
                 <p className={classes.intro}>

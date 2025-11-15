@@ -62,7 +62,7 @@ export function Statistics() {
 
     return (
         <SlideUp fraction={0.5} cascade={true} damping={0.3}>
-            <section id="statistics" className={classes.statistics} ref={ref}>
+            <section id="statistics" className={`section__plain ${classes.statistics}`} ref={ref}>
                 <div className={classes.container}>
                     <header className={classes.head}>
                         <div className={classes.head__left}>

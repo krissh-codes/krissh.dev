@@ -23,7 +23,7 @@ export function Contact() {
     };
 
     return (
-        <section id="contact" className={classes.contact}>
+        <section id="contact" className={`${classes.contact}`}>
             <header>
                 <h5>
                     <LuMail /> Contact me

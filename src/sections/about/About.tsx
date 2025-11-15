@@ -5,7 +5,7 @@ import classes from './about.module.scss';
 
 export function About() {
     return (
-        <section className={classes.about} id="about">
+        <section className={`section__boxed ${classes.about}`} id="about">
             <SlideUp>
                 <div className={classes.container}>
                     <header>

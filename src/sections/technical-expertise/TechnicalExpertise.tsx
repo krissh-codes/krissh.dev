@@ -8,7 +8,7 @@ import classes from './skills.module.scss';
 
 export function TechnicalExpertise() {
     return (
-        <section id="skills">
+        <section id="skills" className="section__plain">
             <header>
                 <h5>
                     <LiaLaptopCodeSolid /> Skills

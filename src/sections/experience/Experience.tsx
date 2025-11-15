@@ -18,7 +18,7 @@ function ExperiencePoint({ children }: { children: ReactNode }) {
 
 export function Experience() {
     return (
-        <section id="experience">
+        <section id="experience" className="section__boxed">
             <SlideUp cascade={true}>
                 <div className={classes.experience}>
                     <header>
