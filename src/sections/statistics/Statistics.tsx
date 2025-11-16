@@ -98,7 +98,7 @@ export function Statistics() {
                     </div>
 
                     <div className={classes.cta}>
-                        <Button link="/github">
+                        <Button link="/github" target="blank">
                             <div className={classes.cta__button}>
                                 <FiGithub />
                                 <label>GitHub Profile</label>
