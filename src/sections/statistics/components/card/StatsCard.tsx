@@ -1,4 +1,4 @@
-import classes from './statcard.module.scss';
+import classes from './StatsCard.module.scss';
 
 export default function StatsCard({ data, caption }: { data: number; caption: string }) {
     return (

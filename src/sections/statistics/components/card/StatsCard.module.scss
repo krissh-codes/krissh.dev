@@ -33,10 +33,7 @@
 
     &__data {
         font-size: var(--text-size-xxl);
-        color: var(--primary-dark);
-        @include mixins.theme(dark) {
-            color: var(--primary-light);
-        }
+        color: var(--primary-light);
     }
 
     &__caption {
