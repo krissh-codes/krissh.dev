@@ -1,16 +1,19 @@
 @font-face {
     font-family: 'CommitMono';
     src: url('../assets/fonts/CommitMono-400-Regular.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Rookery';
     src: url('../assets/fonts/Rookery-Regular.woff');
     font-weight: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Rookery';
     src: url('../assets/fonts/Rookery-Bold.woff');
     font-weight: bold;
+    font-display: swap;
 }

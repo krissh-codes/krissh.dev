@@ -40,6 +40,7 @@ const EMPTY_STATS: IGitHubStats = {
 export function Statistics() {
     const [fetchedStats, setFetchedStats] = useState<IGitHubStats>(EMPTY_STATS);
     const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
+    const [hasFetchedStats, setHasFetchedStats] = useState(false);
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
     const [ref, isVisible] = useVisibilityObserver();
 
@@ -49,8 +50,23 @@ export function Statistics() {
     });
 
     useEffect(() => {
-        fetchGitHubStats().then(setFetchedStats);
-    }, []);
+        if (!isVisible || hasFetchedStats) return;
+
+        let isSubscribed = true;
+        setHasFetchedStats(true);
+
+        fetchGitHubStats()
+            .then((nextStats) => {
+                if (isSubscribed) setFetchedStats(nextStats);
+            })
+            .catch(() => {
+                if (isSubscribed) setFetchedStats(EMPTY_STATS);
+            });
+
+        return () => {
+            isSubscribed = false;
+        };
+    }, [isVisible, hasFetchedStats]);
 
     useEffect(() => {
         setStats(isVisible ? fetchedStats : EMPTY_STATS);
