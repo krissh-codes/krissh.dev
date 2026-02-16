@@ -154,9 +154,12 @@ body {
 section {
     padding: var(--gap-xxl) 0;
 
-    header > .section__eyebrow {
+    header .section__eyebrow {
         display: inline-flex;
         align-items: center;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        color: var(--primary-dark);
         font-size: var(--text-size-msm);
 
         svg {
