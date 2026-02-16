@@ -35,7 +35,7 @@ export function Hero() {
                 </div>
             </div>
 
-            <div role="img" className={classes.waterMark}>
+            <div aria-hidden={true} className={classes.waterMark}>
                 Krissh
             </div>
 
