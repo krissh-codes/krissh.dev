@@ -17,7 +17,24 @@ export function About() {
 
                     <div className={classes.about__content}>
                         <figure className={classes.profile}>
-                            <img src="/images/Krissh.png" alt="Krissh" style={{ width: '100%', height: 'auto' }} />
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    srcSet="/images/Krissh-320.webp 320w, /images/Krissh-480.webp 480w, /images/Krissh-605.webp 605w"
+                                    sizes="(max-width: 768px) 80vw, 30vw"
+                                />
+                                <img
+                                    src="/images/Krissh.png"
+                                    srcSet="/images/Krissh.png 605w"
+                                    sizes="(max-width: 768px) 80vw, 30vw"
+                                    alt="Portrait of Krishna Moorthy"
+                                    width={605}
+                                    height={659}
+                                    loading="lazy"
+                                    decoding="async"
+                                    style={{ width: '100%', height: 'auto' }}
+                                />
+                            </picture>
                         </figure>
 
                         <div className={classes.about__text}>
