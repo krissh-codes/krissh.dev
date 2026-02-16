@@ -54,7 +54,8 @@
         background-image: linear-gradient(120deg, transparent 0%, transparent 50%, var(--primary-light) 50%);
     }
 
-    &[disabled] {
+    &[disabled],
+    &[aria-disabled='true'] {
         pointer-events: none;
         background-position: 100%;
         box-shadow: 0 0 0 var(--primary-dark);
