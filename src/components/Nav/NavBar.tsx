@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { BiStats } from 'react-icons/bi';
 import { GrContactInfo } from 'react-icons/gr';
@@ -39,19 +39,24 @@ const navItems = [
 export function NavBar() {
     const [customNavAttr, setCustomNavAttr] = useState('top');
 
-    window.onscroll = () => {
-        if (window.scrollY <= 5) {
-            // top of the page
-            setCustomNavAttr('top');
-        } else if (window.oldScroll > window.scrollY) {
-            // scrolled up
-            setCustomNavAttr('visible');
-        } else {
-            // scrolled down
-            setCustomNavAttr('hidden');
-        }
-        window.oldScroll = window.scrollY;
-    };
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY <= 5) {
+                setCustomNavAttr('top');
+            } else if (window.oldScroll > window.scrollY) {
+                setCustomNavAttr('visible');
+            } else {
+                setCustomNavAttr('hidden');
+            }
+
+            window.oldScroll = window.scrollY;
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+    }, []);
 
     const check = useRef<HTMLInputElement>(null);
     const handleHamClose = () => {
@@ -59,10 +64,10 @@ export function NavBar() {
     };
 
     return (
-        <nav className={classes.nav} nav-style={customNavAttr}>
+        <nav className={classes.nav} nav-style={customNavAttr} aria-label="Primary navigation">
             <Fade duration={500}>
                 <div className={classes.container}>
-                    <a href="#about" className={classes.nav__skip}>
+                    <a href="#main-content" className={classes.nav__skip}>
                         Skip to main content
                     </a>
 
