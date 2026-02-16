@@ -11,7 +11,9 @@ import { getDescriptor, getStatsCalendarCountKey, StatsCalendar, type TStatsCale
 
 async function fetchGitHubStats() {
     const response = await fetch('/api/github-stats');
+    if (!response.ok) throw new Error('Failed to fetch GitHub stats');
     const json = await response.json();
+    if (!json?.details) throw new Error('Invalid GitHub stats payload');
     return json.details;
 }
 
@@ -38,7 +40,6 @@ const EMPTY_STATS: IGitHubStats = {
 };
 
 export function Statistics() {
-    const [fetchedStats, setFetchedStats] = useState<IGitHubStats>(EMPTY_STATS);
     const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
     const [hasFetchedStats, setHasFetchedStats] = useState(false);
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
@@ -53,24 +54,21 @@ export function Statistics() {
         if (!isVisible || hasFetchedStats) return;
 
         let isSubscribed = true;
-        setHasFetchedStats(true);
 
         fetchGitHubStats()
             .then((nextStats) => {
-                if (isSubscribed) setFetchedStats(nextStats);
+                if (!isSubscribed || !nextStats) return;
+                setStats(nextStats);
+                setHasFetchedStats(true);
             })
             .catch(() => {
-                if (isSubscribed) setFetchedStats(EMPTY_STATS);
+                if (isSubscribed) setStats(EMPTY_STATS);
             });
 
         return () => {
             isSubscribed = false;
         };
     }, [isVisible, hasFetchedStats]);
-
-    useEffect(() => {
-        setStats(isVisible ? fetchedStats : EMPTY_STATS);
-    }, [isVisible, fetchedStats]);
 
     const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
         setSelectedStatsCalendar(selectedButtonItem.id as TStatsCalendar);
