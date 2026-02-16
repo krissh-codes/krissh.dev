@@ -21,9 +21,9 @@ export function TechnicalExpertise() {
                     <SlideUp damping={0.1} delay={0} cascade={true} triggerOnce={true}>
                         {SKILL_POINTS.map(item => (
                             <li key={item.title} className={classes.skills_desc__item}>
-                                <h5 className={classes.skills_desc__item__title}>
+                                <h3 className={classes.skills_desc__item__title}>
                                     <FiChevronRight className={classes.skills_desc__item__title__bullet} /> {item.title}:
-                                </h5>
+                                </h3>
                                 <div className={classes.skills_desc__item__text}>{item.description}</div>
                             </li>
                         ))}

@@ -7,7 +7,7 @@ import classes from './footer.module.scss';
 
 export function Footer() {
     return (
-        <div className={classes.footer}>
+        <footer className={classes.footer}>
             <div className={classes.footer__social}>
                 <SocialLinks />
             </div>
@@ -17,6 +17,6 @@ export function Footer() {
             <div className={classes.footer__line2}>
                 by <strong>Krissh</strong>
             </div>
-        </div>
+        </footer>
     );
 }
