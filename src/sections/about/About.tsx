@@ -9,9 +9,9 @@ export function About() {
             <SlideUp>
                 <div className={classes.container}>
                     <header>
-                        <h5>
+                        <p className="section__eyebrow">
                             <GrContactInfo /> Get to know
-                        </h5>
+                        </p>
                         <h2 className={classes.heading}>About me</h2>
                     </header>
 

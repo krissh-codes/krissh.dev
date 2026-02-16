@@ -25,9 +25,9 @@ export function Contact() {
     return (
         <section id="contact" className={`${classes.contact}`}>
             <header>
-                <h5>
+                <p className="section__eyebrow">
                     <LuMail /> Contact me
-                </h5>
+                </p>
                 <h2>Get in Touch</h2>
             </header>
             <form className={classes.contact__form} action={submitContactForm}>

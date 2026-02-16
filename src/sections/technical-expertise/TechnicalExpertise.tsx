@@ -10,9 +10,9 @@ export function TechnicalExpertise() {
     return (
         <section id="skills" className="section__plain">
             <header>
-                <h5>
+                <p className="section__eyebrow">
                     <LiaLaptopCodeSolid /> Skills
-                </h5>
+                </p>
                 <h2>Technical Expertise</h2>
             </header>
 

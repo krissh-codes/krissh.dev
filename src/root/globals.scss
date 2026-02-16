@@ -154,9 +154,10 @@ body {
 section {
     padding: var(--gap-xxl) 0;
 
-    header > h5 {
+    header > .section__eyebrow {
         display: inline-flex;
         align-items: center;
+        font-size: var(--text-size-msm);
 
         svg {
             font-size: 1.2em;

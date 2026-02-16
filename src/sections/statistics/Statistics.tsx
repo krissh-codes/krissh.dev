@@ -82,9 +82,9 @@ export function Statistics() {
                 <div className={classes.container}>
                     <header className={classes.head}>
                         <div className={classes.head__left}>
-                            <h5>
+                            <p className="section__eyebrow">
                                 <BiStats /> My GitHub profile
-                            </h5>
+                            </p>
                             <h2 className={classes.heading}>Statistics</h2>
                         </div>
                         <div className={classes.stats_control}>

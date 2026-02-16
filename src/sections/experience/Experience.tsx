@@ -22,10 +22,10 @@ export function Experience() {
             <SlideUp cascade={true}>
                 <div className={classes.experience}>
                     <header>
-                        <h5>
+                        <p className="section__eyebrow">
                             <MdWorkOutline />
                             The Stack Trace
-                        </h5>
+                        </p>
                         <h2>Experience</h2>
                     </header>
 
