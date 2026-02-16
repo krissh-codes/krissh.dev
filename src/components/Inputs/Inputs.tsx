@@ -1,7 +1,7 @@
-import type { ChangeEventHandler } from 'react';
+import type { ChangeEventHandler, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 import classes from './inputs.module.scss';
 
-export function TextInput(props: InputProps<HTMLInputElement>) {
+export function TextInput(props: TextInputProps) {
     return (
         <div className={classes.input}>
             <input
@@ -12,6 +12,10 @@ export function TextInput(props: InputProps<HTMLInputElement>) {
                 placeholder={props.placeholder || props.label}
                 value={props.value}
                 onChange={props.onChange}
+                autoComplete={props.autoComplete}
+                required={props.required}
+                minLength={props.minLength}
+                maxLength={props.maxLength}
             />
             <label className={classes.input__label} htmlFor={props.id}>
                 {props.label}
@@ -30,7 +34,12 @@ interface InputProps<ET extends HTMLElement> {
     type?: string;
 }
 
-export function TextArea(props: InputProps<HTMLTextAreaElement>) {
+type TextInputProps = InputProps<HTMLInputElement> &
+    Pick<InputHTMLAttributes<HTMLInputElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
+type TextAreaProps = InputProps<HTMLTextAreaElement> &
+    Pick<TextareaHTMLAttributes<HTMLTextAreaElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
+
+export function TextArea(props: TextAreaProps) {
     return (
         <div className={classes.input}>
             <textarea
@@ -40,6 +49,10 @@ export function TextArea(props: InputProps<HTMLTextAreaElement>) {
                 placeholder={props.placeholder || props.label}
                 value={props.value}
                 onChange={props.onChange}
+                autoComplete={props.autoComplete}
+                required={props.required}
+                minLength={props.minLength}
+                maxLength={props.maxLength}
             ></textarea>
             <label className={classes.input__label} htmlFor={props.id}>
                 {props.label}

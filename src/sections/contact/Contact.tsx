@@ -32,12 +32,12 @@ export function Contact() {
             </header>
             <form className={classes.contact__form} action={submitContactForm}>
                 <SlideUp>
-                    <TextInput name="name" id="name" label="Name" />
-                    <TextInput name="email" id="email" type="email" label="Email" />
-                    <TextArea name="message" id="message" label="Message" />
+                    <TextInput name="name" id="name" label="Name" autoComplete="name" required />
+                    <TextInput name="email" id="email" type="email" label="Email" autoComplete="email" required />
+                    <TextArea name="message" id="message" label="Message" required minLength={20} />
 
                     {/* Spam prevention */}
-                    <input inert id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
+                    <input inert aria-hidden={true} tabIndex={-1} autoComplete="off" id="bt1201307" name="1201307" type="text" className={classes.contact__bt1201307} />
 
                     <Button disabled={isSending} type="submit">
                         {isSending ? (
