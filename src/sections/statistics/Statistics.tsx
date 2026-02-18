@@ -41,7 +41,8 @@ const EMPTY_STATS: IGitHubStats = {
 
 export function Statistics() {
     const [stats, setStats] = useState<IGitHubStats>(EMPTY_STATS);
-    const [hasFetchedStats, setHasFetchedStats] = useState(false);
+    const [prefetchedStats, setPrefetchedStats] = useState<IGitHubStats | null>(null);
+    const [hasHydratedStats, setHasHydratedStats] = useState(false);
     const [selectedStatsCalendar, setSelectedStatsCalendar] = useState<TStatsCalendar>(StatsCalendar[0]);
     const [ref, isVisible] = useVisibilityObserver();
 
@@ -51,24 +52,29 @@ export function Statistics() {
     });
 
     useEffect(() => {
-        if (!isVisible || hasFetchedStats) return;
-
         let isSubscribed = true;
 
         fetchGitHubStats()
             .then((nextStats) => {
                 if (!isSubscribed || !nextStats) return;
-                setStats(nextStats);
-                setHasFetchedStats(true);
+                setPrefetchedStats(nextStats);
             })
             .catch(() => {
-                if (isSubscribed) setStats(EMPTY_STATS);
+                if (isSubscribed) setPrefetchedStats(EMPTY_STATS);
             });
 
         return () => {
             isSubscribed = false;
         };
-    }, [isVisible, hasFetchedStats]);
+    }, []);
+
+    useEffect(() => {
+        const isDirectStatisticsLoad = typeof window !== 'undefined' && window.location.hash === '#statistics';
+        if ((!isVisible && !isDirectStatisticsLoad) || hasHydratedStats || !prefetchedStats) return;
+
+        setStats(prefetchedStats);
+        setHasHydratedStats(true);
+    }, [hasHydratedStats, isVisible, prefetchedStats]);
 
     const changeSelectedStatsCalendar = (selectedButtonItem: ButtonItem) => {
         setSelectedStatsCalendar(selectedButtonItem.id as TStatsCalendar);

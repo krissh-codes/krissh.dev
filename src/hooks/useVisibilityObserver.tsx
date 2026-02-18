@@ -26,7 +26,8 @@ export function useVisibilityObserver(onVisible = () => {}, threshold = 0.5, obs
 
         const rect = element.getBoundingClientRect();
         const viewHeight = window.innerHeight || document.documentElement.clientHeight;
-        if (rect.top >= 0 && rect.top <= viewHeight) {
+        const isInViewport = rect.bottom >= 0 && rect.top <= viewHeight;
+        if (isInViewport) {
             onVisibilityChange();
             if (observeOnce) observer.disconnect();
         }
