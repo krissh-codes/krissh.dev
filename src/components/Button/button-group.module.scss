@@ -34,11 +34,9 @@
         }
 
         &[aria-pressed='true'] {
-            // border-radius: var(--radius-lg);
             border-color: var(--primary-light);
             background-color: var(--primary-translucent);
             color: var(--primary-light);
-            // text-transform: uppercase;
             font-weight: 600;
         }
     }

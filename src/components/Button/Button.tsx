@@ -25,6 +25,6 @@ interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
     variant?: 'sm' | 'md';
     target?: 'self' | 'blank';
     children: ReactNode;
-    specialIcon: ReactNode;
+    specialIcon?: ReactNode;
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
