@@ -28,6 +28,13 @@
  * phone, tab-port, tab-lan, xdr
  */
 @mixin respond($breakpoint) {
+    @if ($breakpoint==xs) {
+            @media only screen and (max-width: 30em) {
+                //480 = 30em (1em = 16px)
+                @content;
+            }
+        }
+
     @if ($breakpoint==phone) {
         @media only screen and (max-width: 37.5em) {
             //600px = 37.5em (1em = 16px)

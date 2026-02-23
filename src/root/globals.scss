@@ -70,6 +70,16 @@
     }
 }
 
+@include mixins.respond(phone) {
+    :root {
+        --text-size-xxxl: 4rem;
+        --text-size-xxl: 3.2rem;
+        --text-size-xl: 2.2rem;
+        --text-size-lg: 1.8rem;
+        --text-size-md: 1.4rem;
+    }
+}
+
 @include mixins.theme(dark) {
     :root {
         --bg-1: transparent;

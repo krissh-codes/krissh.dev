@@ -107,6 +107,10 @@
         @include mixins.respond(phone) {
             font-size: 10rem;
         }
+
+        @include mixins.respond(xs) {
+            font-size: 8rem;
+        }
     }
 
     .quickContact {

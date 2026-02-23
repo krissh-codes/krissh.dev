@@ -51,35 +51,35 @@ export function Experience() {
                             <ul className={classes.experience__points}>
                                 <SlideUp cascade={true} damping={0.1} delay={0}>
                                     <ExperiencePoint>
-                                        <strong>Designed and optimized database schemas</strong> to support scalable, high-performance features, ensuring well-structured and
-                                        normalized data organization.
+                                        <strong>Designed and optimized database schemas</strong> for scalable product features, with a focus on clean data modeling and long-term
+                                        maintainability.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Crafted detailed Architecture, Flow, and Class Diagrams</strong> to provide clear blueprints for new features and enhance
-                                        development efficiency.
+                                        <strong>Created architecture, flow, and class diagrams</strong> to align teams early, reduce implementation ambiguity, and speed up
+                                        delivery.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Enhanced and maintained complex features</strong>, implementing major upgrades and performance improvements to meet evolving
-                                        requirements.
+                                        <strong>Enhanced and maintained complex product modules</strong> by shipping feature upgrades and reliability improvements across release
+                                        cycles.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Collaborated with cross-functional teams</strong> to drive new feature development, quickly resolve bugs, and address customer
-                                        support tickets, ensuring smooth operation and high user satisfaction.
+                                        <strong>Collaborated with cross-functional teams</strong> to deliver new capabilities, resolve production issues, and support critical
+                                        customer use cases.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Modernized legacy codebases</strong>, transitioning to modern frameworks and coding standards for increased maintainability and
-                                        performance.
+                                        <strong>Modernized legacy code paths</strong> by adopting current frameworks and coding standards, improving developer velocity and code
+                                        health.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Developed robust RESTful APIs and service methods</strong>, including scheduled data cleanup and bulk export functionalities.
+                                        <strong>Built and maintained RESTful APIs and background services</strong>, including scheduled cleanup flows and bulk export operations.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Conducted in-depth performance analysis</strong> using tools like heap dumps and flame graphs to evaluate API efficiency, leading to
-                                        significant performance optimizations.
+                                        <strong>Performed performance investigations</strong> using profiling techniques such as heap dump and flame graph analysis to identify and
+                                        resolve bottlenecks.
                                     </ExperiencePoint>
                                     <ExperiencePoint>
-                                        <strong>Revamped UI components and built reusable modules</strong>, enhancing the functionality and scalability of client-facing
-                                        applications.
+                                        <strong>Revamped UI components and built reusable front-end modules</strong> to improve consistency, scalability, and maintainability of
+                                        client-facing workflows.
                                     </ExperiencePoint>
                                 </SlideUp>
                             </ul>

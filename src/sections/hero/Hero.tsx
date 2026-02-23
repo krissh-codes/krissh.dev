@@ -15,11 +15,11 @@ export function Hero() {
                     <span className={classes.emphasize}>Krishna</span> Moorthy
                 </h1>
                 <div className={classes.hero__info}>
-                    A passionate{' '}
+                    Software Engineer crafting scalable, high-performance web applications, with{' '}
                     <HyperLink to="#experience" style={{ fontWeight: 600, display: 'inline' }} lone noUnderLine>
-                        Software Engineer with <TimeSince date={new Date('04-Apr-2022')} /> of professional experience
+                        <TimeSince date={new Date('04-Apr-2022')} /> of professional experience
                     </HyperLink>{' '}
-                    building performant and scalable enterprise web applications.
+                    in enterprise product development.
                 </div>
                 <div className={classes.hero__cta}>
                     <Button link="#contact" variant="sm">

@@ -38,6 +38,7 @@ const navItems = [
 
 export function NavBar() {
     const [customNavAttr, setCustomNavAttr] = useState('top');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
@@ -58,10 +59,28 @@ export function NavBar() {
         };
     }, []);
 
-    const check = useRef<HTMLInputElement>(null);
-    const handleHamClose = () => {
-        check.current!.checked = false;
-    };
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
+    const handleHamClose = () => setIsMenuOpen(false);
+    const handleHamToggle = () => setIsMenuOpen(previous => !previous);
+
+    useEffect(() => {
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false);
+                menuButtonRef.current?.focus();
+            }
+        };
+
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+            window.addEventListener('keydown', onKeyDown);
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isMenuOpen]);
 
     return (
         <nav className={classes.nav} nav-style={customNavAttr} aria-label="Primary navigation">
@@ -75,13 +94,26 @@ export function NavBar() {
                         <img className={classes.nav__logo} src={`/images/logos/krissh/logo-thumb.svg`} alt="Krissh" />
                     </a>
 
-                    <div className={classes.nav__list_container}>
-                        <input ref={check} type="checkbox" className={classes.nav__check} id="nav__check" />
-                        <label htmlFor="nav__check" className={classes.nav__toggle}>
-                            &nbsp;
-                        </label>
+                    <div className={classes.nav__list_container} data-open={isMenuOpen}>
+                        <button
+                            ref={menuButtonRef}
+                            type="button"
+                            className={classes.nav__toggle}
+                            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                            aria-controls="site-navigation"
+                            aria-expanded={isMenuOpen}
+                            onClick={handleHamToggle}
+                        >
+                            <span className={classes.nav__toggle_bar} aria-hidden="true"></span>
+                        </button>
+                        <button
+                            type="button"
+                            className={classes.nav__backdrop}
+                            aria-label="Close navigation menu"
+                            onClick={handleHamClose}
+                        ></button>
 
-                        <ul className={classes.nav__list}>
+                        <ul className={classes.nav__list} id="site-navigation">
                             {navItems.map(item => {
                                 return (
                                     <li key={item.label} className={classes.nav__item}>
@@ -92,11 +124,6 @@ export function NavBar() {
                                     </li>
                                 );
                             })}
-
-                            <li className={classes.hamCloseBtn} onClick={handleHamClose}>
-                                <span className="icon icon-arrow-thin-right"></span>
-                                Close
-                            </li>
                         </ul>
                     </div>
 
