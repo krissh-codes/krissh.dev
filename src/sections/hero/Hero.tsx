@@ -1,6 +1,13 @@
 import { FaArrowRight } from 'react-icons/fa6';
+import { LuMail } from 'react-icons/lu';
 import { Button, Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
+
+
+
+
+
+
 
 export function Hero() {
     return (
@@ -22,7 +29,7 @@ export function Hero() {
                     in enterprise product development.
                 </div>
                 <div className={classes.hero__cta}>
-                    <Button link="#contact" variant="sm">
+                    <Button link="#contact" variant="sm" specialIcon={<LuMail />}>
                         Get in touch
                     </Button>
 

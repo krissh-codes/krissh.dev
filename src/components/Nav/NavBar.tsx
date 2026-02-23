@@ -6,6 +6,7 @@ import { LuMail } from 'react-icons/lu';
 import { MdWorkOutline } from 'react-icons/md';
 import { Button } from '@components';
 import classes from './navbar.module.scss';
+import { FaRegFileLines } from 'react-icons/fa6';
 
 declare global {
     interface Window {
@@ -127,7 +128,7 @@ export function NavBar() {
                         </ul>
                     </div>
 
-                    <Button link="/resume" target="blank">Résumé</Button>
+                    <Button link="/resume" target="blank" specialIcon={<FaRegFileLines />}>Résumé</Button>
                 </div>
             </Fade>
         </nav>
