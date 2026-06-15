@@ -20,7 +20,7 @@ export function About() {
                             <picture>
                                 <source
                                     type="image/webp"
-                                    srcSet="/images/Krissh/Pro/Krissh-320./images/Krissh/Pro/Krissh-480./images/Krissh/Pro/Krissh-605.webpimages/Krissh-605.webp 605w"
+                                    srcSet="/images/Krissh/Pro/Krissh-320.webp 320w ./images/Krissh/Pro/Krissh-480.webp 480w ./images/Krissh/Pro/Krissh-605.webp images/Krissh-605.webp 605w"
                                     sizes="(max-width: 768px) 80vw, 30vw"
                                 />
                                 <img
