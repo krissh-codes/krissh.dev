@@ -1,0 +1,17 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  netlify-cli: true
+  sharp: true
+  unix-dgram: true
+minimumReleaseAgeExclude:
+  - fastify@5.8.1
+  - file-type@21.3.1
+  - fastify@5.8.3
+  - lodash@4.17.24
+  - '@fastify/static@9.1.1'
+  - fastify@5.8.5
+  - multiparty@4.2.4
+  - ws@8.20.1
+  - uuid@13.0.1
+  - esbuild@0.28.1
