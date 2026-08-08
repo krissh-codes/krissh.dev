@@ -116,7 +116,9 @@
             content: '';
             left: 50%;
             transform: translateX(-50%);
-            transition: transform var(--animation-duration-default), opacity var(--animation-duration-default),
+            transition:
+                transform var(--animation-duration-default),
+                opacity var(--animation-duration-default),
                 width var(--animation-duration-default);
         }
     }

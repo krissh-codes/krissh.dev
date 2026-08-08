@@ -3,12 +3,6 @@ import { LuMail } from 'react-icons/lu';
 import { Button, Emoji, HyperLink, NavBar, TimeSince } from '@components';
 import classes from './hero.module.scss';
 
-
-
-
-
-
-
 export function Hero() {
     return (
         <section className={`section__plain ${classes.hero}`}>

@@ -37,6 +37,34 @@
                 background-color: var(--translucent-darker);
                 border-radius: var(--radius-lg);
             }
+
+            &__wand {
+                position: absolute;
+                bottom: var(--gap-md);
+                right: var(--gap-md);
+                width: var(--gap-lg);
+                height: var(--gap-lg);
+                backdrop-filter: blur(10px);
+                border-radius: var(--radius-lg);
+                scale: 0;
+                display: grid;
+                place-content: center;
+                background-color: var(--primary-translucent);
+                color: var(--primary-dark);
+            }
+        }
+
+        .profile:hover {
+            .profile__wand {
+                scale: 1;
+                transition: all ease var(--animation-duration-default);
+
+                &:hover {
+                    background-color: var(--primary-light);
+                    box-shadow: var(--glow);
+                    color: var(--color-white);
+                }
+            }
         }
     }
 

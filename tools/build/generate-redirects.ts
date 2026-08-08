@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 
 export interface RedirectEntry {
     aliases?: string[];
@@ -14,7 +14,7 @@ export function generateRedirects(jsonPath: fs.PathOrFileDescriptor, outputPath:
     Object.keys(data).forEach(key => {
         const { aliases = [], url } = data[key];
         [key, ...aliases].forEach(alias => {
-            redirects += `/${alias}\t\t${url}\t\t301\n`
+            redirects += `/${alias}\t\t${url}\t\t301\n`;
         });
     });
 

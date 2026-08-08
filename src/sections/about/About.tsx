@@ -1,4 +1,5 @@
 import { GrContactInfo } from 'react-icons/gr';
+import { PiMagicWandDuotone } from 'react-icons/pi';
 import { SlideUp } from '@animations';
 import { Emoji, SocialLinks, TimeSince } from '@components';
 import classes from './about.module.scss';
@@ -35,6 +36,10 @@ export function About() {
                                     style={{ width: '100%', height: 'auto' }}
                                 />
                             </picture>
+
+                            <div className={classes.profile__wand}>
+                                <PiMagicWandDuotone size={24} />
+                            </div>
                         </figure>
 
                         <div className={classes.about__text}>

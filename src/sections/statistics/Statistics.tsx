@@ -55,7 +55,7 @@ export function Statistics() {
         let isSubscribed = true;
 
         fetchGitHubStats()
-            .then((nextStats) => {
+            .then(nextStats => {
                 if (!isSubscribed || !nextStats) return;
                 setPrefetchedStats(nextStats);
             })

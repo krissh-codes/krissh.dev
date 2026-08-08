@@ -78,7 +78,7 @@
                 width: 1em;
                 opacity: 0;
                 scale: 0;
-                translate: -.5em .8em;
+                translate: -0.5em 0.8em;
                 rotate: -45deg;
                 transition: all var(--animation-duration-default);
             }
@@ -86,7 +86,7 @@
             &:hover svg {
                 opacity: 1;
                 scale: 1;
-                translate: .3em .1em;
+                translate: 0.3em 0.1em;
             }
         }
     }

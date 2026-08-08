@@ -29,11 +29,11 @@
  */
 @mixin respond($breakpoint) {
     @if ($breakpoint==xs) {
-            @media only screen and (max-width: 30em) {
-                //480 = 30em (1em = 16px)
-                @content;
-            }
+        @media only screen and (max-width: 30em) {
+            //480 = 30em (1em = 16px)
+            @content;
         }
+    }
 
     @if ($breakpoint==phone) {
         @media only screen and (max-width: 37.5em) {

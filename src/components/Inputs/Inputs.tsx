@@ -34,10 +34,8 @@ interface InputProps<ET extends HTMLElement> {
     type?: string;
 }
 
-type TextInputProps = InputProps<HTMLInputElement> &
-    Pick<InputHTMLAttributes<HTMLInputElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
-type TextAreaProps = InputProps<HTMLTextAreaElement> &
-    Pick<TextareaHTMLAttributes<HTMLTextAreaElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
+type TextInputProps = InputProps<HTMLInputElement> & Pick<InputHTMLAttributes<HTMLInputElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
+type TextAreaProps = InputProps<HTMLTextAreaElement> & Pick<TextareaHTMLAttributes<HTMLTextAreaElement>, 'autoComplete' | 'required' | 'minLength' | 'maxLength'>;
 
 export function TextArea(props: TextAreaProps) {
     return (
