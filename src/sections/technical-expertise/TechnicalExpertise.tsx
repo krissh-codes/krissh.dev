@@ -1,9 +1,7 @@
-import { Fade } from 'react-awesome-reveal';
-import { FiChevronRight } from 'react-icons/fi';
 import { LiaLaptopCodeSolid } from 'react-icons/lia';
 import { SlideUp } from '@animations';
 import { WithTooltip } from '@components';
-import { KNOWN_TECH, SKILL_POINTS } from './data';
+import { BENTO_CARDS } from './data';
 import classes from './skills.module.scss';
 
 export function TechnicalExpertise() {
@@ -16,36 +14,49 @@ export function TechnicalExpertise() {
                 <h2>Technical Expertise</h2>
             </header>
 
-            <div className={classes.skills_container}>
-                <ul className={classes.skills_desc}>
-                    <SlideUp damping={0.1} delay={0} cascade={true} triggerOnce={true}>
-                        {SKILL_POINTS.map(item => (
-                            <li key={item.title} className={classes.skills_desc__item}>
-                                <h3 className={classes.skills_desc__item__title}>
-                                    <FiChevronRight className={classes.skills_desc__item__title__bullet} /> {item.title}:
-                                </h3>
-                                <div className={classes.skills_desc__item__text}>{item.description}</div>
-                            </li>
-                        ))}
-                    </SlideUp>
-                </ul>
-                <aside>
-                    <Fade cascade={true} damping={0.1} delay={0.5} triggerOnce={true}>
-                        {KNOWN_TECH.map(item => (
-                            <div key={item.title} className={classes.tech_container}>
-                                <h4>{item.title}</h4>
-                                <div className={classes.tech_icons}>
-                                    {item.items.map(tech => (
+            <SlideUp damping={0.1} delay={0} triggerOnce={true}>
+                <div className={classes.bento_grid}>
+                    {BENTO_CARDS.map(card => (
+                        <div key={card.id} className={`${classes.bento_card} ${classes[`bento_card__${card.id}`]}`}>
+                            <div className={classes.bento_card__header}>
+                                <div className={classes.bento_card__icon_box}>
+                                    {card.icon}
+                                </div>
+                                <div className={classes.bento_card__title_group}>
+                                    <span className={classes.bento_card__badge}>{card.badge}</span>
+                                    <h3 className={classes.bento_card__title}>{card.title}</h3>
+                                </div>
+                            </div>
+
+                            <div className={classes.bento_card__tech_section}>
+                                <span className={classes.bento_card__section_label}>Technologies & Tools</span>
+                                <div className={classes.bento_card__tech_icons}>
+                                    {card.tech.map(tech => (
                                         <WithTooltip key={tech.title} tooltipText={tech.title}>
-                                            {tech.icon}
+                                            <div className={classes.tech_icon_tile}>
+                                                {tech.icon}
+                                            </div>
                                         </WithTooltip>
                                     ))}
                                 </div>
                             </div>
-                        ))}
-                    </Fade>
-                </aside>
-            </div>
+
+                            <div className={classes.bento_card__pills_section}>
+                                <span className={classes.bento_card__section_label}>Core Capabilities</span>
+                                <div className={classes.bento_card__pills}>
+                                    {card.pills.map(pill => (
+                                        <span key={pill} className={classes.bento_card__pill}>
+                                            {pill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </SlideUp>
         </section>
     );
 }
+
+

@@ -1,126 +1,113 @@
 import { DiRedis } from 'react-icons/di';
+import { FaNodeJs } from 'react-icons/fa';
+import { FiCode, FiDatabase, FiLayout, FiServer } from 'react-icons/fi';
 import { LiaReact } from 'react-icons/lia';
 import { RiJavaLine, RiJavascriptLine } from 'react-icons/ri';
-import { SiCsswizardry, SiExpress, SiNestjs, SiPostgresql, SiSpringboot } from 'react-icons/si';
-import { TbBrandFigma, TbBrandGit, TbBrandHtml5, TbBrandMongodb, TbBrandNextjs, TbBrandSass, TbBrandTypescript } from 'react-icons/tb';
+import { SiApachekafka, SiCsswizardry, SiDocker, SiExpress, SiNestjs, SiPostgresql, SiRabbitmq, SiSpringboot } from 'react-icons/si';
+import { TbBrandFigma, TbBrandGit, TbBrandHtml5, TbBrandMongodb, TbBrandSass, TbBrandTypescript } from 'react-icons/tb';
 
-export const SKILL_POINTS = [
-    {
-        title: 'Full-Stack Development',
-        description: 'Capable of handling both server-side and client-side development, integrating backend services with modern front-end frameworks.'
-    },
-    {
-        title: 'API Design & Development',
-        description: 'Skilled in designing, developing, and maintaining RESTful APIs, ensuring scalability and high performance.'
-    },
-    {
-        title: 'Database Management',
-        description: 'Experienced in crafting and optimizing database schemas, ensuring well-structured, normalized, and efficient data storage.'
-    },
-    {
-        title: 'System Architecture',
-        description: 'Proficient in creating detailed architecture, flow, and class diagrams, facilitating streamlined development and clear communication.'
-    },
-    {
-        title: 'Code Quality & Best Practices',
-        description: 'Strong focus on writing clean, maintainable code, adhering to SOLID principles, software design patterns, and industry best practices.'
-    },
-    {
-        title: 'Performance Optimization',
-        description: 'Experienced in conducting in-depth performance analysis and implementing optimizations to enhance system efficiency.'
-    },
-    {
-        title: 'Version Control & Collaboration',
-        description: 'Proficient in using Git for version control, adept at managing branches, resolving conflicts, and maintaining a structured workflow.'
-    }
-];
+export interface TechItem {
+    title: string;
+    icon: React.ReactNode;
+}
 
-const LANGUAGES = [
-    {
-        title: 'Java',
-        icon: <RiJavaLine />
-    },
-    {
-        title: 'JavaScript',
-        icon: <RiJavascriptLine size="4.4rem" />
-    },
-    {
-        title: 'TypeScript',
-        icon: <TbBrandTypescript />
-    },
-    {
-        title: 'HTML',
-        icon: <TbBrandHtml5 />
-    },
-    {
-        title: 'CSS',
-        icon: <SiCsswizardry style={{ transform: 'scale(.75)' }} />
-    },
-    {
-        title: 'Sass',
-        icon: <TbBrandSass />
-    }
-];
-const FRAMEWORKS = [
-    {
-        title: 'React',
-        icon: <LiaReact />
-    },
-    {
-        title: 'Next.js',
-        icon: <TbBrandNextjs />
-    },
-    {
-        title: 'Spring Boot',
-        icon: <SiSpringboot style={{ transform: 'scale(.9)' }} />
-    },
-    {
-        title: 'Nest.js',
-        icon: <SiNestjs style={{ transform: 'scale(.85)' }} />
-    },
-    {
-        title: 'Express',
-        icon: <SiExpress />
-    }
-];
+export interface BentoCardData {
+    id: string;
+    title: string;
+    badge: string;
+    icon: React.ReactNode;
+    tech: TechItem[];
+    pills: string[];
+}
 
-const TOOLS = [
+export const BENTO_CARDS: BentoCardData[] = [
     {
-        title: 'Git',
-        icon: <TbBrandGit />
+        id: 'languages',
+        title: 'Languages & Core Runtimes',
+        badge: 'Core Foundation',
+        icon: <FiCode />,
+        tech: [
+            { title: 'Java', icon: <RiJavaLine /> },
+            { title: 'TypeScript', icon: <TbBrandTypescript /> },
+            { title: 'JavaScript', icon: <RiJavascriptLine style={{ fontSize: '1.1em' }} /> },
+            { title: 'Node.js', icon: <FaNodeJs /> },
+            { title: 'HTML5', icon: <TbBrandHtml5 /> },
+            { title: 'CSS3', icon: <SiCsswizardry style={{ transform: 'scale(.75)' }} /> },
+            { title: 'Sass', icon: <TbBrandSass /> }
+        ],
+        pills: [
+            'Node.js Event Loop & Runtimes',
+            'SOLID Principles & Design Patterns',
+            'Object-Oriented Programming',
+            'Functional Programming',
+            'Type Safety',
+            'Performance Optimization'
+        ]
     },
     {
-        title: 'Figma',
-        icon: <TbBrandFigma />
-    }
-];
-
-const DATABASES = [
-    {
-        title: 'PostgreSQL',
-        icon: <SiPostgresql />
+        id: 'frontend',
+        title: 'Frontend & Web UI',
+        badge: 'Client Architecture',
+        icon: <FiLayout />,
+        tech: [
+            { title: 'React', icon: <LiaReact /> },
+            { title: 'Figma', icon: <TbBrandFigma /> },
+            { title: 'HTML5', icon: <TbBrandHtml5 /> },
+            { title: 'CSS3', icon: <SiCsswizardry style={{ transform: 'scale(.75)' }} /> },
+            { title: 'Sass', icon: <TbBrandSass /> }
+        ],
+        pills: [
+            'Component Architecture',
+            'UI/UX Prototyping',
+            'State Management',
+            'Single-Page Applications',
+            'Responsive UI/UX'
+        ]
     },
     {
-        title: 'MongoDB',
-        icon: <TbBrandMongodb />
+        id: 'backend',
+        title: 'Backend Services & Systems',
+        badge: 'Server Architecture & DevOps',
+        icon: <FiServer />,
+        tech: [
+            { title: 'Spring Boot', icon: <SiSpringboot style={{ transform: 'scale(.9)' }} /> },
+            { title: 'Nest.js', icon: <SiNestjs style={{ transform: 'scale(.85)' }} /> },
+            { title: 'Express', icon: <SiExpress /> },
+            { title: 'Apache Kafka', icon: <SiApachekafka /> },
+            { title: 'RabbitMQ', icon: <SiRabbitmq /> },
+            { title: 'Docker', icon: <SiDocker /> }
+        ],
+        pills: [
+            'Distributed Systems',
+            'Microservices Architecture',
+            'Containerization & Docker',
+            'Event-Driven Architecture',
+            'RESTful API Design',
+            'Message Queuing & Streaming'
+        ]
     },
     {
-        title: 'Redis',
-        icon: <DiRedis style={{ transform: 'scale(1.3)' }} />
+        id: 'database',
+        title: 'Databases & Storage',
+        badge: 'Data Layer & Workflow',
+        icon: <FiDatabase />,
+        tech: [
+            { title: 'PostgreSQL', icon: <SiPostgresql /> },
+            { title: 'MongoDB', icon: <TbBrandMongodb /> },
+            { title: 'Redis', icon: <DiRedis style={{ transform: 'scale(1.3)' }} /> },
+            { title: 'Git', icon: <TbBrandGit /> }
+        ],
+        pills: [
+            'Database Management',
+            'Schema Normalization',
+            'Query Optimization',
+            'In-Memory Caching',
+            'Version Control (Git)',
+            'ACID Transactions'
+        ]
     }
 ];
 
-export const KNOWN_TECH = [
-    {
-        title: 'Languages',
-        items: LANGUAGES
-    },
-    {
-        title: 'Frameworks & Libraries',
-        items: FRAMEWORKS
-    },
-    {
-        title: 'Databases & Tools',
-        items: DATABASES.concat(TOOLS)
-    }
-];
+
+
+
