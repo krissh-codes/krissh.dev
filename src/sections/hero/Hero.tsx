@@ -5,16 +5,18 @@ import { Button, Emoji, HyperLink, NavBar } from '@components';
 import classes from './hero.module.scss';
 
 const PUNCHLINES = [
-    'I don’t fix systems, I make them unbreakable',
-    'I don’t wait for scale, I’m already ahead of it',
-    'Problems don’t reach production if I’ve seen them',
-    'I don’t optimize, I eliminate the need to',
-    'I don’t fix things, I make them bulletproof',
-    'I don’t fight fires, I prevent them',
-    'I don’t second-guess, I course-correct',
-    'If my name’s on it, it lands',
-    'I make clarity the default',
-    'I don’t consider it done until each pixel is right where it belongs'
+    'I don’t fix systems, I make them unbreakable.',
+    'I don’t wait for scale, I’m already ahead of it.',
+    'Problems don’t reach production if I’ve seen them.',
+    'I don’t optimize, I eliminate the need to.',
+    'I don’t fix things, I make them bulletproof.',
+    'I don’t fight fires, I prevent them.',
+    'I don’t second-guess, I course-correct.',
+    'If my name’s on it, it lands.',
+    'I make clarity the default.',
+    'I don’t consider it done until each pixel is right where it belongs.',
+    'I make quality the baseline, not the upgrade.',
+    'I don’t ship “works”. I ship “correct”.'
 ];
 
 export function Hero() {
