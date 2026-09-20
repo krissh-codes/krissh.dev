@@ -28,7 +28,7 @@
     --ambient-glow-soft: hsla(36, 92%, 48%, 0.08);
     --ambient-glow-card: hsla(24, 95%, 53%, 0.10);
 
-    --nav-bg: hsla(24, 15%, 10%, 0.82);
+    --nav-bg: hsla(24, 15%, 10%, 0.42);
     --nav-border: hsla(24, 85%, 60%, 0.15);
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
@@ -196,10 +196,10 @@ body {
         radial-gradient(ellipse 80% 60% at 90% 0%, var(--ambient-glow-card) 0%, transparent 65%),
         radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-glow-soft) 0%, transparent 65%),
         var(--bg-2);
-    -webkit-backdrop-filter: blur(28px) saturate(170%);
-    backdrop-filter: blur(28px) saturate(170%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid var(--translucent-darker);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.32), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.3), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
     max-width: 136rem;
     width: 95%;
     margin: var(--gap-xl) auto;

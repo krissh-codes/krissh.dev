@@ -5,29 +5,32 @@
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--primary-translucent);
-    padding: 1.8rem 1.2rem;
+    background: var(--bg-2);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid var(--translucent-darker);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+    padding: 1.8rem 1.6rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 0 2rem var(--primary-translucent);
     cursor: default;
     transition:
-        border-radius 0.4s,
-        background-color var(--animation-duration-long),
-        color var(--animation-duration-long);
+        transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color var(--animation-duration-default);
 
     & > * {
         transition: color var(--animation-duration-default);
     }
 
     &:hover {
-        background-color: var(--primary-dark);
-        border-radius: var(--radius-md);
-        @include mixins.theme(dark) {
-            background-color: var(--primary-light);
-        }
+        transform: translateY(-4px);
+        border-color: var(--primary-dark);
+        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-translucent);
+        background-color: var(--primary-translucent);
 
-        & > * {
-            color: var(--contrast-bg);
+        @include mixins.theme(dark) {
+            border-color: var(--primary-light);
         }
     }
 
@@ -38,5 +41,6 @@
 
     &__caption {
         font: var(--text-size-sm) var(--font-mono);
+        color: var(--fg-3);
     }
 }
