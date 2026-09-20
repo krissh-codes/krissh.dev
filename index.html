@@ -117,6 +117,21 @@
                     fill-opacity: 1;
                 }
             }
+
+            @media (prefers-color-scheme: light) {
+                #app-preloader {
+                    background-color: #faf7f2;
+                }
+
+                .preloader-glow-bg {
+                    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, rgba(234, 88, 12, 0.08) 55%, transparent 75%);
+                    filter: blur(28px);
+                }
+
+                .preloader-logo path {
+                    filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.45)) drop-shadow(0 0 14px rgba(234, 88, 12, 0.2));
+                }
+            }
         </style>
         <script>
             setTimeout(function() {
