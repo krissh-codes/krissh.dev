@@ -5,32 +5,31 @@
 @use '../styles/misc';
 
 :root {
-    --bg-1: #faf7f2;
-    --bg-2: hsla(24, 30%, 96%, 0.4);
-    --contrast-bg: #{variables.$light-1};
-    --color-white: #{variables.$light-1};
-    --fg-1: #{variables.$dark-1};
-    --fg-2: #{variables.$dark-2};
-    --fg-3: #{variables.$dark-3};
-    --primary-light: #{variables.$primary-dark};
-    --primary-dark: #{variables.$primary-light};
+    --bg-1: #0c0a09;
+    --bg-2: hsla(24, 15%, 11%, 0.38);
+    --contrast-bg: #1c1917;
+    --fg-1: #{variables.$light-1};
+    --fg-2: #{variables.$light-2};
+    --fg-3: #{variables.$light-3};
+    --primary-light: #{variables.$primary-light};
+    --primary-dark: #{variables.$primary-dark};
     --primary-translucent: #{variables.$primary-translucent};
     --primary-translucent-dark: #{variables.$primary-translucent-dark};
 
-    --translucent-dark: hsla(24, 20%, 10%, 0.08);
-    --translucent-darker: hsla(24, 20%, 10%, 0.15);
-    --noise-opacity: 0.2;
+    --translucent-dark: hsla(30, 20%, 90%, 0.08);
+    --translucent-darker: hsla(30, 20%, 90%, 0.14);
+    --noise-opacity: 0.12;
 
-    --bg-image-brightness: 0.95;
+    --bg-image-brightness: 0.68;
     --bg-image-blur: 18px;
-    --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.45) 0%, rgba(250, 247, 242, 0.65) 100%);
+    --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.38) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
 
-    --ambient-glow: hsla(24, 95%, 53%, 0.04);
-    --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
-    --ambient-glow-card: hsla(24, 95%, 53%, 0.04);
+    --ambient-glow: hsla(24, 95%, 53%, 0.12);
+    --ambient-glow-soft: hsla(36, 92%, 48%, 0.08);
+    --ambient-glow-card: hsla(24, 95%, 53%, 0.10);
 
-    --nav-bg: hsla(30, 25%, 98%, 0.85);
-    --nav-border: hsla(24, 30%, 20%, 0.08);
+    --nav-bg: hsla(24, 15%, 10%, 0.82);
+    --nav-border: hsla(24, 85%, 60%, 0.15);
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
@@ -92,31 +91,31 @@
     }
 }
 
-@include mixins.theme(dark) {
+@include mixins.theme(light) {
     :root {
-        --bg-1: #0c0a09;
-        --bg-2: hsla(24, 15%, 11%, 0.38);
-        --contrast-bg: #1c1917;
-        --fg-1: #{variables.$light-1};
-        --fg-2: #{variables.$light-2};
-        --fg-3: #{variables.$light-3};
-        --primary-light: #{variables.$primary-light};
-        --primary-dark: #{variables.$primary-dark};
+        --bg-1: #faf7f2;
+        --bg-2: hsla(24, 30%, 96%, 0.4);
+        --contrast-bg: #{variables.$light-1};
+        --fg-1: #{variables.$dark-1};
+        --fg-2: #{variables.$dark-2};
+        --fg-3: #{variables.$dark-3};
+        --primary-light: #{variables.$primary-dark};
+        --primary-dark: #{variables.$primary-light};
 
-        --translucent-dark: hsla(30, 20%, 90%, 0.08);
-        --translucent-darker: hsla(30, 20%, 90%, 0.14);
-        --noise-opacity: 0.12;
+        --translucent-dark: hsla(24, 20%, 10%, 0.08);
+        --translucent-darker: hsla(24, 20%, 10%, 0.15);
+        --noise-opacity: 0.2;
 
-        --bg-image-brightness: 0.65;
+        --bg-image-brightness: 0.95;
         --bg-image-blur: 18px;
-        --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.35) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.06) 0%, transparent 70%);
+        --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.45) 0%, rgba(250, 247, 242, 0.65) 100%);
 
-        --ambient-glow: hsla(24, 95%, 53%, 0.14);
-        --ambient-glow-soft: hsla(36, 92%, 48%, 0.09);
-        --ambient-glow-card: hsla(24, 95%, 53%, 0.12);
+        --ambient-glow: hsla(24, 95%, 53%, 0.04);
+        --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
+        --ambient-glow-card: hsla(24, 95%, 53%, 0.04);
 
-        --nav-bg: hsla(24, 15%, 10%, 0.82);
-        --nav-border: hsla(24, 85%, 60%, 0.15);
+        --nav-bg: hsla(30, 25%, 98%, 0.85);
+        --nav-border: hsla(24, 30%, 20%, 0.08);
     }
 }
 
@@ -141,13 +140,13 @@ body {
     &::before {
         content: '';
         position: fixed;
-        inset: -25px;
+        inset: -50px;
         background-image: url('/images/bg-wallpaper.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        filter: blur(var(--bg-image-blur, 18px)) brightness(var(--bg-image-brightness, 0.65)) saturate(1.15);
-        transform: scale(1.04);
+        filter: blur(var(--bg-image-blur, 18px)) brightness(var(--bg-image-brightness, 0.68)) saturate(1.18);
+        transform: scale(1.06);
         z-index: -2;
         pointer-events: none;
         will-change: transform, filter;
@@ -289,10 +288,17 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-[tabindex]:focus-visible {
+[tabindex]:not([tabindex='-1']):focus-visible {
     outline: 2px solid var(--primary-dark);
     outline-offset: 3px;
     border-radius: var(--radius-xs);
+}
+
+main:focus,
+main:focus-visible,
+[tabindex='-1']:focus,
+[tabindex='-1']:focus-visible {
+    outline: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
