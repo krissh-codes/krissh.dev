@@ -18,15 +18,12 @@
     --card-border-hover: var(--primary-dark);
 
     position: relative;
-    background:
-        radial-gradient(ellipse 85% 65% at 90% 0%, var(--card-accent-glow) 0%, transparent 65%),
-        radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-glow-soft) 0%, transparent 65%),
-        var(--bg-2);
+    background: var(--bg-2);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid var(--translucent-darker);
     border-radius: var(--radius-lg);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.3), 0 0 35px -10px var(--card-accent-glow), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-card), var(--card-inset-highlight);
     padding: 2.8rem;
     display: flex;
     flex-direction: column;
@@ -60,7 +57,7 @@
         inset: 0;
         border-radius: inherit;
         background: radial-gradient(circle 340px at 90% 10%, var(--card-accent-glow) 0%, transparent 80%);
-        opacity: 0.35;
+        opacity: 0;
         pointer-events: none;
         transition: opacity 0.4s ease, transform 0.4s ease;
         filter: blur(20px);
@@ -76,10 +73,10 @@
         transform: translateY(-5px);
         border-radius: var(--radius-md);
         border-color: var(--card-border-hover);
-        box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.32), 0 0 35px -5px var(--card-accent-glow), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+        box-shadow: var(--shadow-card-hover), 0 0 35px -6px var(--card-accent-glow), var(--card-inset-highlight);
 
         &::after {
-            opacity: 0.85;
+            opacity: 0.75;
             transform: scale(1.08);
         }
     }

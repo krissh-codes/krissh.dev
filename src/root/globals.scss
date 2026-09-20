@@ -32,6 +32,11 @@
     --nav-bg: hsla(24, 15%, 10%, 0.42);
     --nav-border: hsla(24, 85%, 60%, 0.15);
 
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.25), 0 20px 40px -20px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 14px 36px -8px rgba(0, 0, 0, 0.3), 0 24px 48px -18px rgba(0, 0, 0, 0.4);
+    --shadow-boxed: 0 12px 36px -12px rgba(0, 0, 0, 0.25), 0 24px 48px -20px rgba(0, 0, 0, 0.35);
+    --card-inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
     --green: #{variables.$green};
@@ -98,7 +103,7 @@
 @include mixins.theme(light) {
     :root {
         --bg-1: #faf7f2;
-        --bg-2: hsla(24, 30%, 96%, 0.4);
+        --bg-2: hsla(30, 25%, 98%, 0.46);
         --contrast-bg: #{variables.$light-1};
         --fg-1: #{variables.$dark-1};
         --fg-2: #{variables.$dark-2};
@@ -106,8 +111,8 @@
         --primary-light: #{variables.$primary-dark};
         --primary-dark: #{variables.$primary-light};
 
-        --translucent-dark: hsla(24, 20%, 10%, 0.08);
-        --translucent-darker: hsla(24, 20%, 10%, 0.15);
+        --translucent-dark: hsla(24, 20%, 10%, 0.06);
+        --translucent-darker: hsla(24, 20%, 10%, 0.11);
         --noise-opacity: 0.18;
 
         --bg-wallpaper-image: url('/images/bg-wallpaper-light.png');
@@ -119,8 +124,13 @@
         --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
         --ambient-glow-card: hsla(24, 95%, 53%, 0.04);
 
-        --nav-bg: hsla(30, 25%, 98%, 0.75);
+        --nav-bg: hsla(30, 25%, 98%, 0.50);
         --nav-border: hsla(24, 30%, 20%, 0.08);
+
+        --shadow-card: 0 10px 28px -10px rgba(70, 45, 25, 0.07), 0 2px 8px -2px rgba(70, 45, 25, 0.04);
+        --shadow-card-hover: 0 16px 36px -8px rgba(70, 45, 25, 0.1), 0 4px 12px -2px rgba(70, 45, 25, 0.05);
+        --shadow-boxed: 0 14px 38px -12px rgba(70, 45, 25, 0.08), 0 4px 14px -3px rgba(70, 45, 25, 0.04);
+        --card-inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
     }
 }
 
@@ -197,14 +207,11 @@ body {
 
 .section__boxed {
     position: relative;
-    background:
-        radial-gradient(ellipse 80% 60% at 90% 0%, var(--ambient-glow-card) 0%, transparent 65%),
-        radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-glow-soft) 0%, transparent 65%),
-        var(--bg-2);
+    background: var(--bg-2);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid var(--translucent-darker);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.3), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-boxed), var(--card-inset-highlight);
     max-width: 136rem;
     width: 95%;
     margin: var(--gap-xl) auto;

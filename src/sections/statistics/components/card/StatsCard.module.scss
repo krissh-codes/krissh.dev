@@ -9,7 +9,7 @@
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid var(--translucent-darker);
-    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-card), var(--card-inset-highlight);
     padding: 1.8rem 1.6rem;
     border-radius: var(--radius-lg);
     cursor: default;
@@ -28,7 +28,7 @@
         transform: translateY(-4px);
         border-radius: var(--radius-md);
         border-color: var(--primary-dark);
-        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-translucent);
+        box-shadow: var(--shadow-card-hover), 0 0 20px -4px var(--primary-translucent), var(--card-inset-highlight);
         background-color: var(--primary-translucent);
 
         @include mixins.theme(dark) {

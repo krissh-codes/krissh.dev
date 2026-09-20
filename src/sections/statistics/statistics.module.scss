@@ -14,7 +14,7 @@
         backdrop-filter: blur(24px) saturate(160%);
         border: 1px solid var(--translucent-darker);
         border-radius: var(--radius-lg);
-        box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-card), var(--card-inset-highlight);
         padding: 2.4rem 2rem;
         transition:
             transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -25,7 +25,7 @@
         &:hover {
             border-radius: var(--radius-md);
             border-color: var(--primary-translucent-dark);
-            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.28), 0 0 25px var(--primary-translucent);
+            box-shadow: var(--shadow-card-hover), 0 0 25px -5px var(--primary-translucent), var(--card-inset-highlight);
         }
     }
 
