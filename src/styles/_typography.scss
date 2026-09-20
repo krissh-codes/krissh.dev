@@ -30,17 +30,19 @@ h1 {
 h2 {
     font-size: var(--text-size-xxl);
     font-weight: 600;
-    color: var(--fg-2);
+    color: var(--fg-1);
 }
 
 h3 {
     font-size: var(--text-size-xl);
-    color: var(--fg-3);
+    font-weight: 600;
+    color: var(--fg-1);
 }
 
 h4 {
     font-size: var(--text-size-lg);
-    color: var(--fg-3);
+    font-weight: 500;
+    color: var(--fg-2);
 }
 
 h5,
@@ -55,12 +57,25 @@ div,
 body {
     font-size: var(--text-size-md);
     line-height: 1.6em;
+    color: var(--fg-2);
+}
+
+strong,
+b {
+    color: var(--fg-1);
+    font-weight: 600;
+}
+
+small {
+    font-size: var(--text-size-sm);
+    color: var(--fg-3);
 }
 
 li {
     font-size: var(--text-size-md);
     list-style: none;
     line-height: 1.4;
+    color: var(--fg-2);
 
     &:not(:last-child) {
         margin-bottom: 1rem;

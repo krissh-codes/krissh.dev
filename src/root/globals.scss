@@ -11,6 +11,7 @@
     --fg-1: #{variables.$light-1};
     --fg-2: #{variables.$light-2};
     --fg-3: #{variables.$light-3};
+    --fg-4: #{variables.$light-4};
     --primary-light: #{variables.$primary-light};
     --primary-dark: #{variables.$primary-dark};
     --primary-translucent: #{variables.$primary-translucent};
@@ -108,6 +109,7 @@
         --fg-1: #{variables.$dark-1};
         --fg-2: #{variables.$dark-2};
         --fg-3: #{variables.$dark-3};
+        --fg-4: #{variables.$dark-4};
         --primary-light: #{variables.$primary-dark};
         --primary-dark: #{variables.$primary-light};
 
@@ -141,7 +143,7 @@ html {
 }
 
 body {
-    color: var(--fg-3);
+    color: var(--fg-2);
     background-color: transparent;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
