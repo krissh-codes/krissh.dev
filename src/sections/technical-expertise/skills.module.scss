@@ -94,6 +94,13 @@
         --card-accent-translucent: hsla(192, 95%, 55%, 0.15);
         --card-accent-glow: hsla(192, 95%, 55%, 0.32);
         --card-border-hover: hsla(192, 95%, 55%, 0.6);
+
+        @include mixins.theme(light) {
+            --card-accent: hsl(192, 95%, 36%);
+            --card-accent-translucent: hsla(192, 95%, 36%, 0.12);
+            --card-accent-glow: hsla(192, 95%, 36%, 0.25);
+            --card-border-hover: hsla(192, 95%, 36%, 0.6);
+        }
     }
 
     &__backend {
@@ -108,6 +115,13 @@
         --card-accent-translucent: hsla(155, 85%, 48%, 0.15);
         --card-accent-glow: hsla(155, 85%, 48%, 0.32);
         --card-border-hover: hsla(155, 85%, 48%, 0.6);
+
+        @include mixins.theme(light) {
+            --card-accent: hsl(155, 85%, 32%);
+            --card-accent-translucent: hsla(155, 85%, 32%, 0.12);
+            --card-accent-glow: hsla(155, 85%, 32%, 0.25);
+            --card-border-hover: hsla(155, 85%, 32%, 0.6);
+        }
     }
 
     &__header {
