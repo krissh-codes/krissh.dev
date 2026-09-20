@@ -16,8 +16,24 @@
             grid-template-columns: 1fr;
         }
 
-        .description:not(:last-child) {
-            margin-bottom: 1.8rem;
+        div:not(:last-child) > .description {
+            margin-bottom: 1.4em;
+        }
+
+        .description {
+            font-size: var(--text-size-md);
+            line-height: 1.55em;
+            color: var(--fg-2);
+
+            &__lead {
+                font-size: 1.85rem;
+                line-height: 1.5em;
+                color: var(--fg-1);
+
+                @include mixins.respond(phone) {
+                    font-size: 1.7rem;
+                }
+            }
         }
 
         .profile {

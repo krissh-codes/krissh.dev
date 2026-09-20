@@ -44,10 +44,11 @@ export function About() {
 
                         <div className={classes.about__text}>
                             <SlideUp>
-                                <p className={classes.description}>
+                                <p className={`${classes.description} ${classes.description__lead}`}>
                                     <Emoji character="👋🏽" label="wave" />
-                                    Hello, world! I am Krissh, a Software Engineer with <TimeSince date={new Date('01-Feb-2020')} tooltip /> of programming experience and{' '}
-                                    <TimeSince date={new Date('04-Apr-2022')} tooltip /> of professional experience building enterprise web applications.
+                                    Hello, world! I am Krissh, a Software Engineer crafting scalable, high-performance web applications, with{' '}
+                                    <TimeSince date={new Date('01-Feb-2020')} tooltip /> of programming experience and{' '}
+                                    <TimeSince date={new Date('04-Apr-2022')} tooltip /> of professional experience in enterprise product development.
                                 </p>
                                 <p className={classes.description}>
                                     I build scalable, reliable software solutions across the stack. My work includes designing system architecture, modeling efficient database
