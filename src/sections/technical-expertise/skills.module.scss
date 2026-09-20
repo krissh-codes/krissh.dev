@@ -29,7 +29,9 @@
     gap: 2.4rem;
     position: relative;
     overflow: hidden;
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transition:
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
         border-color 0.35s ease,
         box-shadow 0.35s ease;
 
@@ -49,6 +51,7 @@
 
     &:hover {
         transform: translateY(-5px);
+        border-radius: var(--radius-md);
         border-color: var(--card-border-hover);
         box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.22), 0 0 25px var(--card-accent-translucent);
 
@@ -105,11 +108,15 @@
         color: var(--card-accent);
         font-size: 2.4rem;
         flex-shrink: 0;
-        transition: transform 0.3s ease, background 0.3s ease;
+        transition:
+            transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+            border-radius 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+            background 0.3s ease;
     }
 
     &:hover &__icon_box {
         transform: scale(1.06);
+        border-radius: var(--radius-sm);
     }
 
     &__title_group {
@@ -177,17 +184,23 @@
         font-family: var(--font-body);
         font-size: var(--text-size-sm);
         padding: 0.5rem 1.2rem;
-        border-radius: var(--radius-xl);
+        border-radius: var(--radius-full);
         background: var(--translucent-dark);
         color: var(--fg-2);
         border: 1px solid var(--translucent-dark);
-        transition: all 0.25s ease;
+        transition:
+            transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+            border-radius 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+            background 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease;
         cursor: default;
 
         &:hover {
             background: var(--card-accent-translucent);
             color: var(--card-accent);
             border-color: var(--card-border-hover);
+            border-radius: var(--radius-sm);
             transform: translateY(-2px);
         }
     }
@@ -203,7 +216,12 @@
     background: var(--translucent-dark);
     font-size: 2.6rem;
     color: var(--fg-1);
-    transition: all 0.25s ease;
+    transition:
+        transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
     border: 1px solid var(--translucent-dark);
     cursor: pointer;
 
@@ -211,6 +229,7 @@
         background: var(--card-accent-translucent, var(--primary-translucent));
         color: var(--card-accent, var(--primary-dark));
         border-color: var(--card-border-hover, var(--primary-dark));
+        border-radius: var(--radius-sm);
         transform: scale(1.12) translateY(-2px);
     }
 }

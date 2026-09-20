@@ -22,7 +22,13 @@
     background-color: var(--primary-translucent);
     background-image: linear-gradient(120deg, transparent 0%, transparent 50%, var(--primary-dark) 50%);
 
-    transition: all var(--animation-duration-default) ease-in-out;
+    transition:
+        transform var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+        background-position var(--animation-duration-default) ease-in-out,
+        box-shadow var(--animation-duration-default) ease-in-out,
+        border-color var(--animation-duration-default) ease-in-out,
+        color var(--animation-duration-default) ease-in-out;
 
     @include mixins.respond(phone) {
         max-height: 4rem;
@@ -39,6 +45,7 @@
     }
 
     &:hover,
+    &:focus-visible,
     &:active {
         background-position: 99%;
         box-shadow: 0 0 1rem var(--primary-dark);

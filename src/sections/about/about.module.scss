@@ -30,7 +30,10 @@
             img {
                 border-radius: var(--radius-xl);
                 background-color: var(--translucent-dark);
-                transition: all 0.2s;
+                transition:
+                    border-radius 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                    background-color 0.35s ease,
+                    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             &:hover img {
@@ -45,22 +48,27 @@
                 width: var(--gap-lg);
                 height: var(--gap-lg);
                 backdrop-filter: blur(10px);
-                border-radius: var(--radius-lg);
+                border-radius: var(--radius-md);
                 scale: 0;
                 display: grid;
                 place-content: center;
                 background-color: var(--primary-translucent);
                 color: var(--primary-dark);
+                transition:
+                    scale var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+                    border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+                    background-color var(--animation-duration-default) ease,
+                    box-shadow var(--animation-duration-default) ease;
             }
         }
 
         .profile:hover {
             .profile__wand {
                 scale: 1;
-                transition: all ease var(--animation-duration-default);
 
                 &:hover {
                     background-color: var(--primary-light);
+                    border-radius: var(--radius-sm);
                     box-shadow: var(--glow);
                     color: var(--color-white);
                 }

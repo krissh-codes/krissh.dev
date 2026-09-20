@@ -16,7 +16,11 @@
         cursor: pointer;
         border-radius: var(--radius-xs);
 
-        transition: all var(--animation-duration-default);
+        transition:
+            border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+            background-color var(--animation-duration-default) ease,
+            border-color var(--animation-duration-default) ease,
+            color var(--animation-duration-default) ease;
 
         &:first-child {
             border-top-left-radius: var(--radius-md);
@@ -28,9 +32,21 @@
             border-bottom-right-radius: var(--radius-md);
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
             background-color: var(--primary-light) !important;
             color: var(--contrast-bg) !important;
+            border-radius: var(--radius-xs);
+
+            &:first-child {
+                border-top-left-radius: var(--radius-sm);
+                border-bottom-left-radius: var(--radius-sm);
+            }
+
+            &:last-child {
+                border-top-right-radius: var(--radius-sm);
+                border-bottom-right-radius: var(--radius-sm);
+            }
         }
 
         &[aria-pressed='true'] {
@@ -38,6 +54,16 @@
             background-color: var(--primary-translucent);
             color: var(--primary-light);
             font-weight: 600;
+
+            &:first-child {
+                border-top-left-radius: var(--radius-sm);
+                border-bottom-left-radius: var(--radius-sm);
+            }
+
+            &:last-child {
+                border-top-right-radius: var(--radius-sm);
+                border-bottom-right-radius: var(--radius-sm);
+            }
         }
     }
 }

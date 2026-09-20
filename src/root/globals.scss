@@ -48,12 +48,13 @@
     --text-size-xxl: 4.4rem;
     --text-size-xxxl: 5.6rem;
 
-    --radius-xs: 0.2rem;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.8rem;
-    --radius-lg: 1.6rem;
-    --radius-xl: 3rem;
-    --radius-xxl: 5rem;
+    --radius-xs: 0.6rem;
+    --radius-sm: 0.9rem;
+    --radius-md: 1.4rem;
+    --radius-lg: 2.2rem;
+    --radius-xl: 3.2rem;
+    --radius-xxl: 4.4rem;
+    --radius-full: 9999px;
 
     --gap-xs: 0.5rem;
     --gap-sm: 1rem;
@@ -73,8 +74,10 @@
         --text-size-xxl: 3.6rem;
         --text-size-xxxl: 4.4rem;
 
-        --radius-lg: 1.4rem;
-        --radius-xl: 2rem;
+        --radius-sm: 0.8rem;
+        --radius-md: 1.2rem;
+        --radius-lg: 1.8rem;
+        --radius-xl: 2.6rem;
         --radius-xxl: 3.6rem;
         --gap-xl: 5rem;
         --gap-xxl: 6rem;
@@ -230,10 +233,10 @@ body {
     }
 
     @include mixins.respond(phone-large) {
-        width: 100%;
+        width: calc(100% - 2.4rem);
         margin: var(--gap-lg) auto;
         padding: var(--gap-lg) var(--gap-md);
-        border-radius: 0;
+        border-radius: var(--radius-lg);
     }
 
     >* {
@@ -291,7 +294,7 @@ textarea:focus-visible,
 [tabindex]:not([tabindex='-1']):focus-visible {
     outline: 2px solid var(--primary-dark);
     outline-offset: 3px;
-    border-radius: var(--radius-xs);
+    border-radius: var(--radius-sm);
 }
 
 main:focus,

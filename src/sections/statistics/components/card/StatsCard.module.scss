@@ -15,6 +15,7 @@
     cursor: default;
     transition:
         transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-radius 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
         border-color 0.3s ease,
         box-shadow 0.3s ease,
         background-color var(--animation-duration-default);
@@ -25,6 +26,7 @@
 
     &:hover {
         transform: translateY(-4px);
+        border-radius: var(--radius-md);
         border-color: var(--primary-dark);
         box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-translucent);
         background-color: var(--primary-translucent);
