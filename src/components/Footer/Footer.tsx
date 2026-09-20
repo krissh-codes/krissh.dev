@@ -11,11 +11,13 @@ export function Footer() {
             <div className={classes.footer__social}>
                 <SocialLinks />
             </div>
-            <div className={classes.footer__line1}>
-                <MdOutlineDesignServices /> &amp; <IoCodeSlashSharp /> with <TiHeartOutline /> &amp; <TbBrandReact />
-            </div>
-            <div className={classes.footer__line2}>
-                by <strong>Krissh</strong>
+            <div className={classes.footer__credits}>
+                <span className={classes.footer__line1}>
+                    <MdOutlineDesignServices /> &amp; <IoCodeSlashSharp /> with <TiHeartOutline /> &amp; <TbBrandReact />
+                </span>
+                <span className={classes.footer__line2}>
+                    by <strong>Krissh</strong>
+                </span>
             </div>
         </footer>
     );
