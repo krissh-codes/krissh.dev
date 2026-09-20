@@ -6,7 +6,7 @@
 
 :root {
     --bg-1: transparent;
-    --bg-2: hsla(0, 0%, 0%, 0.08);
+    --bg-2: hsla(0, 0%, 0%, 0.14);
     --contrast-bg: #{variables.$light-1};
     --color-white: #{variables.$light-1};
     --fg-1: #{variables.$dark-1};
@@ -19,6 +19,7 @@
 
     --translucent-dark: hsla(0, 0%, 0%, 0.1);
     --translucent-darker: hsla(0, 0%, 0%, 0.3);
+    --noise-opacity: 0.35;
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
@@ -83,7 +84,7 @@
 @include mixins.theme(dark) {
     :root {
         --bg-1: transparent;
-        --bg-2: hsla(0, 0%, 0%, 0.45);
+        --bg-2: hsla(0, 0%, 0%, 0.72);
         --contrast-bg: #{variables.$dark-2};
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
@@ -93,6 +94,7 @@
 
         --translucent-dark: hsla(0, 0%, 100%, 0.1);
         --translucent-darker: hsla(0, 0%, 100%, 0.2);
+        --noise-opacity: 0.2;
     }
 }
 
@@ -141,22 +143,63 @@ body {
 }
 
 .section__boxed {
+    position: relative;
     background: var(--bg-2);
+    border: 1px solid var(--translucent-dark);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.25);
+    max-width: 136rem;
     width: 95%;
-    margin: 0 auto;
+    margin: var(--gap-xl) auto;
+    padding: var(--gap-xl) var(--gap-lg);
     border-radius: var(--radius-xxl);
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 160px 160px;
+        opacity: var(--noise-opacity, 0.4);
+        mix-blend-mode: overlay;
+        z-index: 0;
+    }
+
+    @include mixins.respond(xdr) {
+        max-width: 156rem;
+    }
+
+    @include mixins.respond(tab-lan) {
+        width: 95%;
+    }
 
     @include mixins.respond(phone-large) {
         width: 100%;
+        margin: var(--gap-lg) auto;
+        padding: var(--gap-lg) var(--gap-md);
         border-radius: 0;
     }
 
-    > * {
-        width: 110rem;
+    >* {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 120rem;
         margin: 0 auto;
 
+        @include mixins.respond(desktop) {
+            width: 90%;
+        }
+
+        @include mixins.respond(xdr) {
+            max-width: 140rem;
+        }
+
         @include mixins.respond(tab-lan) {
-            max-width: 90%;
+            max-width: 100%;
         }
     }
 }
