@@ -37,25 +37,23 @@
     &::before {
         content: '';
         position: absolute;
-        top: -30%;
-        right: -20%;
-        width: 65%;
-        height: 85%;
-        background: radial-gradient(circle, var(--card-accent-glow) 0%, transparent 70%);
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(circle 320px at 90% 10%, var(--card-accent-glow) 0%, transparent 80%);
         opacity: 0.35;
         pointer-events: none;
-        transition: opacity 0.35s ease, transform 0.35s ease;
-        border-radius: 50%;
+        transition: opacity 0.4s ease;
+        filter: blur(20px);
+        z-index: 0;
     }
 
     &:hover {
         transform: translateY(-5px);
         border-color: var(--card-border-hover);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), 0 0 25px var(--card-accent-translucent);
+        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.22), 0 0 25px var(--card-accent-translucent);
 
         &::before {
-            opacity: 0.9;
-            transform: scale(1.18);
+            opacity: 0.75;
         }
     }
 
