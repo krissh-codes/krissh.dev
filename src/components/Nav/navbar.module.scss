@@ -282,47 +282,6 @@
         }
     }
 
-    .hamCloseBtn {
-        display: none;
-        cursor: pointer;
-        border: 0;
-        background: transparent;
-        font: inherit;
-        color: inherit;
-        border-radius: var(--radius-md);
-
-        & > span {
-            margin-right: 1rem;
-        }
-
-        @include mixins.respond(phone-large) {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: auto;
-            padding: 1.2rem 2rem;
-            border: 1px solid var(--translucent-dark);
-            border-radius: var(--radius-md);
-            background: var(--bg-2);
-            font-size: var(--text-size-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            transition:
-                transform var(--animation-duration-default),
-                border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
-                background var(--animation-duration-default),
-                border-color var(--animation-duration-default);
-
-            &:hover,
-            &:focus-visible {
-                border-radius: var(--radius-sm);
-                border-color: var(--primary-light);
-                background: var(--primary-translucent);
-                color: var(--primary-dark);
-            }
-        }
-    }
-
     &__item {
         display: inline-block;
         position: relative;
@@ -341,8 +300,8 @@
         @include mixins.respond(phone-large) {
             display: block;
             margin: 0;
-            width: auto;
-            min-width: auto;
+            width: 100%;
+            min-width: 0;
             max-width: none;
         }
 
@@ -358,15 +317,13 @@
     &__link {
         display: inline-flex;
         align-items: center;
+        justify-content: flex-start;
         text-decoration: none;
-        color: inherit;
-        translate: 0 0;
-        transition:
-            color var(--animation-duration-default) ease,
-            translate var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
-            border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
-            background var(--animation-duration-default) ease,
-            border-color var(--animation-duration-default) ease;
+        color: var(--fg-2);
+        width: 100%;
+        padding: 0.8rem 0;
+        cursor: pointer;
+        transition: color var(--animation-duration-default) ease;
 
         svg {
             display: inline-flex;
@@ -388,12 +345,9 @@
                 translate 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        @include mixins.respond(phone-large) {
-            display: flex;
-            padding: 1.4rem 1.8rem;
-            border-radius: var(--radius-md);
-            border: 1px solid transparent;
-            background: var(--bg-2);
+        &:hover,
+        &:focus-visible {
+            color: var(--primary-light);
 
             svg {
                 max-width: 1.6em;
@@ -403,27 +357,35 @@
                 translate: 0 0;
             }
         }
-    }
-
-    &__item:hover &__link,
-    &__link:focus-visible {
-        color: var(--primary-light);
-        translate: 0.3ex 0;
-
-        svg {
-            max-width: 1.6em;
-            margin-right: var(--gap-xs);
-            opacity: 1;
-            scale: 1;
-            translate: 0 0;
-        }
 
         @include mixins.respond(phone-large) {
-            translate: 0;
-            border-radius: var(--radius-sm);
-            border-color: var(--translucent-dark);
-            background: var(--primary-translucent);
-            color: var(--primary-dark);
+            display: flex;
+            width: 100%;
+            padding: 1.4rem 1.8rem;
+            border-radius: var(--radius-md);
+            border: 1px solid transparent;
+            background: var(--bg-2);
+            transition:
+                color var(--animation-duration-default),
+                border-radius var(--animation-duration-default) cubic-bezier(0.2, 0.8, 0.2, 1),
+                background var(--animation-duration-default),
+                border-color var(--animation-duration-default);
+
+            svg {
+                max-width: 1.6em;
+                margin-right: var(--gap-xs);
+                opacity: 1;
+                scale: 1;
+                translate: 0 0;
+            }
+
+            &:hover,
+            &:focus-visible {
+                border-radius: var(--radius-sm);
+                border-color: var(--translucent-dark);
+                background: var(--primary-translucent);
+                color: var(--primary-dark);
+            }
         }
     }
 
