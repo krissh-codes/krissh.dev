@@ -2,18 +2,27 @@
 @use '../../styles/mixins';
 
 .hero {
-    height: 90vh;
+    min-height: 72vh;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+
+    @include mixins.respond(phone) {
+        min-height: auto;
+        padding-top: 10rem;
+        padding-bottom: 6rem;
+    }
 
     .container {
         position: relative;
 
         @include mixins.respond(phone) {
-            margin-top: var(--gap-xl);
+            margin-top: var(--gap-md);
         }
     }
 
