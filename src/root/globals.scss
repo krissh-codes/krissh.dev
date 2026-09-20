@@ -5,8 +5,8 @@
 @use '../styles/misc';
 
 :root {
-    --bg-1: transparent;
-    --bg-2: hsla(0, 0%, 0%, 0.14);
+    --bg-1: #faf7f2;
+    --bg-2: hsla(24, 25%, 92%, 0.65);
     --contrast-bg: #{variables.$light-1};
     --color-white: #{variables.$light-1};
     --fg-1: #{variables.$dark-1};
@@ -17,13 +17,20 @@
     --primary-translucent: #{variables.$primary-translucent};
     --primary-translucent-dark: #{variables.$primary-translucent-dark};
 
-    --translucent-dark: hsla(0, 0%, 0%, 0.1);
-    --translucent-darker: hsla(0, 0%, 0%, 0.3);
+    --translucent-dark: hsla(24, 20%, 10%, 0.08);
+    --translucent-darker: hsla(24, 20%, 10%, 0.18);
     --noise-opacity: 0.35;
 
-    --ambient-purple: hsla(266, 95%, 65%, 0.06);
-    --ambient-purple-soft: hsla(275, 90%, 60%, 0.04);
-    --ambient-purple-card: hsla(266, 95%, 65%, 0.07);
+    --bg-image-brightness: 0.95;
+    --bg-image-blur: 50px;
+    --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.55) 0%, rgba(250, 247, 242, 0.75) 100%);
+
+    --ambient-glow: hsla(24, 95%, 53%, 0.04);
+    --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
+    --ambient-glow-card: hsla(24, 95%, 53%, 0.04);
+
+    --nav-bg: hsla(30, 25%, 98%, 0.85);
+    --nav-border: hsla(24, 30%, 20%, 0.08);
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
     --red: #{variables.$red};
@@ -87,53 +94,72 @@
 
 @include mixins.theme(dark) {
     :root {
-        --bg-1: transparent;
-        --bg-2: hsla(0, 0%, 0%, 0.72);
-        --contrast-bg: #{variables.$dark-2};
+        --bg-1: #0c0a09;
+        --bg-2: hsla(24, 15%, 12%, 0.7);
+        --contrast-bg: #1c1917;
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
         --fg-3: #{variables.$light-3};
         --primary-light: #{variables.$primary-light};
         --primary-dark: #{variables.$primary-dark};
 
-        --translucent-dark: hsla(0, 0%, 100%, 0.1);
-        --translucent-darker: hsla(0, 0%, 100%, 0.2);
+        --translucent-dark: hsla(30, 20%, 90%, 0.08);
+        --translucent-darker: hsla(30, 20%, 90%, 0.16);
         --noise-opacity: 0.2;
 
-        --ambient-purple: hsla(266, 95%, 65%, 0.12);
-        --ambient-purple-soft: hsla(275, 90%, 60%, 0.08);
-        --ambient-purple-card: hsla(266, 95%, 65%, 0.14);
+        --bg-image-brightness: 0.6;
+        --bg-image-blur: 50px;
+        --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.5) 0%, rgba(12, 10, 9, 0.7) 50%, rgba(12, 10, 9, 0.85) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+
+        --ambient-glow: hsla(24, 95%, 53%, 0.14);
+        --ambient-glow-soft: hsla(36, 92%, 48%, 0.09);
+        --ambient-glow-card: hsla(24, 95%, 53%, 0.12);
+
+        --nav-bg: hsla(24, 15%, 10%, 0.82);
+        --nav-border: hsla(24, 85%, 60%, 0.15);
     }
 }
 
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    background-color: var(--bg-1);
 }
 
 body {
     color: var(--fg-3);
-    background: var(--bg-1);
+    background-color: transparent;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     box-sizing: border-box;
     overflow-x: hidden;
-    position: relative;
     min-height: 100vh;
+    position: relative;
 
     &::before {
         content: '';
         position: fixed;
-        inset: 0;
+        inset: -50px;
+        background-image: url('/images/bg-wallpaper.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(var(--bg-image-blur, 50px)) brightness(var(--bg-image-brightness, 0.6)) saturate(1.2);
+        transform: scale(1.08);
+        z-index: -2;
         pointer-events: none;
+        will-change: transform, filter;
+    }
+
+    &::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: var(--bg-overlay);
         z-index: -1;
-        background:
-            radial-gradient(ellipse 65vw 50vh at 88% 8%, var(--ambient-purple) 0%, transparent 70%),
-            radial-gradient(ellipse 55vw 45vh at 6% 38%, var(--ambient-purple-soft) 0%, transparent 70%),
-            radial-gradient(ellipse 65vw 50vh at 92% 68%, var(--ambient-purple) 0%, transparent 70%),
-            radial-gradient(ellipse 55vw 40vh at 50% 98%, var(--ambient-purple-soft) 0%, transparent 70%);
+        pointer-events: none;
     }
 }
 
@@ -168,11 +194,13 @@ body {
 .section__boxed {
     position: relative;
     background:
-        radial-gradient(ellipse 80% 60% at 90% 0%, var(--ambient-purple-card) 0%, transparent 65%),
-        radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-purple-soft) 0%, transparent 65%),
+        radial-gradient(ellipse 80% 60% at 90% 0%, var(--ambient-glow-card) 0%, transparent 65%),
+        radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-glow-soft) 0%, transparent 65%),
         var(--bg-2);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
     border: 1px solid var(--translucent-dark);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.25), 0 0 35px -10px var(--ambient-purple-card);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.28), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
     max-width: 136rem;
     width: 95%;
     margin: var(--gap-xl) auto;

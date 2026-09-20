@@ -3,20 +3,23 @@
 @use '../../styles/variables';
 
 .nav {
-    background-color: var(--primary-translucent);
     position: fixed;
     top: 0;
     left: 50%;
-    backdrop-filter: none;
     z-index: 1000;
     width: 100%;
     border-radius: var(--radius-md);
     transition: all var(--animation-duration-default);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 
     &[nav-style='top'] {
         transform: translate(-50%, 15%);
         box-shadow: none;
-        background: none;
+        background: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        border: 1px solid transparent;
     }
 
     &[nav-style='hidden'] {
@@ -27,8 +30,11 @@
     &[nav-style='visible'] {
         width: 120rem;
         transform: translate(-50%, 25%);
-        box-shadow: 0 0 2rem var(--primary-translucent);
-        backdrop-filter: blur(20px);
+        background-color: var(--nav-bg);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid var(--nav-border);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3), 0 0 20px -5px var(--primary-translucent);
 
         @include mixins.respond(tab-lan) {
             width: 90%;

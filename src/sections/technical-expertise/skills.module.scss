@@ -14,12 +14,15 @@
 .bento_card {
     --card-accent: var(--primary-dark);
     --card-accent-translucent: var(--primary-translucent);
-    --card-accent-glow: hsla(266, 95%, 65%, 0.18);
+    --card-accent-glow: hsla(24, 95%, 53%, 0.18);
     --card-border-hover: var(--primary-dark);
 
     background: var(--bg-2);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
     border: 1px solid var(--translucent-darker);
     border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.18), inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
     padding: 2.8rem;
     display: flex;
     flex-direction: column;
@@ -72,10 +75,10 @@
     }
 
     &__backend {
-        --card-accent: hsl(268, 90%, 68%);
-        --card-accent-translucent: hsla(268, 90%, 68%, 0.15);
-        --card-accent-glow: hsla(268, 90%, 68%, 0.25);
-        --card-border-hover: hsla(268, 90%, 68%, 0.6);
+        --card-accent: hsl(24, 95%, 58%);
+        --card-accent-translucent: hsla(24, 95%, 58%, 0.15);
+        --card-accent-glow: hsla(24, 95%, 58%, 0.25);
+        --card-border-hover: hsla(24, 95%, 58%, 0.6);
     }
 
     &__database {
