@@ -2,36 +2,69 @@
 @use '../../styles/variables';
 
 .footer {
+    max-width: 120rem;
+    width: 90%;
+    margin: var(--gap-xl) auto var(--gap-xl) auto;
     text-align: center;
-    background-color: var(--bg-2);
-    padding: var(--gap-md);
+    background: var(--bg-2);
+    -webkit-backdrop-filter: blur(24px) saturate(170%);
+    backdrop-filter: blur(24px) saturate(170%);
+    border: 1px solid var(--translucent-darker);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.28), 0 0 30px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+    padding: var(--gap-lg) var(--gap-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+
+    @include mixins.respond(xdr) {
+        max-width: 140rem;
+    }
+
+    @include mixins.respond(tab-lan) {
+        width: 95%;
+    }
+
+    @include mixins.respond(phone-large) {
+        margin: var(--gap-lg) auto var(--gap-lg) auto;
+        padding: var(--gap-md) var(--gap-sm);
+        border-radius: var(--radius-lg);
+    }
 
     &__social {
         display: flex;
         justify-content: center;
-        margin: 1rem 0 2rem 0;
+        margin-bottom: 0.2rem;
     }
 
     &__line1 {
         display: inline-flex;
-        align-items: baseline;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        font-family: var(--font-body);
+        font-size: var(--text-size-sm);
+        color: var(--fg-2);
 
         svg {
-            position: relative;
-            top: 0.3rem;
-            margin: 0 0.4rem;
+            margin: 0 0.3rem;
             font-size: var(--text-size-md);
             color: var(--primary-light);
+            vertical-align: middle;
         }
     }
 
-    .colorize {
+    &__line2 {
         font-family: var(--font-mono);
-        font-size: var(--text-size-md);
-        color: var(--primary-light);
-    }
+        font-size: var(--text-size-xs);
+        color: var(--fg-3);
+        letter-spacing: 0.05em;
 
-    strong {
-        font-family: var(--font-headings);
+        strong {
+            font-family: var(--font-headings);
+            font-size: var(--text-size-sm);
+            color: var(--fg-1);
+        }
     }
 }

@@ -6,7 +6,7 @@
 
 :root {
     --bg-1: #faf7f2;
-    --bg-2: hsla(24, 25%, 92%, 0.65);
+    --bg-2: hsla(24, 30%, 96%, 0.4);
     --contrast-bg: #{variables.$light-1};
     --color-white: #{variables.$light-1};
     --fg-1: #{variables.$dark-1};
@@ -18,12 +18,12 @@
     --primary-translucent-dark: #{variables.$primary-translucent-dark};
 
     --translucent-dark: hsla(24, 20%, 10%, 0.08);
-    --translucent-darker: hsla(24, 20%, 10%, 0.18);
-    --noise-opacity: 0.35;
+    --translucent-darker: hsla(24, 20%, 10%, 0.15);
+    --noise-opacity: 0.2;
 
     --bg-image-brightness: 0.95;
-    --bg-image-blur: 50px;
-    --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.55) 0%, rgba(250, 247, 242, 0.75) 100%);
+    --bg-image-blur: 18px;
+    --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.45) 0%, rgba(250, 247, 242, 0.65) 100%);
 
     --ambient-glow: hsla(24, 95%, 53%, 0.04);
     --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
@@ -95,7 +95,7 @@
 @include mixins.theme(dark) {
     :root {
         --bg-1: #0c0a09;
-        --bg-2: hsla(24, 15%, 12%, 0.7);
+        --bg-2: hsla(24, 15%, 11%, 0.38);
         --contrast-bg: #1c1917;
         --fg-1: #{variables.$light-1};
         --fg-2: #{variables.$light-2};
@@ -104,12 +104,12 @@
         --primary-dark: #{variables.$primary-dark};
 
         --translucent-dark: hsla(30, 20%, 90%, 0.08);
-        --translucent-darker: hsla(30, 20%, 90%, 0.16);
-        --noise-opacity: 0.2;
+        --translucent-darker: hsla(30, 20%, 90%, 0.14);
+        --noise-opacity: 0.12;
 
-        --bg-image-brightness: 0.6;
-        --bg-image-blur: 50px;
-        --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.5) 0%, rgba(12, 10, 9, 0.7) 50%, rgba(12, 10, 9, 0.85) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+        --bg-image-brightness: 0.65;
+        --bg-image-blur: 18px;
+        --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.35) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.06) 0%, transparent 70%);
 
         --ambient-glow: hsla(24, 95%, 53%, 0.14);
         --ambient-glow-soft: hsla(36, 92%, 48%, 0.09);
@@ -141,13 +141,13 @@ body {
     &::before {
         content: '';
         position: fixed;
-        inset: -50px;
+        inset: -25px;
         background-image: url('/images/bg-wallpaper.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        filter: blur(var(--bg-image-blur, 50px)) brightness(var(--bg-image-brightness, 0.6)) saturate(1.2);
-        transform: scale(1.08);
+        filter: blur(var(--bg-image-blur, 18px)) brightness(var(--bg-image-brightness, 0.65)) saturate(1.15);
+        transform: scale(1.04);
         z-index: -2;
         pointer-events: none;
         will-change: transform, filter;
@@ -197,10 +197,10 @@ body {
         radial-gradient(ellipse 80% 60% at 90% 0%, var(--ambient-glow-card) 0%, transparent 65%),
         radial-gradient(ellipse 65% 50% at 10% 100%, var(--ambient-glow-soft) 0%, transparent 65%),
         var(--bg-2);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
-    backdrop-filter: blur(24px) saturate(150%);
-    border: 1px solid var(--translucent-dark);
-    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.28), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(28px) saturate(170%);
+    backdrop-filter: blur(28px) saturate(170%);
+    border: 1px solid var(--translucent-darker);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.32), 0 0 35px -10px var(--ambient-glow-card), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
     max-width: 136rem;
     width: 95%;
     margin: var(--gap-xl) auto;
