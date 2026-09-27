@@ -22,8 +22,6 @@
     --noise-opacity: 0.12;
 
     --bg-wallpaper-image: url('/images/bg-wallpaper-dark.webp');
-    --bg-image-brightness: 0.68;
-    --bg-image-blur: 18px;
     --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.38) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
 
     --ambient-glow: hsla(24, 95%, 53%, 0.12);
@@ -118,8 +116,6 @@
         --noise-opacity: 0.18;
 
         --bg-wallpaper-image: url('/images/bg-wallpaper-light.webp');
-        --bg-image-brightness: 0.96;
-        --bg-image-blur: 18px;
         --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.40) 0%, rgba(250, 247, 242, 0.65) 100%);
 
         --ambient-glow: hsla(24, 95%, 53%, 0.04);
@@ -157,16 +153,13 @@ body {
     &::before {
         content: '';
         position: fixed;
-        inset: -50px;
+        inset: 0;
         background-image: var(--bg-wallpaper-image);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        filter: blur(var(--bg-image-blur, 18px)) brightness(var(--bg-image-brightness, 0.68)) saturate(1.18);
-        transform: scale(1.06);
         z-index: -2;
         pointer-events: none;
-        will-change: transform, filter;
     }
 
     &::after {
