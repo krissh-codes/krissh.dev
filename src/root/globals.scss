@@ -21,7 +21,7 @@
     --translucent-darker: hsla(30, 20%, 90%, 0.14);
     --noise-opacity: 0.12;
 
-    --bg-wallpaper-image: url('/images/bg-wallpaper-dark.png');
+    --bg-wallpaper-image: url('/images/bg-wallpaper-dark.webp');
     --bg-image-brightness: 0.68;
     --bg-image-blur: 18px;
     --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.38) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
@@ -117,7 +117,7 @@
         --translucent-darker: hsla(24, 20%, 10%, 0.11);
         --noise-opacity: 0.18;
 
-        --bg-wallpaper-image: url('/images/bg-wallpaper-light.png');
+        --bg-wallpaper-image: url('/images/bg-wallpaper-light.webp');
         --bg-image-brightness: 0.96;
         --bg-image-blur: 18px;
         --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.40) 0%, rgba(250, 247, 242, 0.65) 100%);
