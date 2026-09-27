@@ -53,7 +53,7 @@ function bootstrap() {
         </StrictMode>
     );
 
-    setTimeout(() => requestAnimationFrame(removePreloader), 1000);
+    requestAnimationFrame(() => requestAnimationFrame(removePreloader));
 }
 
 bootstrap();
