@@ -16,7 +16,7 @@ export default function Graph({ data }: { data: { contributions: number }[] }) {
                     contentStyle={{
                         borderRadius: 'var(--radius-sm)',
                         backgroundColor: 'var(--primary-translucent)',
-                        backdropFilter: 'blur(20px)',
+                        backdropFilter: 'blur(8px)',
                         fontFamily: 'var(--font-mono)',
                         borderColor: 'var(--primary-translucent-dark)',
                         textTransform: 'capitalize'

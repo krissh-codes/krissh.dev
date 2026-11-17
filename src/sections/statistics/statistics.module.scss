@@ -10,8 +10,8 @@
 
     .visualization {
         background: var(--bg-2);
-        -webkit-backdrop-filter: blur(24px) saturate(160%);
-        backdrop-filter: blur(24px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(130%);
+        backdrop-filter: blur(10px) saturate(130%);
         border: 1px solid var(--translucent-darker);
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-card), var(--card-inset-highlight);
@@ -25,7 +25,12 @@
         &:hover {
             border-radius: var(--radius-md);
             border-color: var(--primary-translucent-dark);
-            box-shadow: var(--shadow-card-hover), 0 0 25px -5px var(--primary-translucent), var(--card-inset-highlight);
+            box-shadow: var(--shadow-card-hover), 0 0 14px -4px var(--primary-translucent), var(--card-inset-highlight);
+        }
+
+        @include mixins.respond(tab-port) {
+            -webkit-backdrop-filter: blur(6px) saturate(120%);
+            backdrop-filter: blur(6px) saturate(120%);
         }
     }
 

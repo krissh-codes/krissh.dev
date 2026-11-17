@@ -6,8 +6,8 @@
     flex-direction: column;
     align-items: flex-start;
     background: var(--bg-2);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
     border: 1px solid var(--translucent-darker);
     box-shadow: var(--shadow-card), var(--card-inset-highlight);
     padding: 1.8rem 1.6rem;
@@ -20,6 +20,11 @@
         box-shadow 0.3s ease,
         background-color var(--animation-duration-default);
 
+    @include mixins.respond(tab-port) {
+        -webkit-backdrop-filter: blur(6px) saturate(120%);
+        backdrop-filter: blur(6px) saturate(120%);
+    }
+
     & > * {
         transition: color var(--animation-duration-default);
     }
@@ -28,7 +33,7 @@
         transform: translateY(-4px);
         border-radius: var(--radius-md);
         border-color: var(--primary-dark);
-        box-shadow: var(--shadow-card-hover), 0 0 20px -4px var(--primary-translucent), var(--card-inset-highlight);
+        box-shadow: var(--shadow-card-hover), 0 0 12px -4px var(--primary-translucent), var(--card-inset-highlight);
         background-color: var(--primary-translucent);
 
         @include mixins.theme(dark) {

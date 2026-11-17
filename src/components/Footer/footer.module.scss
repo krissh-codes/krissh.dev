@@ -6,8 +6,8 @@
     width: 90%;
     margin: var(--gap-xl) auto var(--gap-xl) auto;
     background: var(--bg-2);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
     border: 1px solid var(--translucent-darker);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-boxed), var(--card-inset-highlight);
@@ -34,6 +34,8 @@
         gap: 1.4rem;
         padding: var(--gap-md) var(--gap-sm);
         border-radius: var(--radius-lg);
+        -webkit-backdrop-filter: blur(6px) saturate(120%);
+        backdrop-filter: blur(6px) saturate(120%);
     }
 
     &__social {

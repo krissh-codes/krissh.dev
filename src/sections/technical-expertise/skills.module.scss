@@ -19,8 +19,8 @@
 
     position: relative;
     background: var(--bg-2);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
     border: 1px solid var(--translucent-darker);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card), var(--card-inset-highlight);
@@ -34,6 +34,16 @@
         border-radius 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
         border-color 0.35s ease,
         box-shadow 0.35s ease;
+
+    @include mixins.respond(tab-port) {
+        -webkit-backdrop-filter: blur(6px) saturate(120%);
+        backdrop-filter: blur(6px) saturate(120%);
+
+        &::before,
+        &::after {
+            display: none !important;
+        }
+    }
 
     // Tactile micro-noise frosted texture matching .section__boxed
     &::before {
@@ -60,7 +70,7 @@
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.4s ease, transform 0.4s ease;
-        filter: blur(20px);
+        filter: blur(10px);
         z-index: 0;
     }
 
@@ -73,7 +83,7 @@
         transform: translateY(-5px);
         border-radius: var(--radius-md);
         border-color: var(--card-border-hover);
-        box-shadow: var(--shadow-card-hover), 0 0 35px -6px var(--card-accent-glow), var(--card-inset-highlight);
+        box-shadow: var(--shadow-card-hover), 0 0 16px -4px var(--card-accent-glow), var(--card-inset-highlight);
 
         &::after {
             opacity: 0.75;

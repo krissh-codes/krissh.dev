@@ -42,16 +42,31 @@ export function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => {
-            if (window.scrollY <= 5) {
-                setCustomNavAttr('top');
-            } else if (window.oldScroll > window.scrollY) {
-                setCustomNavAttr('visible');
-            } else {
-                setCustomNavAttr('hidden');
-            }
+        let ticking = false;
+        let lastScrollY = window.scrollY;
 
-            window.oldScroll = window.scrollY;
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    const diff = currentScrollY - lastScrollY;
+
+                    if (currentScrollY <= 20) {
+                        setCustomNavAttr('top');
+                        lastScrollY = currentScrollY;
+                    } else if (Math.abs(diff) > 10) {
+                        if (diff < 0) {
+                            setCustomNavAttr('visible');
+                        } else {
+                            setCustomNavAttr('hidden');
+                        }
+                        lastScrollY = currentScrollY;
+                    }
+
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });

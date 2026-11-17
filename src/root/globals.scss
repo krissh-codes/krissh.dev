@@ -21,9 +21,6 @@
     --translucent-darker: hsla(30, 20%, 90%, 0.14);
     --noise-opacity: 0.12;
 
-    --bg-wallpaper-image: url('/images/bg-wallpaper-dark.webp');
-    --bg-overlay: linear-gradient(180deg, rgba(12, 10, 9, 0.38) 0%, rgba(12, 10, 9, 0.55) 50%, rgba(12, 10, 9, 0.75) 100%), radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.07) 0%, transparent 70%);
-
     --ambient-glow: hsla(24, 95%, 53%, 0.12);
     --ambient-glow-soft: hsla(36, 92%, 48%, 0.08);
     --ambient-glow-card: hsla(24, 95%, 53%, 0.10);
@@ -31,9 +28,9 @@
     --nav-bg: hsla(24, 15%, 10%, 0.42);
     --nav-border: hsla(24, 85%, 60%, 0.15);
 
-    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.25), 0 20px 40px -20px rgba(0, 0, 0, 0.35);
-    --shadow-card-hover: 0 14px 36px -8px rgba(0, 0, 0, 0.3), 0 24px 48px -18px rgba(0, 0, 0, 0.4);
-    --shadow-boxed: 0 12px 36px -12px rgba(0, 0, 0, 0.25), 0 24px 48px -20px rgba(0, 0, 0, 0.35);
+    --shadow-card: 0 4px 14px -4px rgba(0, 0, 0, 0.25);
+    --shadow-card-hover: 0 6px 18px -4px rgba(0, 0, 0, 0.35);
+    --shadow-boxed: 0 6px 18px -6px rgba(0, 0, 0, 0.25);
     --card-inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
 
     --glow: drop-shadow(0 0 1rem #{variables.$primary-light});
@@ -86,6 +83,8 @@
         --radius-xxl: 3.6rem;
         --gap-xl: 5rem;
         --gap-xxl: 6rem;
+        --bg-2: hsla(24, 15%, 11%, 0.88);
+        --nav-bg: hsla(24, 15%, 10%, 0.92);
     }
 }
 
@@ -115,9 +114,6 @@
         --translucent-darker: hsla(24, 20%, 10%, 0.11);
         --noise-opacity: 0.18;
 
-        --bg-wallpaper-image: url('/images/bg-wallpaper-light.webp');
-        --bg-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0.40) 0%, rgba(250, 247, 242, 0.65) 100%);
-
         --ambient-glow: hsla(24, 95%, 53%, 0.04);
         --ambient-glow-soft: hsla(36, 90%, 48%, 0.03);
         --ambient-glow-card: hsla(24, 95%, 53%, 0.04);
@@ -125,10 +121,15 @@
         --nav-bg: hsla(30, 25%, 98%, 0.50);
         --nav-border: hsla(24, 30%, 20%, 0.08);
 
-        --shadow-card: 0 10px 28px -10px rgba(70, 45, 25, 0.07), 0 2px 8px -2px rgba(70, 45, 25, 0.04);
-        --shadow-card-hover: 0 16px 36px -8px rgba(70, 45, 25, 0.1), 0 4px 12px -2px rgba(70, 45, 25, 0.05);
-        --shadow-boxed: 0 14px 38px -12px rgba(70, 45, 25, 0.08), 0 4px 14px -3px rgba(70, 45, 25, 0.04);
+        --shadow-card: 0 4px 12px -4px rgba(70, 45, 25, 0.06);
+        --shadow-card-hover: 0 6px 16px -4px rgba(70, 45, 25, 0.08);
+        --shadow-boxed: 0 6px 16px -6px rgba(70, 45, 25, 0.06);
         --card-inset-highlight: inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
+
+        @include mixins.respond(tab-port) {
+            --bg-2: hsla(30, 25%, 98%, 0.92);
+            --nav-bg: hsla(30, 25%, 98%, 0.94);
+        }
     }
 }
 
@@ -140,7 +141,7 @@ html {
 
 body {
     color: var(--fg-2);
-    background-color: transparent;
+    background-color: var(--bg-1);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -149,27 +150,6 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
-
-    &::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background-image: var(--bg-wallpaper-image);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: -2;
-        pointer-events: none;
-    }
-
-    &::after {
-        content: '';
-        position: fixed;
-        inset: 0;
-        background: var(--bg-overlay);
-        z-index: -1;
-        pointer-events: none;
-    }
 }
 
 *,
@@ -203,8 +183,8 @@ body {
 .section__boxed {
     position: relative;
     background: var(--bg-2);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
     border: 1px solid var(--translucent-darker);
     box-shadow: var(--shadow-boxed), var(--card-inset-highlight);
     max-width: 136rem;
@@ -241,6 +221,15 @@ body {
         margin: var(--gap-lg) auto;
         padding: var(--gap-lg) var(--gap-md);
         border-radius: var(--radius-lg);
+    }
+
+    @include mixins.respond(tab-port) {
+        -webkit-backdrop-filter: blur(6px) saturate(120%);
+        backdrop-filter: blur(6px) saturate(120%);
+
+        &::before {
+            display: none;
+        }
     }
 
     >* {
